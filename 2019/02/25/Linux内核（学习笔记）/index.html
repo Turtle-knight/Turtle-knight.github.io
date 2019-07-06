@@ -102,20 +102,20 @@
 <meta property="og:site_name" content="Utur的个人博客">
 <meta property="og:description" content="Linux 的优势 Linux是免费的。除硬件之外，无需任何花费就能安装一套玩整的Linux系统 Linux的所有成分都可以充分地定制。通过内核编译选项，你可以选择自己真正需要的特征来定制内核。 Linux可以运行在低档、便宜的硬件平台上。 Linux是强大的，由于充分挖掘了硬件部分的特点，使得Linux系统速度非常块，Linux的主要目标是效率 Linux的开发者都是非常出色的程序员。 Linu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/内核控制路径.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/进程链表.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/进程间的关系.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/4种PID.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/pidhash表及链表.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/门描述符的格式.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/内核控制路径嵌套执行.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/自旋锁.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/普通进程基本时间片.png">
-<meta property="og:updated_time" content="2019-07-06T09:18:46.221Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/内核控制路径.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/进程链表.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/进程间的关系.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/4种PID.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/pidhash表及链表.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/门描述符的格式.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/内核控制路径嵌套执行.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/自旋锁.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/普通进程基本时间片.png">
+<meta property="og:updated_time" content="2019-07-06T11:20:30.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解Linux内核">
 <meta name="twitter:description" content="Linux 的优势 Linux是免费的。除硬件之外，无需任何花费就能安装一套玩整的Linux系统 Linux的所有成分都可以充分地定制。通过内核编译选项，你可以选择自己真正需要的特征来定制内核。 Linux可以运行在低档、便宜的硬件平台上。 Linux是强大的，由于充分挖掘了硬件部分的特点，使得Linux系统速度非常块，Linux的主要目标是效率 Linux的开发者都是非常出色的程序员。 Linu">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/内核控制路径.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/25/Linux内核（学习笔记）/内核控制路径.png">
 
 
 
@@ -390,7 +390,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-06 17:18:46" itemprop="dateModified" datetime="2019-07-06T17:18:46+08:00">2019-07-06</time>
+                <time title="Modified: 2019-07-06 19:20:30" itemprop="dateModified" datetime="2019-07-06T19:20:30+08:00">2019-07-06</time>
               </span>
             
           
@@ -460,7 +460,7 @@
 <li>当CPU正在运行一个启用了中断的内核控制路径时，一个硬件中断发生。</li>
 <li>在支持抢占式调度的内核中，CPU正在运行，而一个更高优先级的进程加入就绪队列，则中断发生。</li>
 </ol>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/内核控制路径.png" alt="内核控制路径"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/内核控制路径.png" alt="内核控制路径"></p>
 <p><strong>同步内核路径</strong></p>
 <ol>
 <li><strong><em>非抢占式内核</em></strong>，当进程在内核态执行时，它不能被任意挂起，也不能被另一个进程代替。因此，在单处理器系统上，中断或异常处理程序不能修改的所有内核数据结构，内核对它们讷的访问都是安全的</li>
@@ -503,7 +503,7 @@
 <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p><strong>进程链表</strong></p>
 <p>Linux的进程链表是一个双向链表，进程链表把所有进程的描述符链接起来。每个task_struct结构都包含一个list_head类型的tasks字段，这个类型的prev和next字段分别指向前面和后面的task_struct元素。</p>
 <p>进程链表的头是init_task描述符，它是所谓的0进程（process 0）或swapper进程的进程描述符。init_task的tasks.prev字段指向链表中最后插入的进程描述符tasks字段。</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/进程链表.png" alt="进程链表"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/进程链表.png" alt="进程链表"></p>
 <p><strong>TASK_RUNNING状态的进程链表</strong></p>
 <p>当内核寻找一个新进程在CPU上运行时，必须只考虑可运行进程（即处在TASK_RUNNING状态的进程）。</p>
 <p>早期的Linux版本把所有的可运行进程都放在同一个叫作运行队列（runqueue）的链表中，由于维持链表中的进程按优先级排序开销过大，因此，早期的调度程序不得不为选择“最佳”可运行进程而扫描整个队列。</p>
@@ -511,14 +511,14 @@
 <p><strong>进程间的关系</strong></p>
 <p>程序创建的进程具有父/子关系。如果一个进程创建多个子进程时，则子进程之间具有兄弟关系。</p>
 <p>图3-4显示了一组进程间的亲属关系。进程P0接连创建了P1，P2，和P3。进程P3又创建了P4。</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/进程间的关系.png" alt="进程间的关系"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/进程间的关系.png" alt="进程间的关系"></p>
 <p><strong>pidhash表及链表</strong></p>
 <p>在几种情况下，内核必须能从进程的PID到处对应的进程描述符指针。</p>
 <p>顺序扫描进程链表并检查进程描述符的pid字段是可行但相当低效的。为了加速查找，引入了4个散列表。需要4个散列表是因为进程描述符包含了表示不同类型pid的字段，而且每种类型的PID需要它自己的散列表。</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/4种PID.png" alt="四种PID"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/4种PID.png" alt="四种PID"></p>
 <p>正如计算机科学的基础课程所阐述的那样，散列（hash）函数并不总能确保PID与表的索引一一对应。两个不同的PID散列（hash）到相同的表索引称为冲突（colliding）</p>
 <p>Linux利用链表来处理冲突的PID：每一个表项是由冲突的进程描述符组成的双向链表。</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/pidhash表及链表.png" alt="pidhash表"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/pidhash表及链表.png" alt="pidhash表"></p>
 <p>具有链表的散列法比从PID到表索引的线性转换更优越，这是因为在任何给定的实例中，系统中的进程数总是远远小于32768（所允许的进程PID的最大数）。如果在任何给定的实例中大部分表项都不使用的话，那么把表定义为32768项会是一种存储浪费。</p>
 <p>由于需要跟踪进程间的关系，PID散列表中使用的数据结构非常复杂。</p>
 <p>PID散列表的数据结构解决了所有这些难题，因为他们可以为包含在一个散列表中任意PID号定义进程链表。</p>
@@ -607,7 +607,7 @@
 <p><strong>中断描述符表</strong></p>
 <p>中断描述符表（Interrupt Descriptor Table, IDT）是一个系统表，它与灭一个中断或异常向量相联系，每一个向量在表中有相应的中断或异常处理程序的入口地址。</p>
 <p>IDT包含三种类型的描述符。</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/门描述符的格式.png" alt="门描述符"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/门描述符的格式.png" alt="门描述符"></p>
 <p>这些描述符是：</p>
 <p>任务门（task_gate)</p>
 <p>​    当中断信号发生时，必须取代当前进程的那个进程的TSS选择符存放在任务门中。</p>
@@ -618,7 +618,7 @@
 <p><strong><em>Linux利用中断门处理中断，利用陷阱门处理异常</em></strong></p>
 <p><strong>中断和异常处理程序的嵌套执行</strong></p>
 <p>每个中断或异常都会引起一个内核控制路径，或者说代表当前进程在内核态执行单独的指令序列。内核控制路径可以任意嵌套：一个中断处理程序可以被另一个中断处理程序“中断”，因此引起内核控制路径的嵌套执行。如图所示。</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/内核控制路径嵌套执行.png" alt="内核控制路径嵌套执行"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/内核控制路径嵌套执行.png" alt="内核控制路径嵌套执行"></p>
 <p>允许内核控制路径嵌套执行必须付出代价，那就是中断处理程序必须永不阻塞，换句话说，中断处理程序运行期间不能发生进程切换。事实上，嵌套的内核控制路径恢复执行时需要的所有数据都存放在内核态堆栈栈中，这个栈毫无疑义的属于当前进程。</p>
 <p>一个中断处理程序既可以抢占其他的中断处理程序，也可以抢占异常处理程序。相反，异常处理程序从不抢占中断处理程序。</p>
 <p>基于以下两个主要原因，Linux交错执行内核控制路径：</p>
@@ -668,7 +668,7 @@
 </li>
 <li><p><strong>自旋锁</strong></p>
 <p>一种广泛使用的同步技术是加锁（locking）。当内核控制路径必须访问共享数据结构或进入临界区时，就需要为自己获取一把”锁“。</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/自旋锁.png" alt="自旋锁"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/自旋锁.png" alt="自旋锁"></p>
 <p>自旋锁（spin lock）是用来在多处理器环境中工作的一种特殊的锁。如果内核控制路径发现自旋锁”开着“，就获取锁并继续自己的执行。相反，如果内核控制路径发现锁由运行在另一个CPU上的内核控制路径”锁着“，就在周围”旋转“，反复执行一条紧凑的循环指令，直到锁被释放。</p>
 <p>自旋锁的循环指令表示”忙等“。及时等待的内核控制路径无事可做（除了浪费时间），它也在CPU上保持运行。不过自旋锁通常非常方便，因为很多内核资源只锁1毫秒的时间片段。</p>
 <p>一般来说，由自旋锁所保护的每个临界区都是禁止内核抢占的。在单处理器系统上，这种锁本身不起锁的作用，自旋锁原语仅仅是禁止或启用内核抢占。在自旋锁忙等期间，内核抢占还是有效的，因此，等待自旋锁释放的进程有可能被更高优先级的进程替代。</p>
@@ -807,7 +807,7 @@
 </ul>
 <h4 id="普通进程的调度"><a href="#普通进程的调度" class="headerlink" title="普通进程的调度"></a>普通进程的调度</h4><p>每个普通进程都有它自己的静态优先级，调度程序使用静态优先级来估计系统中这个进程与其他普通进程之间调度的程度。内核用从100（最高优先级）到139（最低优先级）的数表示普通进程的静态优先级。</p>
 <p>基本时间片：</p>
-<p><img src="/2019/02/25/Linux内核（学习笔记）/utur/图片/picture_for_note/Linux源码/普通进程基本时间片.png" alt="时间片"></p>
+<p><img src="/2019/02/25/Linux内核（学习笔记）/普通进程基本时间片.png" alt="时间片"></p>
 <p>与优先级低的进程相比，通常优先级较高的进程获得更长额CPU时间片。</p>
 <h4 id="实时进程的调度"><a href="#实时进程的调度" class="headerlink" title="实时进程的调度"></a>实时进程的调度</h4><p>每个实时进程都与一个实时优先级相关，实时优先级是一个范围从1（最高优先级）～99（最低优先级）的值。调度程序总是让优先级高的进程运行，换句话说，实时进程运行的过程中，禁止低优先级进程的执行。与普通进程相反，实时进程总是被当成活动进程。</p>
 <p>只有在下述事件之一发生时，实时进程才会被另外一个进程取代：</p>
@@ -871,8 +871,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/25/关于《python源码剖析》笔记/" rel="prev" title="关于《python源码剖析》笔记">
-                关于《python源码剖析》笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/25/Redis设计与实现（笔记）/" rel="prev" title="Redis设计与实现（笔记）">
+                Redis设计与实现（笔记） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

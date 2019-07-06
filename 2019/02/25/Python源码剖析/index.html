@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="最近学习python，时不时会感叹这门语言的简洁和实用，不由得会好奇python的底层实现。偶然得知有《python源码剖析》这本书，便想从中窥视一二，囫囵吞枣一翻，虽谈不上洞彻肺腑，但着实获益不少。正所谓“好记性不如烂笔头”，故作此笔记。 这里带着几个问题：  python是用C实现的（虽然现在还有用JPython，Pypy），那么C是怎么实现python的面向对象的特性的呢？ 什么叫“pyth">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python源码剖析">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/Python源码剖析/index.html">
+<meta property="og:site_name" content="Utur的个人博客">
+<meta property="og:description" content="最近学习python，时不时会感叹这门语言的简洁和实用，不由得会好奇python的底层实现。偶然得知有《python源码剖析》这本书，便想从中窥视一二，囫囵吞枣一翻，虽谈不上洞彻肺腑，但着实获益不少。正所谓“好记性不如烂笔头”，故作此笔记。 这里带着几个问题：  python是用C实现的（虽然现在还有用JPython，Pypy），那么C是怎么实现python的面向对象的特性的呢？ 什么叫“pyth">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://image.littlechao.top/20180924130852000006.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/Utur_PyObject.png">
+<meta property="og:image" content="https://image.littlechao.top/20180927032505000012.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/Utur_Integer.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/object.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/2018-09-28%2021-36-35屏幕截图3.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/IntBlock.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/block.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/string.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/time.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/listcache.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/Pythonrun.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Python源码剖析/%20pycode.png">
+<meta property="og:updated_time" content="2019-07-06T11:27:01.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python源码剖析">
+<meta name="twitter:description" content="最近学习python，时不时会感叹这门语言的简洁和实用，不由得会好奇python的底层实现。偶然得知有《python源码剖析》这本书，便想从中窥视一二，囫囵吞枣一翻，虽谈不上洞彻肺腑，但着实获益不少。正所谓“好记性不如烂笔头”，故作此笔记。 这里带着几个问题：  python是用C实现的（虽然现在还有用JPython，Pypy），那么C是怎么实现python的面向对象的特性的呢？ 什么叫“pyth">
+<meta name="twitter:image" content="https://image.littlechao.top/20180924130852000006.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/02/25/Python源码剖析/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python源码剖析 | Utur的个人博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Utur的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">天天学习，好好向上</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Python源码剖析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Utur">
+      <meta itemprop="description" content="木龟想做一个哈皮程序猿。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Utur的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python源码剖析
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-02-25T00:00:00+08:00">2019-02-25</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-06 19:27:01" itemprop="dateModified" datetime="2019-07-06T19:27:01+08:00">2019-07-06</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近学习python，时不时会感叹这门语言的简洁和实用，不由得会好奇python的底层实现。偶然得知有《python源码剖析》这本书，便想从中窥视一二，囫囵吞枣一翻，虽谈不上洞彻肺腑，但着实获益不少。正所谓“好记性不如烂笔头”，故作此笔记。</p>
+<p>这里带着几个问题：</p>
+<ul>
+<li>python是用C实现的（虽然现在还有用JPython，Pypy），那么C是怎么实现python的面向对象的特性的呢？</li>
+<li>什么叫<em>“<strong>python里的东西都是对象</strong>“</em>，这个对象又是什么？</li>
+<li>python是门解释型语言，那么python是怎么执行代码的呢？</li>
+</ul>
+<p>(ps：《python源码剖析》里剖析的是python2.5版本，与目前最新的版本存在不少差异》）</p>
+<h2 id="Python的总体架构"><a href="#Python的总体架构" class="headerlink" title="Python的总体架构"></a>Python的总体架构</h2><p>但凡认识一个事物，总得先有一个感性的认识，才能进而深入了解。python也如此，先看看python的总体架构。</p>
+<p><img src="https://image.littlechao.top/20180924130852000006.jpg" alt="Architecture"></p>
+<p>内核模块、库、用户模块 + Interpreter = Python 。通过加载一些模块，库，然后对源代码进行编译，最后再执行编译得到的字节码 ，python便完成了一次运行。</p>
+<p>不难看出，python的核心便是他的解释器，而核心中的核心便是它的Code Evealuator（字节码执行器）。</p>
+<h2 id="Python对象"><a href="#Python对象" class="headerlink" title="Python对象"></a>Python对象</h2><p>对象是python中最核心的一个概念，在python的世界中，一切都是对象，一个整数是一个对象，一个字符串也是一个对象，更为奇妙的是，类型也是一种对象，整数类型是一个对象，字符串也是一个对象（这与我在C++，java中的认知有很大不同，之前的认知是：这是一个什么<em>类型</em>的对象）。也就是说，面向对象理论中的“类”和“对象”这两个概念在Python中都是通过Python内的对象来实现的。不得不说，这很美妙，也很让人深思。</p>
+<p><em>对象的本质</em></p>
+<blockquote>
+<p>在计算机中，一个对象实际上就是一片被分配的内存空间，这些内存可能是连续的，也可能是离散的，这都不重要，重要的是这片内存在更高的层次上可以作为一个整体来考虑，这个整体就是一个对象，在这片内存中，存储着一系列的数据以及可以对这些数据进行修改或读取操作的一系列代码。    </p>
+</blockquote>
+<p><em>在Python中，对象就是C中的结构体在堆上申请的一块内存</em>。为了确保对象能被正确的garbage-collected:<strong>对象是不能被静态初始化的，也不能在栈空间上生存</strong>（惟一的例外就是类型对象，Python中所有的内建的类型对象（如整数型对象，字符串类型对象）都是被静态初始化的。）；<strong>并且只能通过特殊的macros（宏）和方法来访问。</strong></p>
+<p>在Python中，一个对象一旦被创建了，那么它在内存中的大小和地址就是确定的了。这意味着那些需要容纳可变长度数据的对象只能在对象内维护一个指向一下指向一块可变大小的内存区域的指针。<strong>遵循这样的规则可以使通过指针维护对象的工作变得十分简单。</strong> <em>优秀的设计</em></p>
+<h3 id="对象机制的基石——PyObject"><a href="#对象机制的基石——PyObject" class="headerlink" title="对象机制的基石——PyObject"></a>对象机制的基石——PyObject</h3><p>可以说，PyObject是整个Python对象机制的核心。</p>
+<p><strong>python2.5</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[object.h]</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">object</span>&#123;</span></span><br><span class="line">	PyObject_HEAD</span><br><span class="line">&#125;PyObject;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyObject_HEAD            \</span></span><br><span class="line">	_PyObject_HEAD_EXTRA         \</span><br><span class="line">	<span class="keyword">int</span> ob_refcent;              \</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">ob_type</span>  \</span></span><br></pre></td></tr></table></figure>
+<p><strong>python3.6.5</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">object</span>&#123;</span></span><br><span class="line">    Py_ssize_t ob_refcnt;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">ob_type</span>;</span>        </span><br><span class="line">&#125; PyObject;</span><br></pre></td></tr></table></figure>
+<p><em>整型变量ob_refcnt与Python的内存管理机制有关，它实现了Python基于引用技术的垃圾收集机制。</em></p>
+<p><em>而ob_type是一个指向_typeobject结构体的指针，实际上这个结构体对应着Python内部的一个特殊的对象，它用来指定一个对象类型的类型对象。</em></p>
+<p>再来看看可变对象PyVarObject的定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Py_ssize_t ob_refcnt;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">ob_type</span>;</span></span><br><span class="line">    Py_ssize_t ob_size; <span class="comment">/* Number of items in variable part */</span></span><br><span class="line">&#125; PyVarObject</span><br></pre></td></tr></table></figure>
+<p>可以看出，PyVarObject实际上只是对PyObject的一个扩展而已。</p>
+<p>至此，可以明确看出，Python对象机制的核心非常简单：<strong>引用计数 + 类型信息</strong>。</p>
+<p>关于类型信息，看一段源码的注释：</p>
+<blockquote>
+<p>An object has a ‘type’ that determins what ir represents and what kind of data it contains. An ovject ‘type’ is fixed when it is created. Types themselves are represented as objects; an object contains a pointer to the corresponding type object. The type itself has type pointer pointing to the object represnting the type ‘type’, which contains a pointer to itself</p>
+</blockquote>
+<h3 id="对象里的特殊对象，类型对象——PyTypeObject。"><a href="#对象里的特殊对象，类型对象——PyTypeObject。" class="headerlink" title="对象里的特殊对象，类型对象——PyTypeObject。"></a>对象里的特殊对象，类型对象——PyTypeObject。</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> struct_typeobject &#123;</span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *tp_name; <span class="comment">/* For printing, in format "&lt;module&gt;.&lt;name&gt;" */</span></span><br><span class="line">    Py_ssize_t tp_basicsize, tp_itemsize; <span class="comment">/* For allocation */</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Methods to implement standard operations */</span></span><br><span class="line">    </span><br><span class="line">    destructor tp_dealloc;</span><br><span class="line">    printfunc tp_print;</span><br><span class="line">    ......</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* More standard operations (here for binary compatibility) */</span></span><br><span class="line">    hashfunc tp_hash;</span><br><span class="line">    ternaryfunc tp_call;</span><br><span class="line">    ......   </span><br><span class="line">&#125; PyTypeObject;</span><br></pre></td></tr></table></figure>
+<p>在_typeobject的定义中包含了许多信息，主要可以分为4类：</p>
+<ul>
+<li>类型名，tp_name，主要是Python内部以及调试的时候使用。</li>
+<li>创建该类型对象时分配内存空间大小的信息，即tp_basecsize和tp_itemsize。</li>
+<li>与该类型对象相关联的操作信息（诸如tp_print这样的许多的函数指针）。</li>
+<li>类型的类型信息。</li>
+</ul>
+<p>在python3.6.5源码的object.h文件中有这么一段注释</p>
+<blockquote>
+<p>/<em> PyObject_HEAD defines the initial segment of every PyObject. </em>/</p>
+</blockquote>
+<p>换句话说，在Python内部，每一个对象都拥有相同的对象头部。这就使得在Python中，对对象的引用变得非常的统一，只需要用一个PyObject *指针就可以引用任意的一个对象。而不论该对象实际是一个什么对象。</p>
+<h3 id="Python对象的多态性"><a href="#Python对象的多态性" class="headerlink" title="Python对象的多态性"></a>Python对象的多态性</h3><p>到这里，Pyhton底层如何用C实现<em>多态</em>的已经跃然纸上了。</p>
+<p>通过PyObject和PyTypeObject，Pyhton利用C语言完成了C++所提供的对象的多态的特性。在Python创建一个对象，比如PyIntObejct对象时，会分配内存，进行初始化。然后Python内部用一个PyObject<em>变量来保存和维护这个对象。其他对象也于此类似，所以在Python内部各个函数之间传递的都是一种范型指针——PyObject </em>。这个指针所指的对象究竟是什么类型，只能从指针所指对象的ob_type域动态进行判断，而正是通过这个域，Python实现了多态机制。</p>
+<p>说了这么多，现在用图来捋一捋。毕竟，一图胜万言。</p>
+<p>​                                                                         <strong>各种Object之间的联系</strong></p>
+<p><img src="/2019/02/25/Python源码剖析/Utur_PyObject.png" alt="Object">​       </p>
+<p>​                                                               <strong>通过PyInt_Type创建整数</strong></p>
+<p><img src="https://image.littlechao.top/20180927032505000012.jpg" alt="jiaohu"></p>
+<p>​                                                                  <strong>运行时整数对象及其类型之间的关系</strong>(对照上图)</p>
+<p><img src="/2019/02/25/Python源码剖析/Utur_Integer.png" alt="Integer"></p>
+<h3 id="Python内对象分类"><a href="#Python内对象分类" class="headerlink" title="Python内对象分类"></a>Python内对象分类</h3><p>关于Python内对象的分类，这里提供几种角度，不保证正确性。</p>
+<h4 id="从概念上的角度"><a href="#从概念上的角度" class="headerlink" title="从概念上的角度"></a>从概念上的角度</h4><ul>
+<li>Fundamental对象：类型对象</li>
+<li>Numeric对象：数值对象</li>
+<li>Sequence 对象：容纳其他对象的序列集合对象</li>
+<li>Mapping 对象：类似于C++中map的关联对象</li>
+<li>Internal 对象：Python虚拟机在运行时内部使用的对象</li>
+</ul>
+<p><img src="/2019/02/25/Python源码剖析/object.png" alt="对象分类"></p>
+<h4 id="从内存上的角度"><a href="#从内存上的角度" class="headerlink" title="从内存上的角度"></a>从内存上的角度</h4><p><strong>定长对象</strong>:不包含可变长度数据的对象（es，整数对象）</p>
+<p><strong>变长对象</strong>:包含可变长度数据的对象（es，字符串对象）</p>
+<p><em>区别：</em>定长对象的不同对象占用的内存是一样的（es，1和100），而变长对象的不同对象占用的内存可能是不一样的。（es，”Python“和”Java“)</p>
+<p>实际上，在变长对象中，还可分为<em>可变对象</em>和<em>不可变对象</em>。可变对象维护的数据在对象在创建后还能再变化，比如一个list被创建后，可以向其中添加元素或删除元素，这些操作都会改变其维护的数据；而不可变对象所维护的数据在对象创建之后就不能再改变了，比如string和tuple。    </p>
+<p>到这里，对对象的结构性认识已经差不多了，接下来，就是各种对象在具体实现上一些差异化了。</p>
+<h3 id="Python内建对象"><a href="#Python内建对象" class="headerlink" title="Python内建对象"></a>Python内建对象</h3><p>在Python中，已经预先定义了一些类型对象，比如int类型、string类型、dict类型等</p>
+<h4 id="PyIntObject对象"><a href="#PyIntObject对象" class="headerlink" title="PyIntObject对象"></a>PyIntObject对象</h4><p>先看个图</p>
+<p><img src="/2019/02/25/Python源码剖析/2018-09-28 21-36-35屏幕截图3.png" alt="PyIntObject"></p>
+<p>内置函数id()用来返回对象的身份(identity)，而这里的身份说白了就是该对象的内存地址。</p>
+<p>下面给出总结：</p>
+<ul>
+<li><strong>处于对Python性能和运行效率的考虑，对于频繁使用的小整数对象，Python采用了对象池技术。在小整数对象池中完全缓存了其PyIntObject对象，这意味着每一个对象池里的每一个PyIntObject对象都能够被任意的共享。</strong></li>
+<li>小整数的范围可以被用户通过源码修改，默认的是[-5, 257)</li>
+<li>对于其他整数，设计者们在时间与空间的两难选择上，作出的妥协是：Python运行环境提供一块内存空间（通用整数对象池），这些内存空间由这些大整数轮流使用。这样免去了不断地malloc之苦，又在一定程度上考虑了效率问题。</li>
+<li>对于通用整数对象池，Python通过定义一个PyIntBlock结构，在这个结构的基础上，实现了一个单向列表。</li>
+</ul>
+<h5 id="通用整数对象池的实现基础——PyIntBlock"><a href="#通用整数对象池的实现基础——PyIntBlock" class="headerlink" title="通用整数对象池的实现基础——PyIntBlock"></a>通用整数对象池的实现基础——PyIntBlock</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[intobject.c]</span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> *<span class="title">next</span>;</span></span><br><span class="line">    PyIntObject object[N_INTOBJCETS];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> <span class="title">PyIntBlock</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> PyIntBlock *block_list = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">static</span> PyIntObject *free_list = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<p>PyIntBlock，顾名思义，就是一块保存了N_INTOBJECTS个PyIntobject对象的内存（block）。</p>
+<p><img src="/2019/02/25/Python源码剖析/IntBlock.png" alt="PyIntBlock"></p>
+<p>这里存在一个隐患：两个PyIntBlock处于同一个链表当中，但是每一个PyIntBlock中至光重要的存放PyIntObject对象的objects却是分离的。 若真是这样，就意味着所有的内存只能使用一次，跟内存泄漏也就没什么区别了。</p>
+<p>Python的设计者当然不会允许这样的存在，所以才有了free，_list的存在。</p>
+<p>在一个PyIntObject对象被销毁的时候（tp_dealloc），不同PyIntBlock中空闲的内存块被链接free_list里了。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[intobject.c]</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">int_dealloc</span><span class="params">(PyIntObject *v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (PyInt_CheckExact(v)) &#123;</span><br><span class="line">        v-&gt;ob_type = (struct _typeobject *)free_list;</span><br><span class="line">        free_list = v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	v-&gt;ob_type-&gt;tp_free(PyObjcet *)v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以真相如图：</p>
+<p><img src="/2019/02/25/Python源码剖析/block.png" alt="free_list"></p>
+<p>但是，这里还隐藏着Python的整数对象系统实现中的一个惊天隐秘：当一个整数对象的引用计数变为0时，就会被Python回收，但是在int_dealloc中，只是将该内存重新加入自由内存链表中， 却不是向系统堆交还任何内存。那么，理论上，是可以利用这个漏洞将系统的内存全部吃光的。只要你定义足够多的大整数对象。</p>
+<h4 id="PythonStringObject对象"><a href="#PythonStringObject对象" class="headerlink" title="PythonStringObject对象"></a>PythonStringObject对象</h4><p>在Python中，PyStringObject是对字符串对象的实现。PyStringObejct是一个拥有可变长度内存的对象，这一点毋庸置疑。但同时，其又是一个不变对象。因为当创建了一个PyStringObject对象之后，该对象内部维护的字符串就不能再被改变了。这一点特性使得PyStringObject对象可作为dict的键值，但同时也使得一些字符串操作的效率大大降低，比如多个字符串的连接。</p>
+<p><strong>PythonStirngObejct</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[stringobejct.h]</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObejct_VAR_HEAD</span><br><span class="line">    <span class="keyword">long</span> ob_shash;</span><br><span class="line">    <span class="keyword">int</span> ob_sstate;</span><br><span class="line">    <span class="keyword">char</span> ob_sval[<span class="number">1</span>];</span><br><span class="line">&#125; PyStringObject;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ob_shash：缓存该对象的hash值，避免每一次都重新计算该字符串对象的hash值。初始值为-1</li>
+<li>ob_sstate：标记了该对象是否已经过intern机制的处理。</li>
+<li>ob_sval：实际上是作为一个字符指针指向一段内存，这段内存保存着这个字符串对象所维护的实际字符串，显然，这段内存不会只是一个字节。而这段内存的实际长度（字节），正是有ob_size来维护，这个机制是Python中所有变长对象的实现机制。</li>
+</ul>
+<h5 id="intern机制"><a href="#intern机制" class="headerlink" title="intern机制"></a>intern机制</h5><p>对PyStringObject对象做intern操作目的在于：在Python运行期间，系统中只有一个与特定字符串对应的PyStringObject对象。当判断两个PyStringObject对象是否相同，如果都被intern处理过了，只需简单地检查对应PyObject *是否相同即可。这个机制既节省了空间，又简化了PyStringObejct对象的比较。</p>
+<p><strong>Python会对简单的字符串进行intern，并将intern的结果放入对象缓存池中。</strong></p>
+<p><strong><em>简单的字符串：空串，字符，只包含字母或数字</em></strong></p>
+<p><img src="/2019/02/25/Python源码剖析/string.png" alt="string"></p>
+<p><strong><em>总结：类似于小整数对象，Python会选择性地对一些字符串进行池化，以减少对象的数量和对内存的占用。</em></strong></p>
+<h5 id="PyStringObejct效率相关问题"><a href="#PyStringObejct效率相关问题" class="headerlink" title="PyStringObejct效率相关问题"></a>PyStringObejct效率相关问题</h5><p>一个严重影响python执行效率的问题——字符串连接”+”操作</p>
+<p>根源 ：PyStringObject对象是一个不可变对象，若要连接<strong>N</strong>个PyStringObject对象，那么必须进行N-1次的内存申请及内存搬运的工作。可想而知，这是多大的工作量，必将严重影响Python的执行效率。</p>
+<p>官方推荐的做法是通过利用join来对N个存在list或tuple的PyStringObejct对象进行连接操作，先统计一共有多少个PyStirngObejct对象，并统计这些对象所维护的字符串一共有多长，然后申请内存。这种做法只需要分配一次内存，执行效率将大大提高</p>
+<p>看下实际运行情况：</p>
+<p><img src="/2019/02/25/Python源码剖析/time.png" alt="time">        </p>
+<p><em>可以看出在N较小的情况下，”+”操作效率比join还高</em>。</p>
+<p><strong>总结：”+”连接效率低是出现在字符串数目较多的情况，而在字符串数目较小的情况下，”+”比join执行效率还高。</strong></p>
+<h4 id="PyListObject"><a href="#PyListObject" class="headerlink" title="PyListObject"></a>PyListObject</h4><p>PyListObject对象是Python提供的对列表的抽象，它可以有效地支持对元素的插入，添加，删除等操作，在Python的列表中无一例外存放的都是PyObject *指针。很明显，PyListObject是一个变长对象，而且还是个可变对象。</p>
+<p>定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    PyObject **ob_item;</span><br><span class="line">    Py_ssize_t allocated</span><br><span class="line">&#125; PylistObject</span><br></pre></td></tr></table></figure>
+<ul>
+<li>**ob_item：指针指向元素列表所在的内存块的首地址</li>
+<li>allocated：维护了当前列表的可容纳的元素的总数</li>
+<li>ob_size：实际被使用的内存的数量</li>
+</ul>
+<p>对于一个PyListObject对象，存在以下关系：</p>
+<p><strong>0 &lt;= ob_size &lt;= allocated</strong></p>
+<p><strong>len(list) == ob_size</strong></p>
+<p><strong>ob_item == NULL 意味着 ob_size == allocated == 0</strong></p>
+<p>由此可以窥探Python对PyListObejct所采的内存管理策略和C++中vector采取的内存管理策略是一致的：<strong>总会申请一大块内存，而不是存了多少就申请对应大小的内存。</strong></p>
+<h5 id="PyListObject的创建"><a href="#PyListObject的创建" class="headerlink" title="PyListObject的创建"></a>PyListObject的创建</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">PyList_New(Py_ssize_t size)</span><br><span class="line">&#123;</span><br><span class="line">    PyListObject *op;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SHOW_ALLOC_COUNT</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> initialized = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (!initialized) &#123;</span><br><span class="line">        Py_AtExit(show_alloc);</span><br><span class="line">        initialized = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (size &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        PyErr_BadInternalCall();</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 为PyListObject对象申请空间</span></span><br><span class="line">     <span class="keyword">if</span> (numfree) &#123;</span><br><span class="line">        <span class="comment">// 缓冲池可用</span></span><br><span class="line">        numfree--;</span><br><span class="line">        op = free_list[numfree];</span><br><span class="line">        _Py_NewReference((PyObject *)op);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SHOW_ALLOC_COUNT		</span></span><br><span class="line">        count_reuse++;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 缓冲池不可用</span></span><br><span class="line">        op = PyObject_GC_New(PyListObject, &amp;PyList_Type);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SHOW_ALLOC_COUNT</span></span><br><span class="line">        count_alloc++;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (size &lt;= <span class="number">0</span>)</span><br><span class="line">        op-&gt;ob_item = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        op-&gt;ob_item = (PyObject **) PyMem_Calloc(size, <span class="keyword">sizeof</span>(PyObject *));</span><br><span class="line">        <span class="keyword">if</span> (op-&gt;ob_item == <span class="literal">NULL</span>) &#123;</span><br><span class="line">            Py_DECREF(op);</span><br><span class="line">            <span class="keyword">return</span> PyErr_NoMemory();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Py_SIZE(op) = size;</span><br><span class="line">    op-&gt;allocated = size;</span><br><span class="line">    _PyObject_GC_TRACK(op);</span><br><span class="line">    <span class="keyword">return</span> (PyObject *) op;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从源码可以看出PyListObject对象的创建主要分两步：</p>
+<ul>
+<li>为PyListObject对象申请空间：<ol>
+<li>若缓冲池有可用对象，则使用这个可用对象</li>
+<li>缓冲池无可用对象，通过PyObject_GC_New在系统堆中申请内存。</li>
+</ol>
+</li>
+<li>为PyListObject对象中维护的元素列表申请空间</li>
+</ul>
+<p>PS:默认情况下，缓冲池free_lists中最多会维护80个PyListObject对象。</p>
+<h5 id="PyListObject对象缓冲池"><a href="#PyListObject对象缓冲池" class="headerlink" title="PyListObject对象缓冲池"></a>PyListObject对象缓冲池</h5><p>同PyIntObject类似，PyListObject也是在被销毁的过程中加入缓冲池。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[listobject.c]</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span></span><br><span class="line">list_dealloc(PyListObject *op)</span><br><span class="line">&#123;</span><br><span class="line">    Py_ssize_t i;</span><br><span class="line">    PyObject_GC_UnTrack(op);</span><br><span class="line">    Py_TRASHCAN_SAFE_BEGIN(op)</span><br><span class="line">    / :销毁PyListObject对象维护的元素列表</span><br><span class="line">    <span class="keyword">if</span> (op-&gt;ob_item != <span class="literal">NULL</span>) &#123; </span><br><span class="line">        i = Py_SIZE(op);</span><br><span class="line">        <span class="keyword">while</span> (--i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            Py_XDECREF(op-&gt;ob_item[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        PyMem_FREE(op-&gt;ob_item);</span><br><span class="line">    &#125;</span><br><span class="line">    / ：释放PyList自身</span><br><span class="line">    <span class="keyword">if</span> (numfree &lt; PyList_MAXFREELIST &amp;&amp; PyList_CheckExact(op))</span><br><span class="line">        free_list[numfree++] = op;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Py_TYPE(op)-&gt;tp_free((PyObject *)op);</span><br><span class="line">    Py_TRASHCAN_SAFE_END(op)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从源码可以看出，与创建相对应，销毁也主要分为两步：</p>
+<ul>
+<li>销毁PyListObject对象维护的元素列表，向系统堆归还内存，以时间换取空间</li>
+<li>释放PyListObject自身：<ol>
+<li>若缓冲池未满，则将该对象放入缓冲池，以备后用</li>
+<li>若满了，则调用自身的tp_free方法进行释放</li>
+</ol>
+</li>
+</ul>
+<p><img src="/2019/02/25/Python源码剖析/listcache.png" alt="list_cache"></p>
+<h4 id="PyDictObject对象"><a href="#PyDictObject对象" class="headerlink" title="PyDictObject对象"></a>PyDictObject对象</h4><h2 id="Python虚拟机"><a href="#Python虚拟机" class="headerlink" title="Python虚拟机"></a>Python虚拟机</h2><p>关于Python，有一种说法：“Python是一种解释性的语言”。其实这种说法是不准确的，因为Python程序的执行原理和Java程序、C#程序的执行原理都可以用两个词囊括——<strong>虚拟机、字节码。</strong>实际上，Python解释器在执行任何一个Python程序文件时，都先对Python源代码进行编译，编译生成一组Python的byte code（字节码），然后由虚拟机按照顺序执行字节码，从而完成对Python程序的执行动作。</p>
+<p><img src="/2019/02/25/Python源码剖析/Pythonrun.png" alt="Python_run"></p>
+<h3 id="PyCodeObject对象和pyc文件"><a href="#PyCodeObject对象和pyc文件" class="headerlink" title="PyCodeObject对象和pyc文件"></a>PyCodeObject对象和pyc文件</h3><p>在编译过程中，包含在Python源代码中的<strong>静态信息</strong>都会被Python编译器收集起来，这些静态信息包括了<strong>字符串、常量值、字节码</strong>。在Python运行期间，<em>这些源文件提供的静态信息被存储在一个运行时的对象中——<strong>PyCodeObject</strong></em>。<em>当运行结束后，这个运行时对象所包含的信息被存储在一种文件中(当有import语句时）——<strong>pyc文件</strong></em></p>
+<p>Python源码中对PyCodeObject的声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_HEAD</span><br><span class="line">    <span class="keyword">int</span> co_argcount;		<span class="comment">/* #arguments, except *args */</span></span><br><span class="line">    <span class="keyword">int</span> co_kwonlyargcount;	<span class="comment">/* #keyword only arguments */</span></span><br><span class="line">    <span class="keyword">int</span> co_nlocals;		<span class="comment">/* #local variables */</span></span><br><span class="line">    <span class="keyword">int</span> co_stacksize;		<span class="comment">/* #entries needed for evaluation stack */</span></span><br><span class="line">    <span class="keyword">int</span> co_flags;		<span class="comment">/* CO_..., see below */</span></span><br><span class="line">    <span class="keyword">int</span> co_firstlineno;   <span class="comment">/* first source line number */</span></span><br><span class="line">    PyObject *co_code;		<span class="comment">/* instruction opcodes */</span></span><br><span class="line">    PyObject *co_consts;	<span class="comment">/* list (constants used) */</span></span><br><span class="line">    PyObject *co_names;		<span class="comment">/* list of strings (names used) */</span></span><br><span class="line">    PyObject *co_varnames;	<span class="comment">/* tuple of strings (local variable names) */</span></span><br><span class="line">    PyObject *co_freevars;	<span class="comment">/* tuple of strings (free variable names) */</span></span><br><span class="line">    PyObject *co_cellvars;      <span class="comment">/* tuple of strings (cell variable names) */</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> *co_cell2arg; <span class="comment">/* Maps cell vars which are arguments. */</span></span><br><span class="line">    PyObject *co_filename;	<span class="comment">/* unicode (where it was loaded from) */</span></span><br><span class="line">    PyObject *co_name;		<span class="comment">/* unicode (name, for reference) */</span></span><br><span class="line">    PyObject *co_lnotab;	<span class="comment">/* string (encoding addr&lt;-&gt;lineno mapping) See</span></span><br><span class="line"><span class="comment">				   Objects/lnotab_notes.txt for details. */</span></span><br><span class="line">    <span class="keyword">void</span> *co_zombieframe;     <span class="comment">/* for optimization only (see frameobject.c) */</span></span><br><span class="line">    PyObject *co_weakreflist;   <span class="comment">/* to support weakrefs to code objects */</span></span><br><span class="line">    <span class="keyword">void</span> *co_extra;</span><br><span class="line">&#125; PyCodeObject;</span><br></pre></td></tr></table></figure>
+<p>Python编译器在Python源代码进行变异的时候，对于代码中的<em>Code Block</em>，会创建一个PyCodeObject对象与之对应。那么何为一个Code Block——当进入一个新名字空间，或者说作用域时，就是进入了一个新的Code Block。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[demo.py]</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">	def B():</span><br><span class="line">		pass</span><br><span class="line"></span><br><span class="line">def C():</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">C()</span><br></pre></td></tr></table></figure>
+<p>对于demo.py，根据之前的说法就要产生4个PyCodeObject，但是Python运行环境只会对一个PyCodeObject对象调用PyMarshal_WriteObjectToFile操作。很显然，这里面存在一种嵌套关系，仔细观察，在demo.py源文件中作用域呈现出一种嵌套结构，而这种结构正是PyCodeObject对象之间的结构。</p>
+<p><img src="/2019/02/25/Python源码剖析/ pycode.png" alt="PythonCode"></p>
+<h3 id="Python虚拟机框架"><a href="#Python虚拟机框架" class="headerlink" title="Python虚拟机框架"></a>Python虚拟机框架</h3><p>Python的虚拟机是Python的核心，在.py源代码被编译为字节码指令序列后，Python虚拟机机开始接手整个工作。Python的虚拟机从编译得到的PyCodeObject对象中一次读入每一条字节码指令，并在<em>当前的上下文环境</em>中执行字节码指令。</p>
+<p>Python的虚拟机实际上实在模拟操作系统运行可执行文件的过程</p>
+<p><img src alt="可执行文件的运行时栈"></p>
+<p>我们知道PyCodeObject对象中包含了最关键的的字节码指令，以及关于程序的所有静态信息。然而有一点，是PyCodeObject对象没有包含，也不可能包含的。那就是关于程序运行时的动态信息——<strong>执行环境</strong></p>
+<p>什么是执行环境，参考下面这个例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[environment.py]</span><br><span class="line">i = <span class="string">'Python'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">	i = <span class="number">999</span></span><br><span class="line">	print(i) <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">print(i) <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+<p>在上面代码中的1和2两个地方，都是print(i)，它们所对应的字节码指令肯定是相同，但是它们的执行效果却是不同的。这样的结果正是在执行环境的影响下产生的。在执行#1处的print时，执行环境中，i的值为999；而在#2处，执行环境中的i的值为“Python”。<em>像这种同样的符号在程序运行的不同时刻对应不同的值，甚至不同类型的情况</em>，必须在运行时动态地被捕获和维护，而不可能在PyCodeObject对象中被静态的存储的。</p>
+<p>仔细观察，这里的执行环境与之前提到的名字空间似乎是用一个东西，但实际上，名字空间仅仅是执行环境的一部分，除了名字空间，在执行环境中，还包含了其他的一些信息。</p>
+<p><em>所以在Python执行的时候，虚拟机上面对的并不是PyCodeObject对象，而是另一个对象——<strong>PyFrameObject</strong>，也就是所谓的执行环境，是Pyhton对x86平台上栈帧的模拟。</em></p>
+<h5 id="PyFrameObject对象"><a href="#PyFrameObject对象" class="headerlink" title="PyFrameObject对象"></a>PyFrameObject对象</h5><p>对于Python而言，PyFrameObject对象不仅仅是一个x86机器上看到的那个简简单单的栈帧，它实际上还包含了其他更多的信息。</p>
+<p>Python源码中对PyFrameObject的定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[frameobject.h]</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">frame</span> &#123;</span></span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">frame</span> *<span class="title">f_back</span>;</span>      <span class="comment">/* previous frame, or NULL */</span></span><br><span class="line">    PyCodeObject *f_code;       <span class="comment">/* code segment */</span></span><br><span class="line">    PyObject *f_builtins;       <span class="comment">/* builtin symbol table (PyDictObject) */</span></span><br><span class="line">    PyObject *f_globals;        <span class="comment">/* global symbol table (PyDictObject) */</span></span><br><span class="line">    PyObject *f_locals;         <span class="comment">/* local symbol table (any mapping) */</span></span><br><span class="line">    PyObject **f_valuestack;    <span class="comment">/* points after the last local */</span></span><br><span class="line"></span><br><span class="line">    PyObject **f_stacktop;</span><br><span class="line">    PyObject *f_trace;          <span class="comment">/* Trace function */</span></span><br><span class="line"></span><br><span class="line">    PyObject *f_exc_type, *f_exc_value, *f_exc_traceback;</span><br><span class="line">    <span class="comment">/* Borrowed reference to a generator, or NULL */</span></span><br><span class="line">    PyObject *f_gen;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> f_lasti;                <span class="comment">/* Last instruction if called */</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> f_lineno;               <span class="comment">/* Current line number */</span></span><br><span class="line">    <span class="keyword">int</span> f_iblock;               <span class="comment">/* index in f_blockstack */</span></span><br><span class="line">    <span class="keyword">char</span> f_executing;           <span class="comment">/* whether the frame is still executing */</span></span><br><span class="line">    PyTryBlock f_blockstack[CO_MAXBLOCKS]; <span class="comment">/* for try and loop blocks */</span></span><br><span class="line">    PyObject *f_localsplus[<span class="number">1</span>];  <span class="comment">/* locals+stack, dynamically sized */</span></span><br><span class="line">&#125; PyFrameObject;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>f_back: 在Python实际的执行中，会产生很多PyFrameObject对象，而这些对象会被链接起来，形成一条执行环境链条。正是对x86机器上栈帧间关系的模拟</li>
+<li>f_code: 存放的是一个待执行的PyCodeObejct对象</li>
+<li>f_builtins: builtin名字空间</li>
+<li>f_globals: global名字空间</li>
+<li>f_locals: local名字空间</li>
+</ul>
+<h5 id="名字、作用域、名字空间"><a href="#名字、作用域、名字空间" class="headerlink" title="名字、作用域、名字空间"></a>名字、作用域、名字空间</h5><h3 id="Python虚拟机中的函数机制"><a href="#Python虚拟机中的函数机制" class="headerlink" title="Python虚拟机中的函数机制"></a>Python虚拟机中的函数机制</h3><h4 id="PyFunctionObject对象"><a href="#PyFunctionObject对象" class="headerlink" title="PyFunctionObject对象"></a>PyFunctionObject对象</h4><h4 id="嵌套函数、闭包与decorater"><a href="#嵌套函数、闭包与decorater" class="headerlink" title="嵌套函数、闭包与decorater"></a>嵌套函数、闭包与decorater</h4><h3 id="Python虚拟机中的类机制"><a href="#Python虚拟机中的类机制" class="headerlink" title="Python虚拟机中的类机制"></a>Python虚拟机中的类机制</h3><h2 id="Python的多线程机制"><a href="#Python的多线程机制" class="headerlink" title="Python的多线程机制"></a>Python的多线程机制</h2><h3 id="GIL与线程调度"><a href="#GIL与线程调度" class="headerlink" title="GIL与线程调度"></a>GIL与线程调度</h3><h3 id="Python线程的调度"><a href="#Python线程的调度" class="headerlink" title="Python线程的调度"></a>Python线程的调度</h3><h3 id="Python线程的用户级互斥与同步"><a href="#Python线程的用户级互斥与同步" class="headerlink" title="Python线程的用户级互斥与同步"></a>Python线程的用户级互斥与同步</h3><h2 id="Python的内存管理"><a href="#Python的内存管理" class="headerlink" title="Python的内存管理"></a>Python的内存管理</h2><h3 id="内存管理架构"><a href="#内存管理架构" class="headerlink" title="内存管理架构"></a>内存管理架构</h3><h3 id="小块空间的内存池"><a href="#小块空间的内存池" class="headerlink" title="小块空间的内存池"></a>小块空间的内存池</h3><h3 id="循环引用的垃圾收集"><a href="#循环引用的垃圾收集" class="headerlink" title="循环引用的垃圾收集"></a>循环引用的垃圾收集</h3><h3 id="Python中的垃圾收集"><a href="#Python中的垃圾收集" class="headerlink" title="Python中的垃圾收集"></a>Python中的垃圾收集</h3><h2 id><a href="#" class="headerlink" title=" "></a> </h2>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/25/编程范式/" rel="prev" title="编程范式">
+                编程范式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Utur</p>
+              <div class="site-description motion-element" itemprop="description">木龟想做一个哈皮程序猿。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Turtle-knight" title="GitHub &rarr; https://github.com/Turtle-knight" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:turtle.mugui@gmail.com" title="E-Mail &rarr; mailto:turtle.mugui@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/yourname" title="Weibo &rarr; https://weibo.com/yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://plus.google.com/木龟" title="Google &rarr; https://plus.google.com/木龟" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python的总体架构"><span class="nav-number">1.</span> <span class="nav-text">Python的总体架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python对象"><span class="nav-number">2.</span> <span class="nav-text">Python对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象机制的基石——PyObject"><span class="nav-number">2.1.</span> <span class="nav-text">对象机制的基石——PyObject</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象里的特殊对象，类型对象——PyTypeObject。"><span class="nav-number">2.2.</span> <span class="nav-text">对象里的特殊对象，类型对象——PyTypeObject。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python对象的多态性"><span class="nav-number">2.3.</span> <span class="nav-text">Python对象的多态性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python内对象分类"><span class="nav-number">2.4.</span> <span class="nav-text">Python内对象分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从概念上的角度"><span class="nav-number">2.4.1.</span> <span class="nav-text">从概念上的角度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从内存上的角度"><span class="nav-number">2.4.2.</span> <span class="nav-text">从内存上的角度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python内建对象"><span class="nav-number">2.5.</span> <span class="nav-text">Python内建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PyIntObject对象"><span class="nav-number">2.5.1.</span> <span class="nav-text">PyIntObject对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#通用整数对象池的实现基础——PyIntBlock"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">通用整数对象池的实现基础——PyIntBlock</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PythonStringObject对象"><span class="nav-number">2.5.2.</span> <span class="nav-text">PythonStringObject对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#intern机制"><span class="nav-number">2.5.2.1.</span> <span class="nav-text">intern机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PyStringObejct效率相关问题"><span class="nav-number">2.5.2.2.</span> <span class="nav-text">PyStringObejct效率相关问题</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PyListObject"><span class="nav-number">2.5.3.</span> <span class="nav-text">PyListObject</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PyListObject的创建"><span class="nav-number">2.5.3.1.</span> <span class="nav-text">PyListObject的创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PyListObject对象缓冲池"><span class="nav-number">2.5.3.2.</span> <span class="nav-text">PyListObject对象缓冲池</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PyDictObject对象"><span class="nav-number">2.5.4.</span> <span class="nav-text">PyDictObject对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python虚拟机"><span class="nav-number">3.</span> <span class="nav-text">Python虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyCodeObject对象和pyc文件"><span class="nav-number">3.1.</span> <span class="nav-text">PyCodeObject对象和pyc文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python虚拟机框架"><span class="nav-number">3.2.</span> <span class="nav-text">Python虚拟机框架</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PyFrameObject对象"><span class="nav-number">3.2.0.1.</span> <span class="nav-text">PyFrameObject对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#名字、作用域、名字空间"><span class="nav-number">3.2.0.2.</span> <span class="nav-text">名字、作用域、名字空间</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python虚拟机中的函数机制"><span class="nav-number">3.3.</span> <span class="nav-text">Python虚拟机中的函数机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PyFunctionObject对象"><span class="nav-number">3.3.1.</span> <span class="nav-text">PyFunctionObject对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套函数、闭包与decorater"><span class="nav-number">3.3.2.</span> <span class="nav-text">嵌套函数、闭包与decorater</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python虚拟机中的类机制"><span class="nav-number">3.4.</span> <span class="nav-text">Python虚拟机中的类机制</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Python的多线程机制"><span class="nav-number">4.</span> <span class="nav-text">Python的多线程机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GIL与线程调度"><span class="nav-number">4.1.</span> <span class="nav-text">GIL与线程调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python线程的调度"><span class="nav-number">4.2.</span> <span class="nav-text">Python线程的调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python线程的用户级互斥与同步"><span class="nav-number">4.3.</span> <span class="nav-text">Python线程的用户级互斥与同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python的内存管理"><span class="nav-number">5.</span> <span class="nav-text">Python的内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理架构"><span class="nav-number">5.1.</span> <span class="nav-text">内存管理架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小块空间的内存池"><span class="nav-number">5.2.</span> <span class="nav-text">小块空间的内存池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环引用的垃圾收集"><span class="nav-number">5.3.</span> <span class="nav-text">循环引用的垃圾收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python中的垃圾收集"><span class="nav-number">5.4.</span> <span class="nav-text">Python中的垃圾收集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text"> </span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Utur</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -102,34 +102,34 @@
 <meta property="og:site_name" content="Utur的个人博客">
 <meta property="og:description" content="Kafka简介Kafka是一款由美国领英公司（LinkedIn）开源出来的高性能消息引擎系统（Messaging system）,其核心功能是——高性能的消息发送与高性能的消息消费。但随着Kafka的不断演进，在Kafka 0.10.0.0版本正式推出了Kafka Streams，即流式处理组件。自此Kafka正式成为了一个流式处理框架。  前置知识背景消息引擎系统消息引擎，又叫消息队列，消息中间">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/消息引擎架构.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/队列消息引擎模型.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/发布订阅消息模型.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/topic和partition.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/消费者位移.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/leadr-follower.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/V2版本消息格式.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/V2版本消息batch格式.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/副本位置信息.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/副本同步流程.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/Kafka备份原理.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/clients端处理流程.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/broker端请求处理流程.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/controller架构.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/副本状态机.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/分区状态机.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/Reactor模式.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/broker请求处理流程.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/producer端的工作原理.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/producer序列化.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/consumer%20group状态机.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/幂等性producer消息去重.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/跨分区事务提交与读取.png">
-<meta property="og:updated_time" content="2019-07-06T08:50:18.649Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/消息引擎架构.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/队列消息引擎模型.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/发布订阅消息模型.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/topic和partition.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/消费者位移.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/leadr-follower.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/V2版本消息格式.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/V2版本消息batch格式.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/副本位置信息.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/副本同步流程.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/Kafka备份原理.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/clients端处理流程.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/broker端请求处理流程.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/controller架构.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/副本状态机.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/分区状态机.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/Reactor模式.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/broker请求处理流程.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/producer端的工作原理.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/producer序列化.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/consumer%20group状态机.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/幂等性producer消息去重.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/跨分区事务提交与读取.png">
+<meta property="og:updated_time" content="2019-07-06T11:12:13.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="消息队列Kafka学习笔记">
 <meta name="twitter:description" content="Kafka简介Kafka是一款由美国领英公司（LinkedIn）开源出来的高性能消息引擎系统（Messaging system）,其核心功能是——高性能的消息发送与高性能的消息消费。但随着Kafka的不断演进，在Kafka 0.10.0.0版本正式推出了Kafka Streams，即流式处理组件。自此Kafka正式成为了一个流式处理框架。  前置知识背景消息引擎系统消息引擎，又叫消息队列，消息中间">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/消息引擎架构.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/25/Apache_Kafka/消息引擎架构.png">
 
 
 
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-06 16:50:18" itemprop="dateModified" datetime="2019-07-06T16:50:18+08:00">2019-07-06</time>
+                <time title="Modified: 2019-07-06 19:12:13" itemprop="dateModified" datetime="2019-07-06T19:12:13+08:00">2019-07-06</time>
               </span>
             
           
@@ -460,16 +460,16 @@
 <hr>
 <h2 id="前置知识背景"><a href="#前置知识背景" class="headerlink" title="前置知识背景"></a>前置知识背景</h2><h3 id="消息引擎系统"><a href="#消息引擎系统" class="headerlink" title="消息引擎系统"></a>消息引擎系统</h3><p>消息引擎，又叫消息队列，消息中间件等。</p>
 <p>根据维基百科的定义，企业消息引擎系统（EMS）是企业发布的一组规范。公司使用这组规范实现在不同系统之间传递语义准确的消息。在实际使用场景中，消息引擎系统通常以软件接口为主要形式，实现了松耦合的异步式数据传递语义。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/消息引擎架构.png" alt="消息引擎"></p>
+<p><img src="/2019/02/25/Apache_Kafka/消息引擎架构.png" alt="消息引擎"></p>
 <hr>
 <h3 id="消息引擎范型"><a href="#消息引擎范型" class="headerlink" title="消息引擎范型"></a>消息引擎范型</h3><p>根据维基百科定义，一个消息引擎范型是一个基于网络的架构范型，描述了消息引擎系统的两个不同的子部分是如何互连且交互的。如果把消息引擎系统的这两个子系统比喻成两座城市，那么传输协议就是需要铺设的沥青公路，而引擎范型决定了来往穿梭与这两座城市的路线。</p>
 <p>最常见的两种消息引擎范型是<strong><em>消息队列模型</em></strong>和<strong><em>发布/订阅模型</em></strong>。</p>
 <ul>
 <li><p>消息队列（message queue）模型是基于队列提供消息传输服务的，多用于进程间通信以及线程间通信。该模型定义了消息队列、发送者和接收者，提供了一种点对点的消息传递方式，即发送者发送每条消息到队列的指定位置，接收者从指定位置获取消息。每条消息由一个发送者生产出来，且只被一个消费者处理。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/队列消息引擎模型.png" alt="消息队列模型"></p>
+<p><img src="/2019/02/25/Apache_Kafka/队列消息引擎模型.png" alt="消息队列模型"></p>
 </li>
 <li><p>发布/订阅模型(publish/subscribe),它有主题（topic）的概念：一个topic可以理解为逻辑语义相近的消息的容器。这种模型定义了类似于生产者/消费者这样的角色，即发布者和订阅者。发布者将消息生产出来发送到指定的topic中，所有订阅了该topic的订阅者都可以接收到该topic下的所有消息。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/发布订阅消息模型.png" alt="发布订阅"></p>
+<p><img src="/2019/02/25/Apache_Kafka/发布订阅消息模型.png" alt="发布订阅"></p>
 </li>
 </ul>
 <hr>
@@ -477,15 +477,15 @@
 <p>省去padding，java对对象保存的大开销以及可能的页缓存。</p>
 <h3 id="topic和partiiton"><a href="#topic和partiiton" class="headerlink" title="topic和partiiton"></a>topic和partiiton</h3><p>从概念上来说，topic只是一个逻辑概念，代表了一类消息，也可以认为是消息被发送到的地方。通常可以使用topic来区分实际业务，比如业务A使用一个topic，业务B使用另一个topic。</p>
 <p>Kafka中的topic通常都会被多个消费者订阅，出于性能的考量，Kafka并不是topic-message的两级结构，而是采取了topic-partition-message的三级结构来分散负载。从本质上来说，每个Kafka topic都由若干个partition组成。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/topic和partition.png" alt="topic和partition"></p>
+<p><img src="/2019/02/25/Apache_Kafka/topic和partition.png" alt="topic和partition"></p>
 <p>topic是由多个partition组成的，而Kafka的partition是不可修改的有序消息队列，也可以说是有序的消息日志。每个partition都有自己专属的partition号。用户对partition唯一能做的操作就是在消息序列的尾部追加写入消息。<strong>partition上的每条消息都会被分配一个唯一的序列号-该序列号被称为位移（offset）。位移信息可以唯一定位到某partition下的一条消息</strong></p>
 <h3 id="offset"><a href="#offset" class="headerlink" title="offset"></a>offset</h3><p>实际上，Kafka消费者也有位移（offset）的概念，但这两个offset属于不同的概念。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/消费者位移.png" alt="消费者位移"></p>
+<p><img src="/2019/02/25/Apache_Kafka/消费者位移.png" alt="消费者位移"></p>
 <p>每条消息在某个partition的位移是固定的，但消费该partition的消费者的位移会随着消费进度不断前移，但不能超过该分区最新一条消息的位移。</p>
 <p><strong>从本质上看，Kafka中的一条消息其实就是一个&lt;topic,partition,offset&gt;三元组（tuple），通过该元组，可以在Kafka集群中找到位移对应的那条消息。</strong></p>
 <h3 id="replica"><a href="#replica" class="headerlink" title="replica"></a>replica</h3><p>为了实现高可靠性，通过冗余机制——备份多份日志。这些备份日志在Kafka中被称为副本（replica），它们存在的唯一目的就是防止数据丢失。</p>
 <p><strong>副本分为两类：领导者副本（leader replica）和追随者副本（follower replica）</strong>。follower replica是不能提供服务给客户端的，它只是被动地向领导者副本（leader replica）获取数据，一旦leader replica所在的broker宕机，Kafka会从剩余的replica中选举出新的leader继续提供服务。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/leadr-follower.png" alt="leader-follower"></p>
+<p><img src="/2019/02/25/Apache_Kafka/leadr-follower.png" alt="leader-follower"></p>
 <h3 id="ISR"><a href="#ISR" class="headerlink" title="ISR"></a>ISR</h3><p><strong>ISR的全称是 in-sync replica，就是与leader replica保持同步的replica集合。</strong></p>
 <p>Kafka为partition动态维护一个replica集合。该集合中的所有replica保存的消息日志都与leader replica保护同步状态。<em>只有这个集合中的replica才能被选举为leader，也只有该集合中所有replica都接收到了同一条消息，Kafka才会将该消息置于“已提交”状态，即认为这条消息发送成功</em>。<strong>Kafka承诺只要这个集合中至少存在一个replica，那些”已提交“状态的消息就不会丢失。</strong></p>
 <hr>
@@ -503,11 +503,11 @@
 <li><p><strong>消息格式</strong></p>
 <p>V2版本分为<strong>消息</strong>和<strong>消息集合</strong>两个维度，不过消息集合的提法被消息批次所取代。V2版本中，它有一个专门的属于：RecordBatch。</p>
 <p>V2版本消息格式</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/V2版本消息格式.png" alt="消息格式"></p>
+<p><img src="/2019/02/25/Apache_Kafka/V2版本消息格式.png" alt="消息格式"></p>
 <p>“可变长度”表示Kafka会根据具体的值来确定到底需要几字节保存。为了在序列化时降低使用的字节数，V2版本借鉴了Google ProtoBuffer中的Zig-zag编码方式，使得绝对值较小的整数占用字节数较少的字节。</p>
 </li>
 <li><p><strong>消息batch</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/V2版本消息batch格式.png" alt="消息batch"></p>
+<p><img src="/2019/02/25/Apache_Kafka/V2版本消息batch格式.png" alt="消息batch"></p>
 <ul>
 <li>CRC值从消息层面被移除，放入batch这一层</li>
 <li>PID、producer epoch和序列号等消息都是0.11.0.0版本为了实现幂等性producer和支持事务而一如的。</li>
@@ -530,14 +530,14 @@
 <h4 id="副本与ISR设计"><a href="#副本与ISR设计" class="headerlink" title="副本与ISR设计"></a>副本与ISR设计</h4><p>一个Kafka分区本质上就是一个备份日志，即利用多份相同的备份共同提供冗余机制来保持系统高可用性。这些备份在Kafka中被称为副本（replica）。</p>
 <ul>
 <li><p><strong>follower副本同步</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/副本位置信息.png" alt="副本位置信息"></p>
+<p><img src="/2019/02/25/Apache_Kafka/副本位置信息.png" alt="副本位置信息"></p>
 <ol>
 <li><p>起始位移（base offset）：表示该副本当前所含第一条消息的位移</p>
 </li>
 <li><p><strong>高水印值（high watermark，HW</strong>）：副本高水印值。它保存了该副本最新一条已提交消息的位移。leader分区的HW值决定了副本中已提交消息的范围，也确定了consumer能够获取消息的消息上限。任何一个副本对象的HW值一定不大于其LEO值。Kafka对leader副本和follower副本的HW值更新机制是不同的。</p>
 </li>
 <li><p><strong>日志末端位移（log end offset，LEO）</strong>：副本日志中下一条待写入消息的offset。所有副本都需要维护自己的LEO信息。只有ISR中的所有副本都更新了对应的LEO之后，leader副本才会向右移动HW值表明消息写入成功。Kafka对leader副本和follower副本的LEO值更新机制也是不同的。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/副本同步流程.png" alt="副本同步流程"></p>
+<p><img src="/2019/02/25/Apache_Kafka/副本同步流程.png" alt="副本同步流程"></p>
 </li>
 </ol>
 </li>
@@ -567,7 +567,7 @@
 <p>前面说过，leader broker上保存了一套follower副本的LEO以及它自己的LEO。当尝试确定分区HW时，它会选出所有满足条件的副本，比较它们的LEO，并选择最小的LEO值作为HW值。</p>
 </li>
 <li><p><strong>图解Kafka备份原理</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/Kafka备份原理.png" alt="Kafka备份原理"></p>
+<p><img src="/2019/02/25/Apache_Kafka/Kafka备份原理.png" alt="Kafka备份原理"></p>
 </li>
 <li><p><strong>基于水印机制的缺陷</strong></p>
 <ul>
@@ -597,10 +597,10 @@
 <li><p><strong>请求处理流程</strong></p>
 <ul>
 <li><p><strong>clients端</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/clients端处理流程.png" alt="cliens请求处理"></p>
+<p><img src="/2019/02/25/Apache_Kafka/clients端处理流程.png" alt="cliens请求处理"></p>
 </li>
 <li><p><strong>broker端</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/broker端请求处理流程.png" alt="broker端请求处理"></p>
+<p><img src="/2019/02/25/Apache_Kafka/broker端请求处理流程.png" alt="broker端请求处理"></p>
 </li>
 </ul>
 </li>
@@ -609,16 +609,16 @@
 <h4 id="controller设计"><a href="#controller设计" class="headerlink" title="controller设计"></a>controller设计</h4><ul>
 <li><p><strong>controller概览</strong></p>
 <p>在一个Kafka集群中，某一个broker会被选举出来承担特殊的角色，即控制器。一如controller就是用来管理和协调Kafka集群的。具体来说，就是管理集群中所有分区的状态并执行相应的管理操作。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/controller架构.png" alt="controller架构"></p>
+<p><img src="/2019/02/25/Apache_Kafka/controller架构.png" alt="controller架构"></p>
 </li>
 <li><p><strong>controller管理状态</strong></p>
 <p>controller维护的状态分为两类：每台broker上的分区副本和每个分区的leader副本信息。从维度上看，这些状态可分为副本状态和分区状态。</p>
 <ul>
 <li><p><strong>副本状态机</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/副本状态机.png" alt="副本状态机"></p>
+<p><img src="/2019/02/25/Apache_Kafka/副本状态机.png" alt="副本状态机"></p>
 </li>
 <li><p><strong>分区状态机</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/分区状态机.png" alt="分区状态机"></p>
+<p><img src="/2019/02/25/Apache_Kafka/分区状态机.png" alt="分区状态机"></p>
 </li>
 </ul>
 </li>
@@ -642,11 +642,11 @@
 <li><strong>Reactor模式</strong></li>
 </ul>
 <p>Kafka broker处理请求的模式就是Reactor设计模式。Reactor设计模式是一种事件处理模式，旨在处理多个输入源同时发送过来的请求。Reactor模式中的服务处理器或分发器将入站请求按照多路复用的方式分发到对应的请求处理器。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/Reactor模式.png" alt="Reactor模式"></p>
+<p><img src="/2019/02/25/Apache_Kafka/Reactor模式.png" alt="Reactor模式"></p>
 <ul>
 <li><p><strong>Kafka broker请求处理</strong></p>
 <p>Kafka broker请求处理实现了Reactor模式。在Kafka中，每个broker都有一个acceptor线程和若干个processor线程。processor线程的数量是可以配置的。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/broker请求处理流程.png" alt="broker请求处理流程"></p>
+<p><img src="/2019/02/25/Apache_Kafka/broker请求处理流程.png" alt="broker请求处理流程"></p>
 </li>
 </ul>
 <hr>
@@ -676,11 +676,11 @@
 </ul>
 <hr>
 <h4 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h4><p>如果把producer统一看成一个盒子，那么整个producer端的工作原理便如图所示。大体来说，用户首先构建待发送的消息对象ProducerRecord，然后调用KafkaProducer#send方法进行发送。KafkaProducer接收到消息后首先对其进行序列化，然后结合本地缓存的元数据信息一起发送给partitioner去确定目标分区，最后追加写入内存中的消息缓冲池。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/producer端的工作原理.png" alt="producer端的工作原理"></p>
+<p><img src="/2019/02/25/Apache_Kafka/producer端的工作原理.png" alt="producer端的工作原理"></p>
 <p>调用KafkaProducer.send执行的操作：</p>
 <ol>
 <li><p><strong>序列化+计算目标分区</strong></p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/producer序列化.png" alt="序列化"></p>
+<p><img src="/2019/02/25/Apache_Kafka/producer序列化.png" alt="序列化"></p>
 </li>
 <li><p><strong>追加写入消息缓冲区</strong></p>
 </li>
@@ -703,7 +703,7 @@
 <li><strong>Stable</strong>：该状态表明group开始正常消费。此时group必须响应clients发送过来的任何请求。</li>
 <li><strong>Dead</strong>：该状态表明group已经彻底废弃，group内没有任何成员并且group的所有元数据都已被删除。</li>
 </ul>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/consumer group状态机.png" alt="consumer group状态机"></p>
+<p><img src="/2019/02/25/Apache_Kafka/consumer group状态机.png" alt="consumer group状态机"></p>
 <hr>
 <h3 id="实现精确一次处理语义-exactly-once-semanties-EOS"><a href="#实现精确一次处理语义-exactly-once-semanties-EOS" class="headerlink" title="实现精确一次处理语义(exactly-once semanties, EOS)"></a>实现精确一次处理语义(exactly-once semanties, EOS)</h3><p>clients端常见的3种消息交付语义：</p>
 <ol>
@@ -713,12 +713,12 @@
 </ol>
 <h4 id="幂等性producer（idempotent-producer）"><a href="#幂等性producer（idempotent-producer）" class="headerlink" title="幂等性producer（idempotent producer）"></a>幂等性producer（idempotent producer）</h4><p>幂等性producer是Apache Kafka 0.11.0.0版本用于实现EOS的一个利器。若一个操作执行多次的结果与只运行一次的结果是相同的，那么称该操作为幂等操作。引入幂等producer表示它的发送操作是幂等。瞬时的发送错可能导致produecer端出现重试，同一个消息被producer发送多次，但在broker端这条消息只会被写入日志一次。</p>
 <p>幂等性producer的设计思路类似于TCP的工作方式。发送到broker端的每批消息都会被赋予一个序列号（sequence number）用于消息去重。但是和TCP不同的是，这个序列号不会被丢弃，相反Kafka会把它们保存在底层日志中，这样即使分区的leader副本挂掉，新选出来的leader broker也能执行消息去重工作。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/幂等性producer消息去重.png" alt="幂等性producer消息去重"></p>
+<p><img src="/2019/02/25/Apache_Kafka/幂等性producer消息去重.png" alt="幂等性producer消息去重"></p>
 <hr>
 <h4 id="事务（transaction）"><a href="#事务（transaction）" class="headerlink" title="事务（transaction）"></a>事务（transaction）</h4><p>对事务的支持是Kafka实现EOS的第二个利器。引入事务使得clients端程序（无论是producer还是consumer）能够将一组消息放入一个原子性单元中统一处理。</p>
 <p>处于事务中的这组消息能够从多个分区中消费，也可以发送到多个分区中。重要的是不论是发送还是消费，Kafka都能保证它们是原子性，即所有的写入操作幺妹全部成功，要么全部失败。</p>
 <p>Kafka为实现事务要求应用程序必须提供一个唯一的id来表征事务。这个id被称为事务id，它必须在应用程序所有的会话上是唯一的。</p>
-<p><img src="/2019/02/25/Apache_Kafka/utur/图片/picture_for_note/Apache_Kafka/跨分区事务提交与读取.png" alt="跨分区事务提交与读取"></p>
+<p><img src="/2019/02/25/Apache_Kafka/跨分区事务提交与读取.png" alt="跨分区事务提交与读取"></p>
 <p>PS：未完待续，后续深入学习再做补充</p>
 
       

@@ -102,13 +102,13 @@
 <meta property="og:site_name" content="Utur的个人博客">
 <meta property="og:description" content="FlaskFlask是使用Python编写的Web微框架，Web框架可以让开发者不用关心底层的请求响应处理，更方便更高效地编写Web程序。Flask有两个主要依赖，一个是WSGI（Web Server Gateway Interface，Web服务器网关接口）工具集——Werkzeug，另一个是Jinja2模板引擎。 搭建开发环境 安装pip和pipenv  1$ pip install pipe">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/04/11/Flask_Web/utur/图片/picture_for_note/Flask_Web/Flask%20Web工作流程图.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/11/Flask_Web/utur/图片/picture_for_note/Flask_Web/请求处理函数调用示意图.png">
-<meta property="og:updated_time" content="2019-07-06T09:04:27.482Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/11/Flask_Web/Flask%20Web工作流程图.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/11/Flask_Web/请求处理函数调用示意图.png">
+<meta property="og:updated_time" content="2019-07-06T11:13:17.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask学习笔记">
 <meta name="twitter:description" content="FlaskFlask是使用Python编写的Web微框架，Web框架可以让开发者不用关心底层的请求响应处理，更方便更高效地编写Web程序。Flask有两个主要依赖，一个是WSGI（Web Server Gateway Interface，Web服务器网关接口）工具集——Werkzeug，另一个是Jinja2模板引擎。 搭建开发环境 安装pip和pipenv  1$ pip install pipe">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/11/Flask_Web/utur/图片/picture_for_note/Flask_Web/Flask%20Web工作流程图.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/11/Flask_Web/Flask%20Web工作流程图.png">
 
 
 
@@ -383,7 +383,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-06 17:04:27" itemprop="dateModified" datetime="2019-07-06T17:04:27+08:00">2019-07-06</time>
+                <time title="Modified: 2019-07-06 19:13:17" itemprop="dateModified" datetime="2019-07-06T19:13:17+08:00">2019-07-06</time>
               </span>
             
           
@@ -439,16 +439,16 @@
 <h3 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h3><ol>
 <li>安装<strong>pip</strong>和<strong>pipenv</strong></li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install pipenv</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pip install pipenv</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>创建虚拟环境</li>
 </ol>
 <p>在Python中虚拟环境（virtual environment）就是隔离的Python解释器环境。通过创建虚拟环境，你可以拥有一个独立的Python解释器环境。<em>这样做的好处是可以为每一个项目创建独立的Python解释器环境，因为不同的项目常常会话依赖不同版本的库或Python版本。使用虚拟环境可以保持全局Python解释器环境的干净，避免包和版本的混乱，并且可以方便地区分和记录每个项目的依赖，以便在新环境下复现依赖环境。</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pipenv install  <span class="comment"># 为当前目录的项目创建虚拟环境</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> pipenv shell   <span class="comment"># 显式激活虚拟环境</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pipenv install  # 为当前目录的项目创建虚拟环境</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> pipenv shell   # 显式激活虚拟环境</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>安装<strong>Flask</strong></li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pipenv install flask  <span class="comment"># 在虚拟环境中安装Flask</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pipenv install flask  # 在虚拟环境中安装Flask</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="注册路由"><a href="#注册路由" class="headerlink" title="注册路由"></a>注册路由</h3><p>在一个Web应用里，客户端和服务器上的Flask程序的交互可以简单概括为以下几步：</p>
 <p>1）用户在浏览器中输入URL访问某个资源</p>
@@ -471,7 +471,7 @@
 </li>
 </ul>
 <hr>
-<h3 id="启动开发服务器"><a href="#启动开发服务器" class="headerlink" title="启动开发服务器"></a>启动开发服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> flask run</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动开发服务器"><a href="#启动开发服务器" class="headerlink" title="启动开发服务器"></a>启动开发服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> flask run</span><br></pre></td></tr></table></figure>
 <p>flask run命令启动内置的开发服务器。</p>
 <ol>
 <li><p><strong>自动发现程序实例</strong></p>
@@ -491,7 +491,7 @@
 </li>
 </ol>
 <hr>
-<h2 id="Flask与HTTP"><a href="#Flask与HTTP" class="headerlink" title="Flask与HTTP"></a>Flask与HTTP</h2><h3 id="请求响应循环"><a href="#请求响应循环" class="headerlink" title="请求响应循环"></a>请求响应循环</h3><p><img src="/2019/04/11/Flask_Web/utur/图片/picture_for_note/Flask_Web/Flask Web工作流程图.png" alt="Flask Web工作流程"></p>
+<h2 id="Flask与HTTP"><a href="#Flask与HTTP" class="headerlink" title="Flask与HTTP"></a>Flask与HTTP</h2><h3 id="请求响应循环"><a href="#请求响应循环" class="headerlink" title="请求响应循环"></a>请求响应循环</h3><p><img src="/2019/04/11/Flask_Web/Flask Web工作流程图.png" alt="Flask Web工作流程"></p>
 <h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><h4 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h4><p><strong>这个请求对象封装了从客户端发来的请求报文，能从它获取请求报文中的所有数据。</strong></p>
 <h4 id="在Flask中处理请求"><a href="#在Flask中处理请求" class="headerlink" title="在Flask中处理请求"></a>在Flask中处理请求</h4><ul>
 <li><p>设置监听的HTTP方法</p>
@@ -530,7 +530,7 @@
 </tr>
 </tbody>
 </table>
-<p><img src="/2019/04/11/Flask_Web/utur/图片/picture_for_note/Flask_Web/请求处理函数调用示意图.png" alt="请求处理函数调用示意图"></p>
+<p><img src="/2019/04/11/Flask_Web/请求处理函数调用示意图.png" alt="请求处理函数调用示意图"></p>
 <h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><h4 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h4><p>在HTTP响应中，数据可以通过多种格式传输。大多数情况下，我们会使用HTML格式，这是Flask中的默认设置。在特定的情况下，也会使用其他格式。不同的响应数据格式需要设置不同的MIME类型。</p>
 <ul>
 <li><p>纯文本</p>
@@ -754,7 +754,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">app.config[<span class="string">'UPLOAD_PATH'</span>] = os.path.join(app.root_path, <span class="string">'uploads'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/upload', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload</span><span class="params">()</span>:</span></span><br><span class="line">	form = UploadForm()</span><br><span class="line">	<span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">		f = form.photo.data</span><br><span class="line">		filename = random_filename(f.filename)</span><br><span class="line">		f.save(os.path.join(app.config[<span class="string">'UPLOAD)PATH'</span>], filename))</span><br><span class="line">		flash(<span class="string">'Upload success.'</span>)</span><br><span class="line">		session[<span class="string">'filenames'</span>] = [filename]</span><br><span class="line">		<span class="keyword">return</span> redirect(url_for(<span class="string">'show_images'</span>))</span><br><span class="line">	<span class="keyword">return</span> render_template(<span class="string">'upload.html'</span>, form=form)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="使用Flask-CKEditor集成富文本编辑器"><a href="#使用Flask-CKEditor集成富文本编辑器" class="headerlink" title="使用Flask-CKEditor集成富文本编辑器"></a>使用Flask-CKEditor集成富文本编辑器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pipenv install flask-ckeditor  <span class="comment"># 安装</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="使用Flask-CKEditor集成富文本编辑器"><a href="#使用Flask-CKEditor集成富文本编辑器" class="headerlink" title="使用Flask-CKEditor集成富文本编辑器"></a>使用Flask-CKEditor集成富文本编辑器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pipenv install flask-ckeditor  # 安装</span><br></pre></td></tr></table></figure>
 <p>1）实例化Flask-CkEditor提供的CkEditor类，传入程序实例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_ckeditor <span class="keyword">import</span> CKEditor</span><br><span class="line"></span><br><span class="line">ckeditor = CKEditor()</span><br></pre></td></tr></table></figure>
 <p>2）渲染富文本编辑器</p>

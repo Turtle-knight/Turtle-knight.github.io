@@ -102,18 +102,18 @@
 <meta property="og:site_name" content="Utur的个人博客">
 <meta property="og:description" content="1. Filed to open xxx/boot/xxx.EFI: not found 解决方法： PS：先将BIOS中的secure boot设置为 disable  开机，插入U盘启动盘，选择”Try Ubuntu without installing“.  连接wifi，打开Terminal（ctrl + alt + T）  输入以下命令： 123$ sudo add-apt-reposi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/内核not%20found.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/boot%20repair.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/df%20-%20h.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/UUID.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/挂载参数.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/new.png">
-<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/磁盘.png">
-<meta property="og:updated_time" content="2019-07-06T09:52:44.839Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/内核not%20found.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/boot%20repair.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/df%20-%20h.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/UUID.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/挂载参数.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/new.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/linux问题解决/磁盘.png">
+<meta property="og:updated_time" content="2019-07-06T11:14:25.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux错误解决（整理）">
 <meta name="twitter:description" content="1. Filed to open xxx/boot/xxx.EFI: not found 解决方法： PS：先将BIOS中的secure boot设置为 disable  开机，插入U盘启动盘，选择”Try Ubuntu without installing“.  连接wifi，打开Terminal（ctrl + alt + T）  输入以下命令： 123$ sudo add-apt-reposi">
-<meta name="twitter:image" content="http://yoursite.com/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/内核not%20found.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/25/linux问题解决/内核not%20found.jpg">
 
 
 
@@ -388,7 +388,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-06 17:52:44" itemprop="dateModified" datetime="2019-07-06T17:52:44+08:00">2019-07-06</time>
+                <time title="Modified: 2019-07-06 19:14:25" itemprop="dateModified" datetime="2019-07-06T19:14:25+08:00">2019-07-06</time>
               </span>
             
           
@@ -440,7 +440,7 @@
       
 
       
-        <h2 id="1-Filed-to-open-xxx-boot-xxx-EFI-not-found"><a href="#1-Filed-to-open-xxx-boot-xxx-EFI-not-found" class="headerlink" title="1. Filed to open xxx/boot/xxx.EFI: not found"></a>1. Filed to open xxx/boot/xxx.EFI: not found</h2><p><img src="/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/内核not found.jpg" alt="failed to open"></p>
+        <h2 id="1-Filed-to-open-xxx-boot-xxx-EFI-not-found"><a href="#1-Filed-to-open-xxx-boot-xxx-EFI-not-found" class="headerlink" title="1. Filed to open xxx/boot/xxx.EFI: not found"></a>1. Filed to open xxx/boot/xxx.EFI: not found</h2><p><img src="/2019/02/25/linux问题解决/内核not found.jpg" alt="failed to open"></p>
 <p><strong>解决方法：</strong></p>
 <p><strong>PS：先将BIOS中的secure boot设置为 disable</strong></p>
 <ol>
@@ -449,10 +449,10 @@
 <li><p>连接wifi，打开Terminal（ctrl + alt + T）</p>
 </li>
 <li><p>输入以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update</span></span><br><span class="line"><span class="meta">-&gt;</span><span class="bash"> 选择按一下Enter键获取钥匙</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install -y boot-repair &amp;&amp; boot-repair</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo add-apt-repository ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update</span><br><span class="line"><span class="meta">-&gt;</span> 选择按一下Enter键获取钥匙</span><br><span class="line"><span class="meta">$</span> sudo apt-get install -y boot-repair &amp;&amp; boot-repair</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>选择第一个 “<strong>Recommended repair</strong>“</p>
-<p><img src="/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/boot repair.png" alt="solution of the failed to open"></p>
+<p><img src="/2019/02/25/linux问题解决/boot repair.png" alt="solution of the failed to open"></p>
 </li>
 <li><p>重启之后就会看见系统选择界面</p>
 </li>
@@ -462,27 +462,27 @@
 <li><p>在Windows上分出一块空白区。打开磁盘管理，选择自己要分割的分区，压缩卷，输入大小，新建卷。</p>
 </li>
 <li><p>在Ubuntu下已root身份登入，终端输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> df -h</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> df -h</span><br></pre></td></tr></table></figure>
 <p>显示如下，找到刚创建的分区，这里假设为 /dev/sda12。</p>
-<p><img src="/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/df - h.png" alt="df -h"></p>
+<p><img src="/2019/02/25/linux问题解决/df - h.png" alt="df -h"></p>
 </li>
 </ol>
 <p>   继续输入：sudo umount /dev/sda12 解除绑定。</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> sudo umount /dev/sda12</span></span><br></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> sudo umount /dev/sda12</span><br></pre></td></tr></table></figure>
 <p>   接着输入: mkfs -t ext4 /dev/sda12 进行格式化</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mkfs -t ext4 /dev/sda12</span></span><br></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> mkfs -t ext4 /dev/sda12</span><br></pre></td></tr></table></figure>
 <p>   这个命令是将该分区格式化为 ext4文件系统。<strong>格式化成功后显示该分区的UUID，这里记录下UUID</strong>。</p>
 <p>   在home下创建一个新的目录，此目录为新分区挂载的目录。这里我新建了一个/home/new目录。</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">cd</span> /home</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> mkdir new</span></span><br></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> cd /home</span><br><span class="line"><span class="meta">#</span> mkdir new</span><br></pre></td></tr></table></figure>
 <p>   最后，以root身份编辑/etc/fstab文件，。</p>
-   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vim /etc/fstab</span></span><br></pre></td></tr></table></figure>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vim /etc/fstab</span><br></pre></td></tr></table></figure>
 <p>   在fstab文件最后一行添加新分区的UUID，方便以后开机自动挂载。</p>
-<p>   <img src="/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/UUID.png" alt="UUID"></p>
-<p>   <img src="/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/挂载参数.png" alt="挂载参数"></p>
+<p>   <img src="/2019/02/25/linux问题解决/UUID.png" alt="UUID"></p>
+<p>   <img src="/2019/02/25/linux问题解决/挂载参数.png" alt="挂载参数"></p>
 <p>   保存重启后，新分区会显示已被挂载到目录/home/nwe下。</p>
-<p>   <img src="/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/new.png" alt="new"></p>
+<p>   <img src="/2019/02/25/linux问题解决/new.png" alt="new"></p>
 <p>   以上第二步的操作大部分可以在图形化界面完成，在搜索中输入“磁盘”。</p>
-<p>   <img src="/2019/02/25/linux问题解决/utur/图片/picture_for_note/linux问题解决/磁盘.png" alt="磁盘"></p>
+<p>   <img src="/2019/02/25/linux问题解决/磁盘.png" alt="磁盘"></p>
 <hr>
 
       
