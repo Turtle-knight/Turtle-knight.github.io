@@ -103,18 +103,18 @@
 <meta property="og:description" content="最近学习python，时不时会感叹这门语言的简洁和实用，不由得会好奇python的底层实现。偶然得知有《python源码剖析》这本书，便想从中窥视一二，囫囵吞枣一翻，虽谈不上洞彻肺腑，但着实获益不少。正所谓“好记性不如烂笔头”，故作此笔记。 这里带着几个问题：  python是用C实现的（虽然现在还有用JPython，Pypy），那么C是怎么实现python的面向对象的特性的呢？ 什么叫“pyth">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://image.littlechao.top/20180924130852000006.jpg">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/Utur_PyObject.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/Utur_PyObject.png">
 <meta property="og:image" content="https://image.littlechao.top/20180927032505000012.jpg">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/Utur_Integer.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/object.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/2018-09-28%2021-36-35屏幕截图3.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/IntBlock.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/block.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/string.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/time.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/listcache.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/Pythonrun.png">
-<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Python源码分析/%20pycode.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/Utur_Integer.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/object.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/2018-09-28%2021-36-35屏幕截图3.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/IntBlock.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/block.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/string.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/time.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/listcache.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/Pythonrun.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/%20pycode.png">
 <meta property="og:updated_time" content="2019-07-06T09:46:59.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于《python源码剖析》笔记">
@@ -497,11 +497,11 @@
 <p>通过PyObject和PyTypeObject，Pyhton利用C语言完成了C++所提供的对象的多态的特性。在Python创建一个对象，比如PyIntObejct对象时，会分配内存，进行初始化。然后Python内部用一个PyObject<em>变量来保存和维护这个对象。其他对象也于此类似，所以在Python内部各个函数之间传递的都是一种范型指针——PyObject </em>。这个指针所指的对象究竟是什么类型，只能从指针所指对象的ob_type域动态进行判断，而正是通过这个域，Python实现了多态机制。</p>
 <p>说了这么多，现在用图来捋一捋。毕竟，一图胜万言。</p>
 <p>​                                                                         <strong>各种Object之间的联系</strong></p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/Utur_PyObject.png" alt="Object">​       </p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/Utur_PyObject.png" alt="Object">​       </p>
 <p>​                                                               <strong>通过PyInt_Type创建整数</strong></p>
 <p><img src="https://image.littlechao.top/20180927032505000012.jpg" alt="jiaohu"></p>
 <p>​                                                                  <strong>运行时整数对象及其类型之间的关系</strong>(对照上图)</p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/Utur_Integer.png" alt="Integer"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/Utur_Integer.png" alt="Integer"></p>
 <h3 id="Python内对象分类"><a href="#Python内对象分类" class="headerlink" title="Python内对象分类"></a>Python内对象分类</h3><p>关于Python内对象的分类，这里提供几种角度，不保证正确性。</p>
 <h4 id="从概念上的角度"><a href="#从概念上的角度" class="headerlink" title="从概念上的角度"></a>从概念上的角度</h4><ul>
 <li>Fundamental对象：类型对象</li>
@@ -510,7 +510,7 @@
 <li>Mapping 对象：类似于C++中map的关联对象</li>
 <li>Internal 对象：Python虚拟机在运行时内部使用的对象</li>
 </ul>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/object.png" alt="对象分类"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/object.png" alt="对象分类"></p>
 <h4 id="从内存上的角度"><a href="#从内存上的角度" class="headerlink" title="从内存上的角度"></a>从内存上的角度</h4><p><strong>定长对象</strong>:不包含可变长度数据的对象（es，整数对象）</p>
 <p><strong>变长对象</strong>:包含可变长度数据的对象（es，字符串对象）</p>
 <p><em>区别：</em>定长对象的不同对象占用的内存是一样的（es，1和100），而变长对象的不同对象占用的内存可能是不一样的。（es，”Python“和”Java“)</p>
@@ -518,7 +518,7 @@
 <p>到这里，对对象的结构性认识已经差不多了，接下来，就是各种对象在具体实现上一些差异化了。</p>
 <h3 id="Python内建对象"><a href="#Python内建对象" class="headerlink" title="Python内建对象"></a>Python内建对象</h3><p>在Python中，已经预先定义了一些类型对象，比如int类型、string类型、dict类型等</p>
 <h4 id="PyIntObject对象"><a href="#PyIntObject对象" class="headerlink" title="PyIntObject对象"></a>PyIntObject对象</h4><p>先看个图</p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/2018-09-28 21-36-35屏幕截图3.png" alt="PyIntObject"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/2018-09-28 21-36-35屏幕截图3.png" alt="PyIntObject"></p>
 <p>内置函数id()用来返回对象的身份(identity)，而这里的身份说白了就是该对象的内存地址。</p>
 <p>下面给出总结：</p>
 <ul>
@@ -529,13 +529,13 @@
 </ul>
 <h5 id="通用整数对象池的实现基础——PyIntBlock"><a href="#通用整数对象池的实现基础——PyIntBlock" class="headerlink" title="通用整数对象池的实现基础——PyIntBlock"></a>通用整数对象池的实现基础——PyIntBlock</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[intobject.c]</span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> *<span class="title">next</span>;</span></span><br><span class="line">    PyIntObject object[N_INTOBJCETS];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> <span class="title">PyIntBlock</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> PyIntBlock *block_list = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">static</span> PyIntObject *free_list = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 <p>PyIntBlock，顾名思义，就是一块保存了N_INTOBJECTS个PyIntobject对象的内存（block）。</p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/IntBlock.png" alt="PyIntBlock"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/IntBlock.png" alt="PyIntBlock"></p>
 <p>这里存在一个隐患：两个PyIntBlock处于同一个链表当中，但是每一个PyIntBlock中至光重要的存放PyIntObject对象的objects却是分离的。 若真是这样，就意味着所有的内存只能使用一次，跟内存泄漏也就没什么区别了。</p>
 <p>Python的设计者当然不会允许这样的存在，所以才有了free，_list的存在。</p>
 <p>在一个PyIntObject对象被销毁的时候（tp_dealloc），不同PyIntBlock中空闲的内存块被链接free_list里了。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[intobject.c]</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">int_dealloc</span><span class="params">(PyIntObject *v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (PyInt_CheckExact(v)) &#123;</span><br><span class="line">        v-&gt;ob_type = (struct _typeobject *)free_list;</span><br><span class="line">        free_list = v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	v-&gt;ob_type-&gt;tp_free(PyObjcet *)v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>所以真相如图：</p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/block.png" alt="free_list"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/block.png" alt="free_list"></p>
 <p>但是，这里还隐藏着Python的整数对象系统实现中的一个惊天隐秘：当一个整数对象的引用计数变为0时，就会被Python回收，但是在int_dealloc中，只是将该内存重新加入自由内存链表中， 却不是向系统堆交还任何内存。那么，理论上，是可以利用这个漏洞将系统的内存全部吃光的。只要你定义足够多的大整数对象。</p>
 <h4 id="PythonStringObject对象"><a href="#PythonStringObject对象" class="headerlink" title="PythonStringObject对象"></a>PythonStringObject对象</h4><p>在Python中，PyStringObject是对字符串对象的实现。PyStringObejct是一个拥有可变长度内存的对象，这一点毋庸置疑。但同时，其又是一个不变对象。因为当创建了一个PyStringObject对象之后，该对象内部维护的字符串就不能再被改变了。这一点特性使得PyStringObject对象可作为dict的键值，但同时也使得一些字符串操作的效率大大降低，比如多个字符串的连接。</p>
 <p><strong>PythonStirngObejct</strong></p>
@@ -548,13 +548,13 @@
 <h5 id="intern机制"><a href="#intern机制" class="headerlink" title="intern机制"></a>intern机制</h5><p>对PyStringObject对象做intern操作目的在于：在Python运行期间，系统中只有一个与特定字符串对应的PyStringObject对象。当判断两个PyStringObject对象是否相同，如果都被intern处理过了，只需简单地检查对应PyObject *是否相同即可。这个机制既节省了空间，又简化了PyStringObejct对象的比较。</p>
 <p><strong>Python会对简单的字符串进行intern，并将intern的结果放入对象缓存池中。</strong></p>
 <p><strong><em>简单的字符串：空串，字符，只包含字母或数字</em></strong></p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/string.png" alt="string"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/string.png" alt="string"></p>
 <p><strong><em>总结：类似于小整数对象，Python会选择性地对一些字符串进行池化，以减少对象的数量和对内存的占用。</em></strong></p>
 <h5 id="PyStringObejct效率相关问题"><a href="#PyStringObejct效率相关问题" class="headerlink" title="PyStringObejct效率相关问题"></a>PyStringObejct效率相关问题</h5><p>一个严重影响python执行效率的问题——字符串连接”+”操作</p>
 <p>根源 ：PyStringObject对象是一个不可变对象，若要连接<strong>N</strong>个PyStringObject对象，那么必须进行N-1次的内存申请及内存搬运的工作。可想而知，这是多大的工作量，必将严重影响Python的执行效率。</p>
 <p>官方推荐的做法是通过利用join来对N个存在list或tuple的PyStringObejct对象进行连接操作，先统计一共有多少个PyStirngObejct对象，并统计这些对象所维护的字符串一共有多长，然后申请内存。这种做法只需要分配一次内存，执行效率将大大提高</p>
 <p>看下实际运行情况：</p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/time.png" alt="time">        </p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/time.png" alt="time">        </p>
 <p><em>可以看出在N较小的情况下，”+”操作效率比join还高</em>。</p>
 <p><strong>总结：”+”连接效率低是出现在字符串数目较多的情况，而在字符串数目较小的情况下，”+”比join执行效率还高。</strong></p>
 <h4 id="PyListObject"><a href="#PyListObject" class="headerlink" title="PyListObject"></a>PyListObject</h4><p>PyListObject对象是Python提供的对列表的抽象，它可以有效地支持对元素的插入，添加，删除等操作，在Python的列表中无一例外存放的都是PyObject *指针。很明显，PyListObject是一个变长对象，而且还是个可变对象。</p>
@@ -592,16 +592,16 @@
 </ol>
 </li>
 </ul>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/listcache.png" alt="list_cache"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/listcache.png" alt="list_cache"></p>
 <h4 id="PyDictObject对象"><a href="#PyDictObject对象" class="headerlink" title="PyDictObject对象"></a>PyDictObject对象</h4><h2 id="Python虚拟机"><a href="#Python虚拟机" class="headerlink" title="Python虚拟机"></a>Python虚拟机</h2><p>关于Python，有一种说法：“Python是一种解释性的语言”。其实这种说法是不准确的，因为Python程序的执行原理和Java程序、C#程序的执行原理都可以用两个词囊括——<strong>虚拟机、字节码。</strong>实际上，Python解释器在执行任何一个Python程序文件时，都先对Python源代码进行编译，编译生成一组Python的byte code（字节码），然后由虚拟机按照顺序执行字节码，从而完成对Python程序的执行动作。</p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/Pythonrun.png" alt="Python_run"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/Pythonrun.png" alt="Python_run"></p>
 <h3 id="PyCodeObject对象和pyc文件"><a href="#PyCodeObject对象和pyc文件" class="headerlink" title="PyCodeObject对象和pyc文件"></a>PyCodeObject对象和pyc文件</h3><p>在编译过程中，包含在Python源代码中的<strong>静态信息</strong>都会被Python编译器收集起来，这些静态信息包括了<strong>字符串、常量值、字节码</strong>。在Python运行期间，<em>这些源文件提供的静态信息被存储在一个运行时的对象中——<strong>PyCodeObject</strong></em>。<em>当运行结束后，这个运行时对象所包含的信息被存储在一种文件中(当有import语句时）——<strong>pyc文件</strong></em></p>
 <p>Python源码中对PyCodeObject的声明：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_HEAD</span><br><span class="line">    <span class="keyword">int</span> co_argcount;		<span class="comment">/* #arguments, except *args */</span></span><br><span class="line">    <span class="keyword">int</span> co_kwonlyargcount;	<span class="comment">/* #keyword only arguments */</span></span><br><span class="line">    <span class="keyword">int</span> co_nlocals;		<span class="comment">/* #local variables */</span></span><br><span class="line">    <span class="keyword">int</span> co_stacksize;		<span class="comment">/* #entries needed for evaluation stack */</span></span><br><span class="line">    <span class="keyword">int</span> co_flags;		<span class="comment">/* CO_..., see below */</span></span><br><span class="line">    <span class="keyword">int</span> co_firstlineno;   <span class="comment">/* first source line number */</span></span><br><span class="line">    PyObject *co_code;		<span class="comment">/* instruction opcodes */</span></span><br><span class="line">    PyObject *co_consts;	<span class="comment">/* list (constants used) */</span></span><br><span class="line">    PyObject *co_names;		<span class="comment">/* list of strings (names used) */</span></span><br><span class="line">    PyObject *co_varnames;	<span class="comment">/* tuple of strings (local variable names) */</span></span><br><span class="line">    PyObject *co_freevars;	<span class="comment">/* tuple of strings (free variable names) */</span></span><br><span class="line">    PyObject *co_cellvars;      <span class="comment">/* tuple of strings (cell variable names) */</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> *co_cell2arg; <span class="comment">/* Maps cell vars which are arguments. */</span></span><br><span class="line">    PyObject *co_filename;	<span class="comment">/* unicode (where it was loaded from) */</span></span><br><span class="line">    PyObject *co_name;		<span class="comment">/* unicode (name, for reference) */</span></span><br><span class="line">    PyObject *co_lnotab;	<span class="comment">/* string (encoding addr&lt;-&gt;lineno mapping) See</span></span><br><span class="line"><span class="comment">				   Objects/lnotab_notes.txt for details. */</span></span><br><span class="line">    <span class="keyword">void</span> *co_zombieframe;     <span class="comment">/* for optimization only (see frameobject.c) */</span></span><br><span class="line">    PyObject *co_weakreflist;   <span class="comment">/* to support weakrefs to code objects */</span></span><br><span class="line">    <span class="keyword">void</span> *co_extra;</span><br><span class="line">&#125; PyCodeObject;</span><br></pre></td></tr></table></figure>
 <p>Python编译器在Python源代码进行变异的时候，对于代码中的<em>Code Block</em>，会创建一个PyCodeObject对象与之对应。那么何为一个Code Block——当进入一个新名字空间，或者说作用域时，就是进入了一个新的Code Block。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[demo.py]</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">	def B():</span><br><span class="line">		pass</span><br><span class="line"></span><br><span class="line">def C():</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">C()</span><br></pre></td></tr></table></figure>
 <p>对于demo.py，根据之前的说法就要产生4个PyCodeObject，但是Python运行环境只会对一个PyCodeObject对象调用PyMarshal_WriteObjectToFile操作。很显然，这里面存在一种嵌套关系，仔细观察，在demo.py源文件中作用域呈现出一种嵌套结构，而这种结构正是PyCodeObject对象之间的结构。</p>
-<p><img src="/home/utur/图片/picture_for_note/Python源码分析/ pycode.png" alt="PythonCode"></p>
+<p><img src="/2019/02/25/关于《python源码剖析》笔记/utur/图片/picture_for_note/Python源码分析/ pycode.png" alt="PythonCode"></p>
 <h3 id="Python虚拟机框架"><a href="#Python虚拟机框架" class="headerlink" title="Python虚拟机框架"></a>Python虚拟机框架</h3><p>Python的虚拟机是Python的核心，在.py源代码被编译为字节码指令序列后，Python虚拟机机开始接手整个工作。Python的虚拟机从编译得到的PyCodeObject对象中一次读入每一条字节码指令，并在<em>当前的上下文环境</em>中执行字节码指令。</p>
 <p>Python的虚拟机实际上实在模拟操作系统运行可执行文件的过程</p>
 <p><img src alt="可执行文件的运行时栈"></p>
@@ -741,7 +741,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
