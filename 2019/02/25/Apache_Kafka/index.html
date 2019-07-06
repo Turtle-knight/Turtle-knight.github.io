@@ -94,16 +94,42 @@
 
 
 
-  <meta name="description" content="木龟想做一个哈皮程序猿。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Utur的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Apache Kafka(学习笔记)Kafka简介Kafka是一款由美国领英公司（LinkedIn）开源出来的高性能消息引擎系统（Messaging system）,其核心功能是——高性能的消息发送与高性能的消息消费。但随着Kafka的不断演进，在Kafka 0.10.0.0版本正式推出了Kafka Streams，即流式处理组件。自此Kafka正式成为了一个流式处理框架。  前置知识背景消息引擎">
+<meta name="keywords" content="Kafka">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu环境">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/Apache_Kafka/index.html">
 <meta property="og:site_name" content="Utur的个人博客">
-<meta property="og:description" content="木龟想做一个哈皮程序猿。">
+<meta property="og:description" content="Apache Kafka(学习笔记)Kafka简介Kafka是一款由美国领英公司（LinkedIn）开源出来的高性能消息引擎系统（Messaging system）,其核心功能是——高性能的消息发送与高性能的消息消费。但随着Kafka的不断演进，在Kafka 0.10.0.0版本正式推出了Kafka Streams，即流式处理组件。自此Kafka正式成为了一个流式处理框架。  前置知识背景消息引擎">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/消息引擎架构.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/队列消息引擎模型.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/发布订阅消息模型.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/topic和partition.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/消费者位移.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/leadr-follower.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/V2版本消息格式.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/V2版本消息batch格式.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/副本位置信息.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/副本同步流程.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/Kafka备份原理.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/clients端处理流程.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/broker端请求处理流程.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/controller架构.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/副本状态机.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/分区状态机.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/Reactor模式.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/broker请求处理流程.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/producer端的工作原理.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/producer序列化.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/consumer%20group状态机.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/幂等性producer消息去重.png">
+<meta property="og:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/跨分区事务提交与读取.png">
+<meta property="og:updated_time" content="2019-07-06T08:47:16.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Utur的个人博客">
-<meta name="twitter:description" content="木龟想做一个哈皮程序猿。">
+<meta name="twitter:title" content="Ubuntu环境">
+<meta name="twitter:description" content="Apache Kafka(学习笔记)Kafka简介Kafka是一款由美国领英公司（LinkedIn）开源出来的高性能消息引擎系统（Messaging system）,其核心功能是——高性能的消息发送与高性能的消息消费。但随着Kafka的不断演进，在Kafka 0.10.0.0版本正式推出了Kafka Streams，即流式处理组件。自此Kafka正式成为了一个流式处理框架。  前置知识背景消息引擎">
+<meta name="twitter:image" content="http://yoursite.com/home/utur/图片/picture_for_note/Apache_Kafka/消息引擎架构.png">
 
 
 
@@ -111,7 +137,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/25/Apache_Kafka/">
 
 
 
@@ -121,7 +147,7 @@
   };
 </script>
 
-  <title>Utur的个人博客</title>
+  <title>Ubuntu环境 | Utur的个人博客</title>
   
 
 
@@ -169,8 +195,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,7 +237,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -304,200 +329,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Ubuntu快速配置工作环境/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Utur">
-      <meta itemprop="description" content="木龟想做一个哈皮程序猿。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Utur的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/25/Ubuntu快速配置工作环境/" class="post-title-link" itemprop="url">Ubuntu环境</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-02-25T00:00:00+08:00">2019-02-25</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-06 16:42:11" itemprop="dateModified" datetime="2019-07-06T16:42:11+08:00">2019-07-06</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Ubuntu工作环境快速配置"><a href="#Ubuntu工作环境快速配置" class="headerlink" title="Ubuntu工作环境快速配置"></a>Ubuntu工作环境快速配置</h1><p>首先更新一下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br></pre></td></tr></table></figure>
-<h2 id="更换软件源"><a href="#更换软件源" class="headerlink" title="更换软件源"></a>更换软件源</h2><p>详情<a href="https://blog.csdn.net/JRRRJ/article/details/81082444" target="_blank" rel="noopener">https://blog.csdn.net/JRRRJ/article/details/81082444</a></p>
-<p>将阿里源添加到<strong>sources.list</strong>中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse</span><br></pre></td></tr></table></figure>
-<p>保存退出，然后更新。</p>
-<h2 id="安装显卡驱动"><a href="#安装显卡驱动" class="headerlink" title="安装显卡驱动"></a>安装显卡驱动</h2><p>在「软件和更新」-「附加驱动」选项卡中进行选择</p>
-<h2 id="基础软件安装"><a href="#基础软件安装" class="headerlink" title="基础软件安装"></a>基础软件安装</h2><h3 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure>
-<h4 id="vim-个人配置"><a href="#vim-个人配置" class="headerlink" title="vim 个人配置"></a>vim 个人配置</h4><p>.vimrc (保存在个人百度网盘快速配置Ubuntu环境文件夹)</p>
-<h3 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a>搜狗输入法</h3><p><a href="https://blog.csdn.net/fx_yzjy101/article/details/80243710" target="_blank" rel="noopener">https://blog.csdn.net/fx_yzjy101/article/details/80243710</a></p>
-<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
-<h3 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h3><p><a href="https://blog.csdn.net/qq_15192373/article/details/81091278" target="_blank" rel="noopener">https://blog.csdn.net/qq_15192373/article/details/81091278</a></p>
-<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ipython3</span><br></pre></td></tr></table></figure>
-<h3 id="flask"><a href="#flask" class="headerlink" title="flask"></a>flask</h3><p>安装详情见<a href="http://docs.jinkan.org/docs/flask/" target="_blank" rel="noopener">flask官网</a></p>
-<h3 id="Typora-Markdown编辑"><a href="#Typora-Markdown编辑" class="headerlink" title="Typora(Markdown编辑)"></a>Typora(Markdown编辑)</h3><p>安装详情见<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a></p>
-<h3 id="Shutter-截图软件"><a href="#Shutter-截图软件" class="headerlink" title="Shutter(截图软件)"></a>Shutter(截图软件)</h3><p>详情见<a href="https://blog.csdn.net/qq_19339041/article/details/80058892" target="_blank" rel="noopener">https://blog.csdn.net/qq_19339041/article/details/80058892</a></p>
-<h3 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h3><p>先卸载LibreOffice</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge libreoffice*</span><br></pre></td></tr></table></figure>
-<p>下载安装访问<a href="http://www.wps.cn/product/wpslinux/" target="_blank" rel="noopener">WPS官网</a></p>
-<h3 id="MySQL-amp-amp-Redis"><a href="#MySQL-amp-amp-Redis" class="headerlink" title="MySQL &amp;&amp; Redis"></a>MySQL &amp;&amp; Redis</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br><span class="line">sudo apt install redis-server</span><br></pre></td></tr></table></figure>
-<h3 id="Wechat"><a href="#Wechat" class="headerlink" title="Wechat"></a>Wechat</h3><p><a href="https://www.cnblogs.com/dotnetcrazy/p/9124658.html" target="_blank" rel="noopener">Ubuntu 18.04 安装微信（Linux通用）</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -529,10 +363,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/25/Apache_Kafka/" class="post-title-link" itemprop="url">Ubuntu环境</a>
+          <h1 class="post-title" itemprop="name headline">Ubuntu环境
+
               
             
           </h1>
@@ -624,9 +456,7 @@
       
 
       
-        
-          
-            <h1 id="Apache-Kafka-学习笔记"><a href="#Apache-Kafka-学习笔记" class="headerlink" title="Apache Kafka(学习笔记)"></a>Apache Kafka(学习笔记)</h1><h2 id="Kafka简介"><a href="#Kafka简介" class="headerlink" title="Kafka简介"></a>Kafka简介</h2><p>Kafka是一款由美国领英公司（LinkedIn）开源出来的<strong>高性能消息引擎系统（Messaging system）</strong>,其核心功能是——<em>高性能的消息发送与高性能的消息消费</em>。但随着Kafka的不断演进，在Kafka 0.10.0.0版本正式推出了Kafka Streams，即流式处理组件。自此Kafka正式成为了一个流式处理框架。</p>
+        <h1 id="Apache-Kafka-学习笔记"><a href="#Apache-Kafka-学习笔记" class="headerlink" title="Apache Kafka(学习笔记)"></a>Apache Kafka(学习笔记)</h1><h2 id="Kafka简介"><a href="#Kafka简介" class="headerlink" title="Kafka简介"></a>Kafka简介</h2><p>Kafka是一款由美国领英公司（LinkedIn）开源出来的<strong>高性能消息引擎系统（Messaging system）</strong>,其核心功能是——<em>高性能的消息发送与高性能的消息消费</em>。但随着Kafka的不断演进，在Kafka 0.10.0.0版本正式推出了Kafka Streams，即流式处理组件。自此Kafka正式成为了一个流式处理框架。</p>
 <hr>
 <h2 id="前置知识背景"><a href="#前置知识背景" class="headerlink" title="前置知识背景"></a>前置知识背景</h2><h3 id="消息引擎系统"><a href="#消息引擎系统" class="headerlink" title="消息引擎系统"></a>消息引擎系统</h3><p>消息引擎，又叫消息队列，消息中间件等。</p>
 <p>根据维基百科的定义，企业消息引擎系统（EMS）是企业发布的一组规范。公司使用这组规范实现在不同系统之间传递语义准确的消息。在实际使用场景中，消息引擎系统通常以软件接口为主要形式，实现了松耦合的异步式数据传递语义。</p>
@@ -891,8 +721,6 @@
 <p><img src="/home/utur/图片/picture_for_note/Apache_Kafka/跨分区事务提交与读取.png" alt="跨分区事务提交与读取"></p>
 <p>PS：未完待续，后续深入学习再做补充</p>
 
-          
-        
       
     </div>
 
@@ -913,14 +741,39 @@
 
     <footer class="post-footer">
       
-
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Kafka/" rel="tag"># Kafka</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/25/Ubuntu快速配置工作环境/" rel="prev" title="Ubuntu环境">
+                Ubuntu环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -930,14 +783,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -957,8 +811,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1090,6 +953,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Apache-Kafka-学习笔记"><span class="nav-number">1.</span> <span class="nav-text">Apache Kafka(学习笔记)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka简介"><span class="nav-number">1.1.</span> <span class="nav-text">Kafka简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前置知识背景"><span class="nav-number">1.2.</span> <span class="nav-text">前置知识背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消息引擎系统"><span class="nav-number">1.2.1.</span> <span class="nav-text">消息引擎系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息引擎范型"><span class="nav-number">1.2.2.</span> <span class="nav-text">消息引擎范型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka术语"><span class="nav-number">1.3.</span> <span class="nav-text">Kafka术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消息"><span class="nav-number">1.3.1.</span> <span class="nav-text">消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#topic和partiiton"><span class="nav-number">1.3.2.</span> <span class="nav-text">topic和partiiton</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#offset"><span class="nav-number">1.3.3.</span> <span class="nav-text">offset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replica"><span class="nav-number">1.3.4.</span> <span class="nav-text">replica</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ISR"><span class="nav-number">1.3.5.</span> <span class="nav-text">ISR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka使用场景"><span class="nav-number">1.4.</span> <span class="nav-text">Kafka使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka设计原理"><span class="nav-number">1.5.</span> <span class="nav-text">Kafka设计原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#broker端设计架构"><span class="nav-number">1.5.1.</span> <span class="nav-text">broker端设计架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#消息设计"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">消息设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集群管理"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">集群管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#副本与ISR设计"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">副本与ISR设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通信协议"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">通信协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#controller设计"><span class="nav-number">1.5.1.5.</span> <span class="nav-text">controller设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#broker请求处理"><span class="nav-number">1.5.1.6.</span> <span class="nav-text">broker请求处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#producer端设计架构"><span class="nav-number">1.5.2.</span> <span class="nav-text">producer端设计架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#producer端基本数据结构"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">producer端基本数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作流程"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">工作流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#consumer端设计架构"><span class="nav-number">1.5.3.</span> <span class="nav-text">consumer端设计架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#consumer-group-状态机"><span class="nav-number">1.5.3.1.</span> <span class="nav-text">consumer group 状态机</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现精确一次处理语义-exactly-once-semanties-EOS"><span class="nav-number">1.5.4.</span> <span class="nav-text">实现精确一次处理语义(exactly-once semanties, EOS)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#幂等性producer（idempotent-producer）"><span class="nav-number">1.5.4.1.</span> <span class="nav-text">幂等性producer（idempotent producer）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事务（transaction）"><span class="nav-number">1.5.4.2.</span> <span class="nav-text">事务（transaction）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1223,6 +1103,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   
 
@@ -1238,6 +1122,8 @@
 
   
 
+
+  
 
 
   
