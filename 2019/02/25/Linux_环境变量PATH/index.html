@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="Ubuntu工作环境快速配置首先更新一下 1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade 更换软件源详情https://blog.csdn.net/JRRRJ/article/details/81082444 将阿里源添加到sources.list中 1deb http://mirrors.aliyun.com/ubuntu/ xenial-securit">
-<meta name="keywords" content="Ubuntu,配置">
+  <meta name="description" content="环境变量$PATH在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》） 改变PATH直接修改$PATH值：12echo $PATH //查看当前PATH的配置路径export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用&apos;:&apos;">
+<meta name="keywords" content="环境变量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu环境">
-<meta property="og:url" content="http://yoursite.com/2019/02/25/Ubuntu快速配置工作环境/index.html">
+<meta property="og:title" content="Linux环境变量PATH">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/Linux_环境变量PATH/index.html">
 <meta property="og:site_name" content="Utur的个人博客">
-<meta property="og:description" content="Ubuntu工作环境快速配置首先更新一下 1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade 更换软件源详情https://blog.csdn.net/JRRRJ/article/details/81082444 将阿里源添加到sources.list中 1deb http://mirrors.aliyun.com/ubuntu/ xenial-securit">
+<meta property="og:description" content="环境变量$PATH在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》） 改变PATH直接修改$PATH值：12echo $PATH //查看当前PATH的配置路径export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用&apos;:&apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-06T08:42:11.530Z">
+<meta property="og:updated_time" content="2019-07-06T09:07:58.988Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu环境">
-<meta name="twitter:description" content="Ubuntu工作环境快速配置首先更新一下 1sudo apt update &amp;amp;&amp;amp; sudo apt upgrade 更换软件源详情https://blog.csdn.net/JRRRJ/article/details/81082444 将阿里源添加到sources.list中 1deb http://mirrors.aliyun.com/ubuntu/ xenial-securit">
+<meta name="twitter:title" content="Linux环境变量PATH">
+<meta name="twitter:description" content="环境变量$PATH在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》） 改变PATH直接修改$PATH值：12echo $PATH //查看当前PATH的配置路径export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用&apos;:&apos;">
 
 
 
@@ -113,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/02/25/Ubuntu快速配置工作环境/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/25/Linux_环境变量PATH/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>Ubuntu环境 | Utur的个人博客</title>
+  <title>Linux环境变量PATH | Utur的个人博客</title>
   
 
 
@@ -322,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Ubuntu快速配置工作环境/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Linux_环境变量PATH/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Utur">
@@ -339,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu环境
+          <h1 class="post-title" itemprop="name headline">Linux环境变量PATH
 
               
             
@@ -380,7 +380,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-06 16:42:11" itemprop="dateModified" datetime="2019-07-06T16:42:11+08:00">2019-07-06</time>
+                <time title="Modified: 2019-07-06 17:07:58" itemprop="dateModified" datetime="2019-07-06T17:07:58+08:00">2019-07-06</time>
               </span>
             
           
@@ -394,7 +394,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -432,27 +432,41 @@
       
 
       
-        <h1 id="Ubuntu工作环境快速配置"><a href="#Ubuntu工作环境快速配置" class="headerlink" title="Ubuntu工作环境快速配置"></a>Ubuntu工作环境快速配置</h1><p>首先更新一下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br></pre></td></tr></table></figure>
-<h2 id="更换软件源"><a href="#更换软件源" class="headerlink" title="更换软件源"></a>更换软件源</h2><p>详情<a href="https://blog.csdn.net/JRRRJ/article/details/81082444" target="_blank" rel="noopener">https://blog.csdn.net/JRRRJ/article/details/81082444</a></p>
-<p>将阿里源添加到<strong>sources.list</strong>中</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse</span><br></pre></td></tr></table></figure>
-<p>保存退出，然后更新。</p>
-<h2 id="安装显卡驱动"><a href="#安装显卡驱动" class="headerlink" title="安装显卡驱动"></a>安装显卡驱动</h2><p>在「软件和更新」-「附加驱动」选项卡中进行选择</p>
-<h2 id="基础软件安装"><a href="#基础软件安装" class="headerlink" title="基础软件安装"></a>基础软件安装</h2><h3 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure>
-<h4 id="vim-个人配置"><a href="#vim-个人配置" class="headerlink" title="vim 个人配置"></a>vim 个人配置</h4><p>.vimrc (保存在个人百度网盘快速配置Ubuntu环境文件夹)</p>
-<h3 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a>搜狗输入法</h3><p><a href="https://blog.csdn.net/fx_yzjy101/article/details/80243710" target="_blank" rel="noopener">https://blog.csdn.net/fx_yzjy101/article/details/80243710</a></p>
-<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
-<h3 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h3><p><a href="https://blog.csdn.net/qq_15192373/article/details/81091278" target="_blank" rel="noopener">https://blog.csdn.net/qq_15192373/article/details/81091278</a></p>
-<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ipython3</span><br></pre></td></tr></table></figure>
-<h3 id="flask"><a href="#flask" class="headerlink" title="flask"></a>flask</h3><p>安装详情见<a href="http://docs.jinkan.org/docs/flask/" target="_blank" rel="noopener">flask官网</a></p>
-<h3 id="Typora-Markdown编辑"><a href="#Typora-Markdown编辑" class="headerlink" title="Typora(Markdown编辑)"></a>Typora(Markdown编辑)</h3><p>安装详情见<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a></p>
-<h3 id="Shutter-截图软件"><a href="#Shutter-截图软件" class="headerlink" title="Shutter(截图软件)"></a>Shutter(截图软件)</h3><p>详情见<a href="https://blog.csdn.net/qq_19339041/article/details/80058892" target="_blank" rel="noopener">https://blog.csdn.net/qq_19339041/article/details/80058892</a></p>
-<h3 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h3><p>先卸载LibreOffice</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge libreoffice*</span><br></pre></td></tr></table></figure>
-<p>下载安装访问<a href="http://www.wps.cn/product/wpslinux/" target="_blank" rel="noopener">WPS官网</a></p>
-<h3 id="MySQL-amp-amp-Redis"><a href="#MySQL-amp-amp-Redis" class="headerlink" title="MySQL &amp;&amp; Redis"></a>MySQL &amp;&amp; Redis</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br><span class="line">sudo apt install redis-server</span><br></pre></td></tr></table></figure>
-<h3 id="Wechat"><a href="#Wechat" class="headerlink" title="Wechat"></a>Wechat</h3><p><a href="https://www.cnblogs.com/dotnetcrazy/p/9124658.html" target="_blank" rel="noopener">Ubuntu 18.04 安装微信（Linux通用）</a></p>
+        <h2 id="环境变量-PATH"><a href="#环境变量-PATH" class="headerlink" title="环境变量$PATH"></a>环境变量$PATH</h2><p>在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》）</p>
+<h2 id="改变PATH"><a href="#改变PATH" class="headerlink" title="改变PATH"></a>改变PATH</h2><h3 id="直接修改-PATH值："><a href="#直接修改-PATH值：" class="headerlink" title="直接修改$PATH值："></a>直接修改$PATH值：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH //查看当前PATH的配置路径</span><br><span class="line">export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用':'间隔</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生效方法：立即生效</li>
+<li>有效期限：临时改变，只对当前终端有效，关闭后恢复原来的PATH</li>
+<li>用户局限：<strong>仅当前用户</strong></li>
+</ul>
+<h3 id="通过修改-bashrc文件：（-bashrc文件在根目录下）"><a href="#通过修改-bashrc文件：（-bashrc文件在根目录下）" class="headerlink" title="通过修改.bashrc文件：（.bashrc文件在根目录下）"></a>通过修改.bashrc文件：（.bashrc文件在根目录下）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc  // 编辑.bashrc文件</span><br><span class="line"></span><br><span class="line">// 在最后一行添加：</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:/xxx/xxx    // /xxx/xxx为需要加入的环境变量地址，等号两边无空格</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>生效方法：（有一下两种）</p>
+<ol>
+<li><p>关闭当前终端窗口，重新打开一个新的终端窗口即可</p>
+</li>
+<li><p>输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
+<p>命令，立即生效。</p>
+</li>
+</ol>
+</li>
+<li><p>有效期限：永久有效</p>
+</li>
+<li>用户局限：<strong>仅当前用户</strong></li>
+</ul>
+<h3 id="通过修改profile文件：（profile文件在-etc目录下）"><a href="#通过修改profile文件：（profile文件在-etc目录下）" class="headerlink" title="通过修改profile文件：（profile文件在/etc目录下）"></a>通过修改profile文件：（profile文件在/etc目录下）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile    // 编辑profile文件</span><br><span class="line"></span><br><span class="line">// 在最后一行添加：</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/xxx/xxx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生效方法：系统重启</li>
+<li>有效期限：永久有效</li>
+<li>用户局限：<strong>所有用户</strong></li>
+</ul>
+<h3 id="通过修改environment文件：（environment文件在-etc目录下）"><a href="#通过修改environment文件：（environment文件在-etc目录下）" class="headerlink" title="通过修改environment文件：（environment文件在/etc目录下）"></a>通过修改environment文件：（environment文件在/etc目录下）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/environment    //编辑environment文件</span><br><span class="line"></span><br><span class="line">在PATH=/.......中加入“:/xxx/xxx”</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生效方法：系统重启</li>
+<li>有效期限：永久有效</li>
+<li>用户局限：<strong>所有用户</strong></li>
+</ul>
 
       
     </div>
@@ -479,9 +493,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
-          
-            <a href="/tags/配置/" rel="tag"># 配置</a>
+            <a href="/tags/环境变量/" rel="tag"># 环境变量</a>
           
         </div>
       
@@ -494,18 +506,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/25/Apache_Kafka/" rel="next" title="消息队列Kafka学习笔记">
-                <i class="fa fa-chevron-left"></i> 消息队列Kafka学习笔记
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/11/Flask_Web/" rel="prev" title="Flask学习笔记">
-                Flask学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/25/Apache_Kafka/" rel="prev" title="消息队列Kafka学习笔记">
+                消息队列Kafka学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -711,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu工作环境快速配置"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu工作环境快速配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更换软件源"><span class="nav-number">1.1.</span> <span class="nav-text">更换软件源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装显卡驱动"><span class="nav-number">1.2.</span> <span class="nav-text">安装显卡驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础软件安装"><span class="nav-number">1.3.</span> <span class="nav-text">基础软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VIM"><span class="nav-number">1.3.1.</span> <span class="nav-text">VIM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-个人配置"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">vim 个人配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜狗输入法"><span class="nav-number">1.3.2.</span> <span class="nav-text">搜狗输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.3.3.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PyCharm"><span class="nav-number">1.3.4.</span> <span class="nav-text">PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ipython"><span class="nav-number">1.3.5.</span> <span class="nav-text">ipython</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flask"><span class="nav-number">1.3.6.</span> <span class="nav-text">flask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Typora-Markdown编辑"><span class="nav-number">1.3.7.</span> <span class="nav-text">Typora(Markdown编辑)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shutter-截图软件"><span class="nav-number">1.3.8.</span> <span class="nav-text">Shutter(截图软件)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WPS"><span class="nav-number">1.3.9.</span> <span class="nav-text">WPS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-amp-amp-Redis"><span class="nav-number">1.3.10.</span> <span class="nav-text">MySQL &amp;&amp; Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wechat"><span class="nav-number">1.3.11.</span> <span class="nav-text">Wechat</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量-PATH"><span class="nav-number">1.</span> <span class="nav-text">环境变量$PATH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变PATH"><span class="nav-number">2.</span> <span class="nav-text">改变PATH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接修改-PATH值："><span class="nav-number">2.1.</span> <span class="nav-text">直接修改$PATH值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过修改-bashrc文件：（-bashrc文件在根目录下）"><span class="nav-number">2.2.</span> <span class="nav-text">通过修改.bashrc文件：（.bashrc文件在根目录下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过修改profile文件：（profile文件在-etc目录下）"><span class="nav-number">2.3.</span> <span class="nav-text">通过修改profile文件：（profile文件在/etc目录下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过修改environment文件：（environment文件在-etc目录下）"><span class="nav-number">2.4.</span> <span class="nav-text">通过修改environment文件：（environment文件在/etc目录下）</span></a></li></ol></li></ol></div>
             
 
           </div>
