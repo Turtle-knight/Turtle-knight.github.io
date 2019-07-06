@@ -321,6 +321,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Ubuntu快速配置工作环境/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Utur">
+      <meta itemprop="description" content="木龟想做一个哈皮程序猿。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Utur的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/25/Ubuntu快速配置工作环境/" class="post-title-link" itemprop="url">Ubuntu环境</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-02-25T00:00:00+08:00">2019-02-25</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-06 16:42:11" itemprop="dateModified" datetime="2019-07-06T16:42:11+08:00">2019-07-06</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Ubuntu工作环境快速配置"><a href="#Ubuntu工作环境快速配置" class="headerlink" title="Ubuntu工作环境快速配置"></a>Ubuntu工作环境快速配置</h1><p>首先更新一下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br></pre></td></tr></table></figure>
+<h2 id="更换软件源"><a href="#更换软件源" class="headerlink" title="更换软件源"></a>更换软件源</h2><p>详情<a href="https://blog.csdn.net/JRRRJ/article/details/81082444" target="_blank" rel="noopener">https://blog.csdn.net/JRRRJ/article/details/81082444</a></p>
+<p>将阿里源添加到<strong>sources.list</strong>中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ xenial-security multiverse</span><br></pre></td></tr></table></figure>
+<p>保存退出，然后更新。</p>
+<h2 id="安装显卡驱动"><a href="#安装显卡驱动" class="headerlink" title="安装显卡驱动"></a>安装显卡驱动</h2><p>在「软件和更新」-「附加驱动」选项卡中进行选择</p>
+<h2 id="基础软件安装"><a href="#基础软件安装" class="headerlink" title="基础软件安装"></a>基础软件安装</h2><h3 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure>
+<h4 id="vim-个人配置"><a href="#vim-个人配置" class="headerlink" title="vim 个人配置"></a>vim 个人配置</h4><p>.vimrc (保存在个人百度网盘快速配置Ubuntu环境文件夹)</p>
+<h3 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a>搜狗输入法</h3><p><a href="https://blog.csdn.net/fx_yzjy101/article/details/80243710" target="_blank" rel="noopener">https://blog.csdn.net/fx_yzjy101/article/details/80243710</a></p>
+<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
+<h3 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h3><p><a href="https://blog.csdn.net/qq_15192373/article/details/81091278" target="_blank" rel="noopener">https://blog.csdn.net/qq_15192373/article/details/81091278</a></p>
+<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ipython3</span><br></pre></td></tr></table></figure>
+<h3 id="flask"><a href="#flask" class="headerlink" title="flask"></a>flask</h3><p>安装详情见<a href="http://docs.jinkan.org/docs/flask/" target="_blank" rel="noopener">flask官网</a></p>
+<h3 id="Typora-Markdown编辑"><a href="#Typora-Markdown编辑" class="headerlink" title="Typora(Markdown编辑)"></a>Typora(Markdown编辑)</h3><p>安装详情见<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a></p>
+<h3 id="Shutter-截图软件"><a href="#Shutter-截图软件" class="headerlink" title="Shutter(截图软件)"></a>Shutter(截图软件)</h3><p>详情见<a href="https://blog.csdn.net/qq_19339041/article/details/80058892" target="_blank" rel="noopener">https://blog.csdn.net/qq_19339041/article/details/80058892</a></p>
+<h3 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h3><p>先卸载LibreOffice</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge libreoffice*</span><br></pre></td></tr></table></figure>
+<p>下载安装访问<a href="http://www.wps.cn/product/wpslinux/" target="_blank" rel="noopener">WPS官网</a></p>
+<h3 id="MySQL-amp-amp-Redis"><a href="#MySQL-amp-amp-Redis" class="headerlink" title="MySQL &amp;&amp; Redis"></a>MySQL &amp;&amp; Redis</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install mysql-server</span><br><span class="line">sudo apt install redis-server</span><br></pre></td></tr></table></figure>
+<h3 id="Wechat"><a href="#Wechat" class="headerlink" title="Wechat"></a>Wechat</h3><p><a href="https://www.cnblogs.com/dotnetcrazy/p/9124658.html" target="_blank" rel="noopener">Ubuntu 18.04 安装微信（Linux通用）</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Redis设计与实现（笔记）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -726,6 +917,351 @@
 <hr>
 <p>后续深入学习再作补充     </p>
 
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/关于《python源码剖析》笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Utur">
+      <meta itemprop="description" content="木龟想做一个哈皮程序猿。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Utur的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/25/关于《python源码剖析》笔记/" class="post-title-link" itemprop="url">关于《python源码剖析》笔记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-02-25T00:00:00+08:00">2019-02-25</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-06 17:46:59" itemprop="dateModified" datetime="2019-07-06T17:46:59+08:00">2019-07-06</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近学习python，时不时会感叹这门语言的简洁和实用，不由得会好奇python的底层实现。偶然得知有《python源码剖析》这本书，便想从中窥视一二，囫囵吞枣一翻，虽谈不上洞彻肺腑，但着实获益不少。正所谓“好记性不如烂笔头”，故作此笔记。</p>
+<p>这里带着几个问题：</p>
+<ul>
+<li>python是用C实现的（虽然现在还有用JPython，Pypy），那么C是怎么实现python的面向对象的特性的呢？</li>
+<li>什么叫<em>“<strong>python里的东西都是对象</strong>“</em>，这个对象又是什么？</li>
+<li>python是门解释型语言，那么python是怎么执行代码的呢？</li>
+</ul>
+<p>(ps：《python源码剖析》里剖析的是python2.5版本，与目前最新的版本存在不少差异》）</p>
+<h2 id="Python的总体架构"><a href="#Python的总体架构" class="headerlink" title="Python的总体架构"></a>Python的总体架构</h2><p>但凡认识一个事物，总得先有一个感性的认识，才能进而深入了解。python也如此，先看看python的总体架构。</p>
+<p><img src="https://image.littlechao.top/20180924130852000006.jpg" alt="Architecture"></p>
+<p>内核模块、库、用户模块 + Interpreter = Python 。通过加载一些模块，库，然后对源代码进行编译，最后再执行编译得到的字节码 ，python便完成了一次运行。</p>
+<p>不难看出，python的核心便是他的解释器，而核心中的核心便是它的Code Evealuator（字节码执行器）。</p>
+<h2 id="Python对象"><a href="#Python对象" class="headerlink" title="Python对象"></a>Python对象</h2><p>对象是python中最核心的一个概念，在python的世界中，一切都是对象，一个整数是一个对象，一个字符串也是一个对象，更为奇妙的是，类型也是一种对象，整数类型是一个对象，字符串也是一个对象（这与我在C++，java中的认知有很大不同，之前的认知是：这是一个什么<em>类型</em>的对象）。也就是说，面向对象理论中的“类”和“对象”这两个概念在Python中都是通过Python内的对象来实现的。不得不说，这很美妙，也很让人深思。</p>
+<p><em>对象的本质</em></p>
+<blockquote>
+<p>在计算机中，一个对象实际上就是一片被分配的内存空间，这些内存可能是连续的，也可能是离散的，这都不重要，重要的是这片内存在更高的层次上可以作为一个整体来考虑，这个整体就是一个对象，在这片内存中，存储着一系列的数据以及可以对这些数据进行修改或读取操作的一系列代码。    </p>
+</blockquote>
+<p><em>在Python中，对象就是C中的结构体在堆上申请的一块内存</em>。为了确保对象能被正确的garbage-collected:<strong>对象是不能被静态初始化的，也不能在栈空间上生存</strong>（惟一的例外就是类型对象，Python中所有的内建的类型对象（如整数型对象，字符串类型对象）都是被静态初始化的。）；<strong>并且只能通过特殊的macros（宏）和方法来访问。</strong></p>
+<p>在Python中，一个对象一旦被创建了，那么它在内存中的大小和地址就是确定的了。这意味着那些需要容纳可变长度数据的对象只能在对象内维护一个指向一下指向一块可变大小的内存区域的指针。<strong>遵循这样的规则可以使通过指针维护对象的工作变得十分简单。</strong> <em>优秀的设计</em></p>
+<h3 id="对象机制的基石——PyObject"><a href="#对象机制的基石——PyObject" class="headerlink" title="对象机制的基石——PyObject"></a>对象机制的基石——PyObject</h3><p>可以说，PyObject是整个Python对象机制的核心。</p>
+<p><strong>python2.5</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[object.h]</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">object</span>&#123;</span></span><br><span class="line">	PyObject_HEAD</span><br><span class="line">&#125;PyObject;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PyObject_HEAD            \</span></span><br><span class="line">	_PyObject_HEAD_EXTRA         \</span><br><span class="line">	<span class="keyword">int</span> ob_refcent;              \</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">ob_type</span>  \</span></span><br></pre></td></tr></table></figure>
+<p><strong>python3.6.5</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">object</span>&#123;</span></span><br><span class="line">    Py_ssize_t ob_refcnt;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">ob_type</span>;</span>        </span><br><span class="line">&#125; PyObject;</span><br></pre></td></tr></table></figure>
+<p><em>整型变量ob_refcnt与Python的内存管理机制有关，它实现了Python基于引用技术的垃圾收集机制。</em></p>
+<p><em>而ob_type是一个指向_typeobject结构体的指针，实际上这个结构体对应着Python内部的一个特殊的对象，它用来指定一个对象类型的类型对象。</em></p>
+<p>再来看看可变对象PyVarObject的定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    Py_ssize_t ob_refcnt;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">typeobject</span> *<span class="title">ob_type</span>;</span></span><br><span class="line">    Py_ssize_t ob_size; <span class="comment">/* Number of items in variable part */</span></span><br><span class="line">&#125; PyVarObject</span><br></pre></td></tr></table></figure>
+<p>可以看出，PyVarObject实际上只是对PyObject的一个扩展而已。</p>
+<p>至此，可以明确看出，Python对象机制的核心非常简单：<strong>引用计数 + 类型信息</strong>。</p>
+<p>关于类型信息，看一段源码的注释：</p>
+<blockquote>
+<p>An object has a ‘type’ that determins what ir represents and what kind of data it contains. An ovject ‘type’ is fixed when it is created. Types themselves are represented as objects; an object contains a pointer to the corresponding type object. The type itself has type pointer pointing to the object represnting the type ‘type’, which contains a pointer to itself</p>
+</blockquote>
+<h3 id="对象里的特殊对象，类型对象——PyTypeObject。"><a href="#对象里的特殊对象，类型对象——PyTypeObject。" class="headerlink" title="对象里的特殊对象，类型对象——PyTypeObject。"></a>对象里的特殊对象，类型对象——PyTypeObject。</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> struct_typeobject &#123;</span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *tp_name; <span class="comment">/* For printing, in format "&lt;module&gt;.&lt;name&gt;" */</span></span><br><span class="line">    Py_ssize_t tp_basicsize, tp_itemsize; <span class="comment">/* For allocation */</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* Methods to implement standard operations */</span></span><br><span class="line">    </span><br><span class="line">    destructor tp_dealloc;</span><br><span class="line">    printfunc tp_print;</span><br><span class="line">    ......</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* More standard operations (here for binary compatibility) */</span></span><br><span class="line">    hashfunc tp_hash;</span><br><span class="line">    ternaryfunc tp_call;</span><br><span class="line">    ......   </span><br><span class="line">&#125; PyTypeObject;</span><br></pre></td></tr></table></figure>
+<p>在_typeobject的定义中包含了许多信息，主要可以分为4类：</p>
+<ul>
+<li>类型名，tp_name，主要是Python内部以及调试的时候使用。</li>
+<li>创建该类型对象时分配内存空间大小的信息，即tp_basecsize和tp_itemsize。</li>
+<li>与该类型对象相关联的操作信息（诸如tp_print这样的许多的函数指针）。</li>
+<li>类型的类型信息。</li>
+</ul>
+<p>在python3.6.5源码的object.h文件中有这么一段注释</p>
+<blockquote>
+<p>/<em> PyObject_HEAD defines the initial segment of every PyObject. </em>/</p>
+</blockquote>
+<p>换句话说，在Python内部，每一个对象都拥有相同的对象头部。这就使得在Python中，对对象的引用变得非常的统一，只需要用一个PyObject *指针就可以引用任意的一个对象。而不论该对象实际是一个什么对象。</p>
+<h3 id="Python对象的多态性"><a href="#Python对象的多态性" class="headerlink" title="Python对象的多态性"></a>Python对象的多态性</h3><p>到这里，Pyhton底层如何用C实现<em>多态</em>的已经跃然纸上了。</p>
+<p>通过PyObject和PyTypeObject，Pyhton利用C语言完成了C++所提供的对象的多态的特性。在Python创建一个对象，比如PyIntObejct对象时，会分配内存，进行初始化。然后Python内部用一个PyObject<em>变量来保存和维护这个对象。其他对象也于此类似，所以在Python内部各个函数之间传递的都是一种范型指针——PyObject </em>。这个指针所指的对象究竟是什么类型，只能从指针所指对象的ob_type域动态进行判断，而正是通过这个域，Python实现了多态机制。</p>
+<p>说了这么多，现在用图来捋一捋。毕竟，一图胜万言。</p>
+<p>​                                                                         <strong>各种Object之间的联系</strong></p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/Utur_PyObject.png" alt="Object">​       </p>
+<p>​                                                               <strong>通过PyInt_Type创建整数</strong></p>
+<p><img src="https://image.littlechao.top/20180927032505000012.jpg" alt="jiaohu"></p>
+<p>​                                                                  <strong>运行时整数对象及其类型之间的关系</strong>(对照上图)</p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/Utur_Integer.png" alt="Integer"></p>
+<h3 id="Python内对象分类"><a href="#Python内对象分类" class="headerlink" title="Python内对象分类"></a>Python内对象分类</h3><p>关于Python内对象的分类，这里提供几种角度，不保证正确性。</p>
+<h4 id="从概念上的角度"><a href="#从概念上的角度" class="headerlink" title="从概念上的角度"></a>从概念上的角度</h4><ul>
+<li>Fundamental对象：类型对象</li>
+<li>Numeric对象：数值对象</li>
+<li>Sequence 对象：容纳其他对象的序列集合对象</li>
+<li>Mapping 对象：类似于C++中map的关联对象</li>
+<li>Internal 对象：Python虚拟机在运行时内部使用的对象</li>
+</ul>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/object.png" alt="对象分类"></p>
+<h4 id="从内存上的角度"><a href="#从内存上的角度" class="headerlink" title="从内存上的角度"></a>从内存上的角度</h4><p><strong>定长对象</strong>:不包含可变长度数据的对象（es，整数对象）</p>
+<p><strong>变长对象</strong>:包含可变长度数据的对象（es，字符串对象）</p>
+<p><em>区别：</em>定长对象的不同对象占用的内存是一样的（es，1和100），而变长对象的不同对象占用的内存可能是不一样的。（es，”Python“和”Java“)</p>
+<p>实际上，在变长对象中，还可分为<em>可变对象</em>和<em>不可变对象</em>。可变对象维护的数据在对象在创建后还能再变化，比如一个list被创建后，可以向其中添加元素或删除元素，这些操作都会改变其维护的数据；而不可变对象所维护的数据在对象创建之后就不能再改变了，比如string和tuple。    </p>
+<p>到这里，对对象的结构性认识已经差不多了，接下来，就是各种对象在具体实现上一些差异化了。</p>
+<h3 id="Python内建对象"><a href="#Python内建对象" class="headerlink" title="Python内建对象"></a>Python内建对象</h3><p>在Python中，已经预先定义了一些类型对象，比如int类型、string类型、dict类型等</p>
+<h4 id="PyIntObject对象"><a href="#PyIntObject对象" class="headerlink" title="PyIntObject对象"></a>PyIntObject对象</h4><p>先看个图</p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/2018-09-28 21-36-35屏幕截图3.png" alt="PyIntObject"></p>
+<p>内置函数id()用来返回对象的身份(identity)，而这里的身份说白了就是该对象的内存地址。</p>
+<p>下面给出总结：</p>
+<ul>
+<li><strong>处于对Python性能和运行效率的考虑，对于频繁使用的小整数对象，Python采用了对象池技术。在小整数对象池中完全缓存了其PyIntObject对象，这意味着每一个对象池里的每一个PyIntObject对象都能够被任意的共享。</strong></li>
+<li>小整数的范围可以被用户通过源码修改，默认的是[-5, 257)</li>
+<li>对于其他整数，设计者们在时间与空间的两难选择上，作出的妥协是：Python运行环境提供一块内存空间（通用整数对象池），这些内存空间由这些大整数轮流使用。这样免去了不断地malloc之苦，又在一定程度上考虑了效率问题。</li>
+<li>对于通用整数对象池，Python通过定义一个PyIntBlock结构，在这个结构的基础上，实现了一个单向列表。</li>
+</ul>
+<h5 id="通用整数对象池的实现基础——PyIntBlock"><a href="#通用整数对象池的实现基础——PyIntBlock" class="headerlink" title="通用整数对象池的实现基础——PyIntBlock"></a>通用整数对象池的实现基础——PyIntBlock</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[intobject.c]</span><br><span class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> &#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> *<span class="title">next</span>;</span></span><br><span class="line">    PyIntObject object[N_INTOBJCETS];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">intblock</span> <span class="title">PyIntBlock</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> PyIntBlock *block_list = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">static</span> PyIntObject *free_list = <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+<p>PyIntBlock，顾名思义，就是一块保存了N_INTOBJECTS个PyIntobject对象的内存（block）。</p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/IntBlock.png" alt="PyIntBlock"></p>
+<p>这里存在一个隐患：两个PyIntBlock处于同一个链表当中，但是每一个PyIntBlock中至光重要的存放PyIntObject对象的objects却是分离的。 若真是这样，就意味着所有的内存只能使用一次，跟内存泄漏也就没什么区别了。</p>
+<p>Python的设计者当然不会允许这样的存在，所以才有了free，_list的存在。</p>
+<p>在一个PyIntObject对象被销毁的时候（tp_dealloc），不同PyIntBlock中空闲的内存块被链接free_list里了。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[intobject.c]</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">int_dealloc</span><span class="params">(PyIntObject *v)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (PyInt_CheckExact(v)) &#123;</span><br><span class="line">        v-&gt;ob_type = (struct _typeobject *)free_list;</span><br><span class="line">        free_list = v;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    	v-&gt;ob_type-&gt;tp_free(PyObjcet *)v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以真相如图：</p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/block.png" alt="free_list"></p>
+<p>但是，这里还隐藏着Python的整数对象系统实现中的一个惊天隐秘：当一个整数对象的引用计数变为0时，就会被Python回收，但是在int_dealloc中，只是将该内存重新加入自由内存链表中， 却不是向系统堆交还任何内存。那么，理论上，是可以利用这个漏洞将系统的内存全部吃光的。只要你定义足够多的大整数对象。</p>
+<h4 id="PythonStringObject对象"><a href="#PythonStringObject对象" class="headerlink" title="PythonStringObject对象"></a>PythonStringObject对象</h4><p>在Python中，PyStringObject是对字符串对象的实现。PyStringObejct是一个拥有可变长度内存的对象，这一点毋庸置疑。但同时，其又是一个不变对象。因为当创建了一个PyStringObject对象之后，该对象内部维护的字符串就不能再被改变了。这一点特性使得PyStringObject对象可作为dict的键值，但同时也使得一些字符串操作的效率大大降低，比如多个字符串的连接。</p>
+<p><strong>PythonStirngObejct</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[stringobejct.h]</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObejct_VAR_HEAD</span><br><span class="line">    <span class="keyword">long</span> ob_shash;</span><br><span class="line">    <span class="keyword">int</span> ob_sstate;</span><br><span class="line">    <span class="keyword">char</span> ob_sval[<span class="number">1</span>];</span><br><span class="line">&#125; PyStringObject;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ob_shash：缓存该对象的hash值，避免每一次都重新计算该字符串对象的hash值。初始值为-1</li>
+<li>ob_sstate：标记了该对象是否已经过intern机制的处理。</li>
+<li>ob_sval：实际上是作为一个字符指针指向一段内存，这段内存保存着这个字符串对象所维护的实际字符串，显然，这段内存不会只是一个字节。而这段内存的实际长度（字节），正是有ob_size来维护，这个机制是Python中所有变长对象的实现机制。</li>
+</ul>
+<h5 id="intern机制"><a href="#intern机制" class="headerlink" title="intern机制"></a>intern机制</h5><p>对PyStringObject对象做intern操作目的在于：在Python运行期间，系统中只有一个与特定字符串对应的PyStringObject对象。当判断两个PyStringObject对象是否相同，如果都被intern处理过了，只需简单地检查对应PyObject *是否相同即可。这个机制既节省了空间，又简化了PyStringObejct对象的比较。</p>
+<p><strong>Python会对简单的字符串进行intern，并将intern的结果放入对象缓存池中。</strong></p>
+<p><strong><em>简单的字符串：空串，字符，只包含字母或数字</em></strong></p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/string.png" alt="string"></p>
+<p><strong><em>总结：类似于小整数对象，Python会选择性地对一些字符串进行池化，以减少对象的数量和对内存的占用。</em></strong></p>
+<h5 id="PyStringObejct效率相关问题"><a href="#PyStringObejct效率相关问题" class="headerlink" title="PyStringObejct效率相关问题"></a>PyStringObejct效率相关问题</h5><p>一个严重影响python执行效率的问题——字符串连接”+”操作</p>
+<p>根源 ：PyStringObject对象是一个不可变对象，若要连接<strong>N</strong>个PyStringObject对象，那么必须进行N-1次的内存申请及内存搬运的工作。可想而知，这是多大的工作量，必将严重影响Python的执行效率。</p>
+<p>官方推荐的做法是通过利用join来对N个存在list或tuple的PyStringObejct对象进行连接操作，先统计一共有多少个PyStirngObejct对象，并统计这些对象所维护的字符串一共有多长，然后申请内存。这种做法只需要分配一次内存，执行效率将大大提高</p>
+<p>看下实际运行情况：</p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/time.png" alt="time">        </p>
+<p><em>可以看出在N较小的情况下，”+”操作效率比join还高</em>。</p>
+<p><strong>总结：”+”连接效率低是出现在字符串数目较多的情况，而在字符串数目较小的情况下，”+”比join执行效率还高。</strong></p>
+<h4 id="PyListObject"><a href="#PyListObject" class="headerlink" title="PyListObject"></a>PyListObject</h4><p>PyListObject对象是Python提供的对列表的抽象，它可以有效地支持对元素的插入，添加，删除等操作，在Python的列表中无一例外存放的都是PyObject *指针。很明显，PyListObject是一个变长对象，而且还是个可变对象。</p>
+<p>定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    PyObject **ob_item;</span><br><span class="line">    Py_ssize_t allocated</span><br><span class="line">&#125; PylistObject</span><br></pre></td></tr></table></figure>
+<ul>
+<li>**ob_item：指针指向元素列表所在的内存块的首地址</li>
+<li>allocated：维护了当前列表的可容纳的元素的总数</li>
+<li>ob_size：实际被使用的内存的数量</li>
+</ul>
+<p>对于一个PyListObject对象，存在以下关系：</p>
+<p><strong>0 &lt;= ob_size &lt;= allocated</strong></p>
+<p><strong>len(list) == ob_size</strong></p>
+<p><strong>ob_item == NULL 意味着 ob_size == allocated == 0</strong></p>
+<p>由此可以窥探Python对PyListObejct所采的内存管理策略和C++中vector采取的内存管理策略是一致的：<strong>总会申请一大块内存，而不是存了多少就申请对应大小的内存。</strong></p>
+<h5 id="PyListObject的创建"><a href="#PyListObject的创建" class="headerlink" title="PyListObject的创建"></a>PyListObject的创建</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">PyList_New(Py_ssize_t size)</span><br><span class="line">&#123;</span><br><span class="line">    PyListObject *op;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SHOW_ALLOC_COUNT</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> initialized = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (!initialized) &#123;</span><br><span class="line">        Py_AtExit(show_alloc);</span><br><span class="line">        initialized = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (size &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        PyErr_BadInternalCall();</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 为PyListObject对象申请空间</span></span><br><span class="line">     <span class="keyword">if</span> (numfree) &#123;</span><br><span class="line">        <span class="comment">// 缓冲池可用</span></span><br><span class="line">        numfree--;</span><br><span class="line">        op = free_list[numfree];</span><br><span class="line">        _Py_NewReference((PyObject *)op);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SHOW_ALLOC_COUNT		</span></span><br><span class="line">        count_reuse++;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 缓冲池不可用</span></span><br><span class="line">        op = PyObject_GC_New(PyListObject, &amp;PyList_Type);</span><br><span class="line">        <span class="keyword">if</span> (op == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> SHOW_ALLOC_COUNT</span></span><br><span class="line">        count_alloc++;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (size &lt;= <span class="number">0</span>)</span><br><span class="line">        op-&gt;ob_item = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        op-&gt;ob_item = (PyObject **) PyMem_Calloc(size, <span class="keyword">sizeof</span>(PyObject *));</span><br><span class="line">        <span class="keyword">if</span> (op-&gt;ob_item == <span class="literal">NULL</span>) &#123;</span><br><span class="line">            Py_DECREF(op);</span><br><span class="line">            <span class="keyword">return</span> PyErr_NoMemory();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Py_SIZE(op) = size;</span><br><span class="line">    op-&gt;allocated = size;</span><br><span class="line">    _PyObject_GC_TRACK(op);</span><br><span class="line">    <span class="keyword">return</span> (PyObject *) op;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从源码可以看出PyListObject对象的创建主要分两步：</p>
+<ul>
+<li>为PyListObject对象申请空间：<ol>
+<li>若缓冲池有可用对象，则使用这个可用对象</li>
+<li>缓冲池无可用对象，通过PyObject_GC_New在系统堆中申请内存。</li>
+</ol>
+</li>
+<li>为PyListObject对象中维护的元素列表申请空间</li>
+</ul>
+<p>PS:默认情况下，缓冲池free_lists中最多会维护80个PyListObject对象。</p>
+<h5 id="PyListObject对象缓冲池"><a href="#PyListObject对象缓冲池" class="headerlink" title="PyListObject对象缓冲池"></a>PyListObject对象缓冲池</h5><p>同PyIntObject类似，PyListObject也是在被销毁的过程中加入缓冲池。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[listobject.c]</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span></span><br><span class="line">list_dealloc(PyListObject *op)</span><br><span class="line">&#123;</span><br><span class="line">    Py_ssize_t i;</span><br><span class="line">    PyObject_GC_UnTrack(op);</span><br><span class="line">    Py_TRASHCAN_SAFE_BEGIN(op)</span><br><span class="line">    / :销毁PyListObject对象维护的元素列表</span><br><span class="line">    <span class="keyword">if</span> (op-&gt;ob_item != <span class="literal">NULL</span>) &#123; </span><br><span class="line">        i = Py_SIZE(op);</span><br><span class="line">        <span class="keyword">while</span> (--i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            Py_XDECREF(op-&gt;ob_item[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        PyMem_FREE(op-&gt;ob_item);</span><br><span class="line">    &#125;</span><br><span class="line">    / ：释放PyList自身</span><br><span class="line">    <span class="keyword">if</span> (numfree &lt; PyList_MAXFREELIST &amp;&amp; PyList_CheckExact(op))</span><br><span class="line">        free_list[numfree++] = op;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Py_TYPE(op)-&gt;tp_free((PyObject *)op);</span><br><span class="line">    Py_TRASHCAN_SAFE_END(op)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从源码可以看出，与创建相对应，销毁也主要分为两步：</p>
+<ul>
+<li>销毁PyListObject对象维护的元素列表，向系统堆归还内存，以时间换取空间</li>
+<li>释放PyListObject自身：<ol>
+<li>若缓冲池未满，则将该对象放入缓冲池，以备后用</li>
+<li>若满了，则调用自身的tp_free方法进行释放</li>
+</ol>
+</li>
+</ul>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/listcache.png" alt="list_cache"></p>
+<h4 id="PyDictObject对象"><a href="#PyDictObject对象" class="headerlink" title="PyDictObject对象"></a>PyDictObject对象</h4><h2 id="Python虚拟机"><a href="#Python虚拟机" class="headerlink" title="Python虚拟机"></a>Python虚拟机</h2><p>关于Python，有一种说法：“Python是一种解释性的语言”。其实这种说法是不准确的，因为Python程序的执行原理和Java程序、C#程序的执行原理都可以用两个词囊括——<strong>虚拟机、字节码。</strong>实际上，Python解释器在执行任何一个Python程序文件时，都先对Python源代码进行编译，编译生成一组Python的byte code（字节码），然后由虚拟机按照顺序执行字节码，从而完成对Python程序的执行动作。</p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/Pythonrun.png" alt="Python_run"></p>
+<h3 id="PyCodeObject对象和pyc文件"><a href="#PyCodeObject对象和pyc文件" class="headerlink" title="PyCodeObject对象和pyc文件"></a>PyCodeObject对象和pyc文件</h3><p>在编译过程中，包含在Python源代码中的<strong>静态信息</strong>都会被Python编译器收集起来，这些静态信息包括了<strong>字符串、常量值、字节码</strong>。在Python运行期间，<em>这些源文件提供的静态信息被存储在一个运行时的对象中——<strong>PyCodeObject</strong></em>。<em>当运行结束后，这个运行时对象所包含的信息被存储在一种文件中(当有import语句时）——<strong>pyc文件</strong></em></p>
+<p>Python源码中对PyCodeObject的声明：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    PyObject_HEAD</span><br><span class="line">    <span class="keyword">int</span> co_argcount;		<span class="comment">/* #arguments, except *args */</span></span><br><span class="line">    <span class="keyword">int</span> co_kwonlyargcount;	<span class="comment">/* #keyword only arguments */</span></span><br><span class="line">    <span class="keyword">int</span> co_nlocals;		<span class="comment">/* #local variables */</span></span><br><span class="line">    <span class="keyword">int</span> co_stacksize;		<span class="comment">/* #entries needed for evaluation stack */</span></span><br><span class="line">    <span class="keyword">int</span> co_flags;		<span class="comment">/* CO_..., see below */</span></span><br><span class="line">    <span class="keyword">int</span> co_firstlineno;   <span class="comment">/* first source line number */</span></span><br><span class="line">    PyObject *co_code;		<span class="comment">/* instruction opcodes */</span></span><br><span class="line">    PyObject *co_consts;	<span class="comment">/* list (constants used) */</span></span><br><span class="line">    PyObject *co_names;		<span class="comment">/* list of strings (names used) */</span></span><br><span class="line">    PyObject *co_varnames;	<span class="comment">/* tuple of strings (local variable names) */</span></span><br><span class="line">    PyObject *co_freevars;	<span class="comment">/* tuple of strings (free variable names) */</span></span><br><span class="line">    PyObject *co_cellvars;      <span class="comment">/* tuple of strings (cell variable names) */</span></span><br><span class="line">   </span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> *co_cell2arg; <span class="comment">/* Maps cell vars which are arguments. */</span></span><br><span class="line">    PyObject *co_filename;	<span class="comment">/* unicode (where it was loaded from) */</span></span><br><span class="line">    PyObject *co_name;		<span class="comment">/* unicode (name, for reference) */</span></span><br><span class="line">    PyObject *co_lnotab;	<span class="comment">/* string (encoding addr&lt;-&gt;lineno mapping) See</span></span><br><span class="line"><span class="comment">				   Objects/lnotab_notes.txt for details. */</span></span><br><span class="line">    <span class="keyword">void</span> *co_zombieframe;     <span class="comment">/* for optimization only (see frameobject.c) */</span></span><br><span class="line">    PyObject *co_weakreflist;   <span class="comment">/* to support weakrefs to code objects */</span></span><br><span class="line">    <span class="keyword">void</span> *co_extra;</span><br><span class="line">&#125; PyCodeObject;</span><br></pre></td></tr></table></figure>
+<p>Python编译器在Python源代码进行变异的时候，对于代码中的<em>Code Block</em>，会创建一个PyCodeObject对象与之对应。那么何为一个Code Block——当进入一个新名字空间，或者说作用域时，就是进入了一个新的Code Block。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[demo.py]</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">	def B():</span><br><span class="line">		pass</span><br><span class="line"></span><br><span class="line">def C():</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">C()</span><br></pre></td></tr></table></figure>
+<p>对于demo.py，根据之前的说法就要产生4个PyCodeObject，但是Python运行环境只会对一个PyCodeObject对象调用PyMarshal_WriteObjectToFile操作。很显然，这里面存在一种嵌套关系，仔细观察，在demo.py源文件中作用域呈现出一种嵌套结构，而这种结构正是PyCodeObject对象之间的结构。</p>
+<p><img src="/home/utur/图片/picture_for_note/Python源码分析/ pycode.png" alt="PythonCode"></p>
+<h3 id="Python虚拟机框架"><a href="#Python虚拟机框架" class="headerlink" title="Python虚拟机框架"></a>Python虚拟机框架</h3><p>Python的虚拟机是Python的核心，在.py源代码被编译为字节码指令序列后，Python虚拟机机开始接手整个工作。Python的虚拟机从编译得到的PyCodeObject对象中一次读入每一条字节码指令，并在<em>当前的上下文环境</em>中执行字节码指令。</p>
+<p>Python的虚拟机实际上实在模拟操作系统运行可执行文件的过程</p>
+<p><img src alt="可执行文件的运行时栈"></p>
+<p>我们知道PyCodeObject对象中包含了最关键的的字节码指令，以及关于程序的所有静态信息。然而有一点，是PyCodeObject对象没有包含，也不可能包含的。那就是关于程序运行时的动态信息——<strong>执行环境</strong></p>
+<p>什么是执行环境，参考下面这个例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[environment.py]</span><br><span class="line">i = <span class="string">'Python'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">	i = <span class="number">999</span></span><br><span class="line">	print(i) <span class="comment"># 1</span></span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">print(i) <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+<p>在上面代码中的1和2两个地方，都是print(i)，它们所对应的字节码指令肯定是相同，但是它们的执行效果却是不同的。这样的结果正是在执行环境的影响下产生的。在执行#1处的print时，执行环境中，i的值为999；而在#2处，执行环境中的i的值为“Python”。<em>像这种同样的符号在程序运行的不同时刻对应不同的值，甚至不同类型的情况</em>，必须在运行时动态地被捕获和维护，而不可能在PyCodeObject对象中被静态的存储的。</p>
+<p>仔细观察，这里的执行环境与之前提到的名字空间似乎是用一个东西，但实际上，名字空间仅仅是执行环境的一部分，除了名字空间，在执行环境中，还包含了其他的一些信息。</p>
+<p><em>所以在Python执行的时候，虚拟机上面对的并不是PyCodeObject对象，而是另一个对象——<strong>PyFrameObject</strong>，也就是所谓的执行环境，是Pyhton对x86平台上栈帧的模拟。</em></p>
+<h5 id="PyFrameObject对象"><a href="#PyFrameObject对象" class="headerlink" title="PyFrameObject对象"></a>PyFrameObject对象</h5><p>对于Python而言，PyFrameObject对象不仅仅是一个x86机器上看到的那个简简单单的栈帧，它实际上还包含了其他更多的信息。</p>
+<p>Python源码中对PyFrameObject的定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[frameobject.h]</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">frame</span> &#123;</span></span><br><span class="line">    PyObject_VAR_HEAD</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">frame</span> *<span class="title">f_back</span>;</span>      <span class="comment">/* previous frame, or NULL */</span></span><br><span class="line">    PyCodeObject *f_code;       <span class="comment">/* code segment */</span></span><br><span class="line">    PyObject *f_builtins;       <span class="comment">/* builtin symbol table (PyDictObject) */</span></span><br><span class="line">    PyObject *f_globals;        <span class="comment">/* global symbol table (PyDictObject) */</span></span><br><span class="line">    PyObject *f_locals;         <span class="comment">/* local symbol table (any mapping) */</span></span><br><span class="line">    PyObject **f_valuestack;    <span class="comment">/* points after the last local */</span></span><br><span class="line"></span><br><span class="line">    PyObject **f_stacktop;</span><br><span class="line">    PyObject *f_trace;          <span class="comment">/* Trace function */</span></span><br><span class="line"></span><br><span class="line">    PyObject *f_exc_type, *f_exc_value, *f_exc_traceback;</span><br><span class="line">    <span class="comment">/* Borrowed reference to a generator, or NULL */</span></span><br><span class="line">    PyObject *f_gen;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> f_lasti;                <span class="comment">/* Last instruction if called */</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> f_lineno;               <span class="comment">/* Current line number */</span></span><br><span class="line">    <span class="keyword">int</span> f_iblock;               <span class="comment">/* index in f_blockstack */</span></span><br><span class="line">    <span class="keyword">char</span> f_executing;           <span class="comment">/* whether the frame is still executing */</span></span><br><span class="line">    PyTryBlock f_blockstack[CO_MAXBLOCKS]; <span class="comment">/* for try and loop blocks */</span></span><br><span class="line">    PyObject *f_localsplus[<span class="number">1</span>];  <span class="comment">/* locals+stack, dynamically sized */</span></span><br><span class="line">&#125; PyFrameObject;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>f_back: 在Python实际的执行中，会产生很多PyFrameObject对象，而这些对象会被链接起来，形成一条执行环境链条。正是对x86机器上栈帧间关系的模拟</li>
+<li>f_code: 存放的是一个待执行的PyCodeObejct对象</li>
+<li>f_builtins: builtin名字空间</li>
+<li>f_globals: global名字空间</li>
+<li>f_locals: local名字空间</li>
+</ul>
+<h5 id="名字、作用域、名字空间"><a href="#名字、作用域、名字空间" class="headerlink" title="名字、作用域、名字空间"></a>名字、作用域、名字空间</h5><h3 id="Python虚拟机中的函数机制"><a href="#Python虚拟机中的函数机制" class="headerlink" title="Python虚拟机中的函数机制"></a>Python虚拟机中的函数机制</h3><h4 id="PyFunctionObject对象"><a href="#PyFunctionObject对象" class="headerlink" title="PyFunctionObject对象"></a>PyFunctionObject对象</h4><h4 id="嵌套函数、闭包与decorater"><a href="#嵌套函数、闭包与decorater" class="headerlink" title="嵌套函数、闭包与decorater"></a>嵌套函数、闭包与decorater</h4><h3 id="Python虚拟机中的类机制"><a href="#Python虚拟机中的类机制" class="headerlink" title="Python虚拟机中的类机制"></a>Python虚拟机中的类机制</h3><h2 id="Python的多线程机制"><a href="#Python的多线程机制" class="headerlink" title="Python的多线程机制"></a>Python的多线程机制</h2><h3 id="GIL与线程调度"><a href="#GIL与线程调度" class="headerlink" title="GIL与线程调度"></a>GIL与线程调度</h3><h3 id="Python线程的调度"><a href="#Python线程的调度" class="headerlink" title="Python线程的调度"></a>Python线程的调度</h3><h3 id="Python线程的用户级互斥与同步"><a href="#Python线程的用户级互斥与同步" class="headerlink" title="Python线程的用户级互斥与同步"></a>Python线程的用户级互斥与同步</h3><h2 id="Python的内存管理"><a href="#Python的内存管理" class="headerlink" title="Python的内存管理"></a>Python的内存管理</h2><h3 id="内存管理架构"><a href="#内存管理架构" class="headerlink" title="内存管理架构"></a>内存管理架构</h3><h3 id="小块空间的内存池"><a href="#小块空间的内存池" class="headerlink" title="小块空间的内存池"></a>小块空间的内存池</h3><h3 id="循环引用的垃圾收集"><a href="#循环引用的垃圾收集" class="headerlink" title="循环引用的垃圾收集"></a>循环引用的垃圾收集</h3><h3 id="Python中的垃圾收集"><a href="#Python中的垃圾收集" class="headerlink" title="Python中的垃圾收集"></a>Python中的垃圾收集</h3><h2 id><a href="#" class="headerlink" title=" "></a> </h2>
           
         
       
@@ -1915,1113 +2451,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/编程范式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Utur">
-      <meta itemprop="description" content="木龟想做一个哈皮程序猿。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Utur的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/25/编程范式/" class="post-title-link" itemprop="url">编程范式</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-02-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-02-25T00:00:00+08:00">2019-02-25</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-06 17:39:05" itemprop="dateModified" datetime="2019-07-06T17:39:05+08:00">2019-07-06</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/编程/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>编程范式的英语是 programming paradigm，范即模范之意，范式即模式、方法，是一类典型的编程风格，是指从事软件工程的一类典型的风格。</p>
-<p>编程语言发展到今天，出现了好多不同的代码编写方式，<strong><em>但不同的方式解决的都是同一个问题，那就是如何写出更为通用、更具可重用性的代码或模块</em></strong>。</p>
-<p>下面给一张表格说明以下世界上四大编程范式的类别，它们的特性和主要的编程语言。</p>
-<p><img src="/home/utur/图片/picture_for_note/编程范式/programming paradigm.png" alt="programming paradigm"></p>
-<h2 id="泛型编程"><a href="#泛型编程" class="headerlink" title="泛型编程"></a>泛型编程</h2><p>为了讲清楚这个问题，需要从C语言开始讲起。因为C语言历史悠久，而几乎现在看到的所有编程语言都是以C语言为基础来拓展的，不管是C++、Java、C#、Go、Python、PHP、JavaScript，还会Shell。</p>
-<p>自C语言问世40多年来，其影响了太多太多的编程语言，到现在还一直被广泛使用，不得不佩服它的生命力。但是，我们也要清楚地直到，大多数C Like编程语言其实都是在改善C语言带来的问题。</p>
-<p>C语言特性：</p>
-<ol>
-<li>C语言是一个静态弱类型语言，在使用变量时需要声明变量类型，但是类型间可以有隐式转换。</li>
-<li>不同的变量类型可以用结构体（struct）组合在一起，以此来生命新的数据类型。</li>
-<li>C语言可以用typedef关键字来定义类型的别名，以此来达到变量类型的抽象。</li>
-<li>C语言是一个结构化程序设计、具有变量作用域以及递归功能的过程式语言。</li>
-<li>C语言传递参数一般是以值传递，也可以传递指针。</li>
-<li>用过指针，C语言可以容易地对内存进行低级控制，然而这引入了非常大的贬称复杂度。</li>
-<li>编译预处理让C语言的编译更具有弹性，比如跨平台。</li>
-</ol>
-<p>C语言的这些特性，可以让程序员在微观层面写出非常惊喜和精确的编程操作,让程序员可以在底层和系统细节上非常自由、灵活和精准地控制代码。</p>
-<p>然而，在代码组织和功能编程上，C语言的上述特性，却不那么美妙。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>* x, <span class="keyword">int</span>* y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = *x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>数据类型与现实世界类比（后续补充）</li>
-</ul>
-<p>可以看到，无论是传统世界，还是编程世界，我们都在干一件事情——<strong>那就是通过使用一种更为通用的方式，用另外的话说就是抽象和隔离，让复杂的“世界”变得简单一些。</strong>（好好琢磨这句话)</p>
-<p>要做到抽象，对于C语言这样的类型来说，首当其冲的就是抽象类型（这是个动词），这就是所谓的——泛型编程。</p>
-<p>虽然对于C语言来说，类型可以转换，编译器会使用一切方式来做类型转换，这让相近的类型可以做到一点点的泛型，但这样的类型转换会出很多问题。</p>
-<h3 id="C语言的泛型"><a href="#C语言的泛型" class="headerlink" title="C语言的泛型"></a>C语言的泛型</h3><p>C语言的类型泛型基本上来说就是使用void *关键字或是使用宏定义。</p>
-<p><strong>void *泛型版本的swap函数</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">void</span>* x, <span class="keyword">void</span>* y, <span class="keyword">size_t</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">char</span> tmp[size];</span><br><span class="line">     <span class="built_in">memcpy</span>(tmp, y, size);</span><br><span class="line">     <span class="built_in">memcpy</span>(y, x, size);</span><br><span class="line">     <span class="built_in">memcpy</span>(x, tmp, size);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个实现方式有三个重点：</p>
-<ul>
-<li><strong>函数接口中增加了一个size参数。</strong>使用了void *后，类型被“抽象”掉了，编译器不能通过类型得到类型的尺寸了，所以，需要人为地加上一个类型长度的标识。</li>
-<li><strong>函数的实现中使用了memcpy()函数。</strong>因为类型被“抽象”掉了，所以不能用赋值表达式了，很有可能传进来的参数类型还是一个结构体。因此，为了要交换这些负责类型的值，只能使用内存复制的方法。</li>
-<li><strong>函数的实现中使用了一个temp[size]数组。</strong>这就是交换数据时需要用的buffer，用buffer来做临时的空间存储。</li>
-</ul>
-<p><em>新增的size参数，使用memcpy内存拷贝以及一个buffer，这增加了编程的复杂度。这就是C语言的类型抽象所带来的复杂度的提升。</em></p>
-<p>除了使用void *来做泛型，在C语言中，还可以用宏定义来做泛型。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> swap(x, y, size) &#123;\</span></span><br><span class="line">	<span class="keyword">char</span> temp[size]; \</span><br><span class="line">	<span class="built_in">memcpy</span>(temp, &amp;y, size); \</span><br><span class="line">	<span class="built_in">memcpy</span>(&amp;y,   &amp;x, size); \</span><br><span class="line">	<span class="built_in">memcpy</span>(&amp;x, temp, size); \</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用宏带来的问题就是编译器做字符串替换，因为宏是做字符串替换的，所以会导致代码膨胀，导致编译出的执行文件比较大。</p>
-<p>除此之外，还有一个最大的问题就是<strong>有可能会有重复执行</strong>的问题。如：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(foo(), bar())  （foo()&gt;bar() ? foo() : bar()）</span></span><br></pre></td></tr></table></figure>
-<p>本意是比较foo() 和 bar()函数的返回值，然而，经过宏替换后，foo()和bar()会被调用两次，这回带来很多问题。</p>
-<p>另外，这种“泛型”太过宽松，完全不做类型检查， 就是在内存上对拷，直接操作内存，是比较危险的。</p>
-<p>C语言的这种泛型，让我们根本没有办法检查传入的参数size，导致我们只能增加接口复杂度，加入一个size参数，然后把这个问题抛给调用者了。</p>
-<h3 id="一个更为复杂的泛型示例-Search函数"><a href="#一个更为复杂的泛型示例-Search函数" class="headerlink" title="一个更为复杂的泛型示例-Search函数"></a>一个更为复杂的泛型示例-Search函数</h3><p>写一个search函数，传入一个int数组，搜索target，搜到返回数组下标，搜不到返回-1</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>* a, <span class="keyword">size_t</span> size, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (a[i] == target) &#123;</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>泛型化：</p>
-<ol>
-<li>需要在函数接口上增及挨个element size，也就是数组里每个元素的size。这样遍历时，可以通过这个size正确地移动指针到下一个数组元素。</li>
-<li>加个cmpFn。因为不同的数据类型的比较的实现不一样，所以，必须要自定义一个比较函数。</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">void</span>* a, <span class="keyword">size_t</span> size, <span class="keyword">void</span>* target, </span></span></span><br><span class="line"><span class="function"><span class="params">	<span class="keyword">size_t</span> elem_size, <span class="keyword">int</span>(*cmpFn)(<span class="keyword">void</span>*, <span class="keyword">void</span>*) )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++) &#123;</span><br><span class="line">		<span class="comment">// why not use memcmp()</span></span><br><span class="line">		<span class="comment">// use unsigned char * to calculate the address</span></span><br><span class="line">		<span class="keyword">if</span> ( cmpFn ((<span class="keyword">unsigned</span> <span class="keyword">char</span> *)a + elem_size * i, target) == <span class="number">0</span> ) &#123;</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>虽说看上去还行，但是，上面的这个search函数只能用于数组这样的顺序型的数据容器（数据结构）。如果这个search函数能支持一些非顺序型的数据容器，比如：堆、栈、哈希表、树、图。那么C语言来干基本上干不下去。对于像search（）这样的算法来说，数据类型的自适应问题就已经把事情搞得很复杂了。然而，数据结构的自适应就会把这个事的复杂度搞得上几个数量级。</p>
-<p><strong>小结</strong></p>
-<p>如果说，程序 = 算法 + 数据 ，那么C语言会有这么几个问题。</p>
-<ol>
-<li>一个通用的算法，需要对所处理的数据的数据类型进行适配。但在适配数据类型的过程中，C语言只能使用void *或宏替换的方式，这两种方式导致了类型过于宽松，并带来很多其他问题。</li>
-<li>适配数据类型，需要C语言在泛型中加入一个类型的size。识别不了被泛型后的数据类型，而C语言没有运行时的类型识别，所以只能将这个工作抛给调用泛型算法的程序员来做。</li>
-<li>算法其实实在操作数据结构，而数据则是放到数据结构中的。所以，真正的泛型除了适配数据类型外，还要适配数据结构。最后这个事情导致泛型算法的复杂度急剧上升。比如容器内存的分配和释放、对象之间的复制。</li>
-</ol>
-<p>总结来说，C语言设计目标是提供一种能以简易的方式编译、处理底层内存、产生少量的机器码以及不需要任何运行环境支持便能运行的编程语言。C语言也很适合搭配汇编语言来使用。</p>
-<p>C语言把非常底层的控制权交给了程序员，它设计的理念是：</p>
-<ul>
-<li>相信程序员；</li>
-<li>不会阻止程序员做任何底层的事；</li>
-<li>保持语言的最小和最箭的特性；</li>
-<li>保证C语言的最快运行速度，哪怕牺牲移植性。</li>
-</ul>
-<p>从某种角度上来说，C语言的伟大之处在于——使用C语言的程序员在高级语言的特性之上还能简单地做任何底层上的微观控制。这是C语言的强大和优雅之处，也有人说，C语言是高级语言中的汇编语言。</p>
-<p>不过，这只是在针对底层指令控制和过程式的编程方式。而对于更高阶更为抽象的编程模型来说，C语言这种基于过程和底层的初衷设计方式就会称为它的短板。因为，在编程世界中，更多的编程工作是解决业务上的问题，而不是计算机的问题。所以，我们需要更为贴近业务更为抽象的语言。</p>
-<p>编程范式其实就是程序的指导思想，它代表了这门语言的设计方向，我们并不能说哪种范式更为超前，只能说各有千秋。</p>
-<p>比如C语言就是过程是的编程语言，像C语言这样的过程式编程语言优点是底层灵活而且高j效，特别适合开发运行较快且对系统资源利用率要求较高的程序，但在上述的问题上它在后来也没有试图去解决，因为编程范式的选择基本已经决定了它的”命运“。</p>
-<hr>
-<h3 id="C-语言"><a href="#C-语言" class="headerlink" title="C++语言"></a>C++语言</h3><p>作为一门高级语言，C语言绝对是编程语言历史发展中的一个重要里程碑，但随着认知的升级，面向过程的C语言已经无法满足更高层次的编程需要。于是，C++出现了。它既可以全面兼容C语言，又巧妙揉和了一些面向对象的编程理念。</p>
-<p>从语言角度来说，实际上早期C++的许多工作是对C的强化和净化，并把完全兼容C作为强制性要求（这也是C++复杂晦涩的原因，这点java就干得比C++彻底得多）。</p>
-<p>C++很大程度就是用来解决C语言中的各种问题和各种不方便的。比如：</p>
-<ul>
-<li>用引用来解决指针的问题</li>
-<li>用namespace来解决名字空间冲突的问题</li>
-<li>通过try-catch来解决检查返回值编程的问题</li>
-<li>用class来解决对象的创建、复制、销毁的问题，从而可以达到在结构体嵌套时可以深度复制的内存安全问题。</li>
-<li>通过重载操作符来达到操作上的泛型。</li>
-<li>通过模板template和虚函数的多态以及运行时识别来达到更高层次的泛型和多态</li>
-<li>用RALL、智能指针的方式，解决了C语言中因为需要释放资源而出现的那些非常ugly也很容易出错的代码的问题</li>
-<li>用STL解决了C语言中算法和数据结构中的N多种坑。</li>
-</ul>
-<h3 id="C-泛型编程"><a href="#C-泛型编程" class="headerlink" title="C++泛型编程"></a>C++泛型编程</h3><p>C++是支持编程范式最多的一门语言。    </p>
-<p>理想情况下，算法应是和数据结构和类型无关的，各种特殊的数据类型理应做好自己分内的工作。算法只关心一个标准的实现。<strong>而对于泛型的抽象，我们需要回答的问题是，如果我们的数据类型符合通用算法，那么对数据类型的最小需求又是什么呢？</strong></p>
-<p>C++是如何有效解决程序泛型问题的，有三点是关键：</p>
-<ul>
-<li><p><strong>第一，它通过类的方式来解决</strong></p>
-<ul>
-<li>类里面会有构造函数、析构函数表示这个类的分配和释放</li>
-<li>还有它的拷贝构造函数，表示了对内存的复制</li>
-<li>重载操作符</li>
-</ul>
-<p>这样可以让一个用户自定义的数据类型和内建的那些数据类型就很一致了。</p>
-</li>
-<li><p><strong>第二，通过模板达到类型和算法的妥协</strong></p>
-<ul>
-<li>模板有点像DSL，模板的特化会根据使用者的类型在编译时期生成那个模板的代码。</li>
-<li>模板可以通过一个虚拟类型来做类型绑定，这样不会导致类型转换的问题。</li>
-</ul>
-<p>模板很好地取代了C时代宏定义带来的问题</p>
-</li>
-<li><p><strong>第三，通过虚函数和运行时类型识别</strong></p>
-<ul>
-<li>虚函数带来的多态在语义上可以支持”同一类”的类型泛型</li>
-<li>运行时类型识别技术可以做到在泛型时对具体类型的特殊处理</li>
-</ul>
-<p>这样一来，就可以写出基于抽象接口的泛型。</p>
-</li>
-</ul>
-<h3 id="C-泛型编程示例-Search函数"><a href="#C-泛型编程示例-Search函数" class="headerlink" title="C++泛型编程示例-Search函数"></a>C++泛型编程示例-Search函数</h3><p>就像C中的search()函数，只能适用于顺序性的数据结构，并不适用于非顺序型的数据结构。所以，如果找不到一个泛型的数据结构的操作方式（如遍历、查找、增加、删除、修改等），那么，任何的算法或是程序都不可能做到真正意义上的泛型。</p>
-<p>除了“遍历操作之外”，还有search函数的返回值也应该做得泛型和通用一些。如果找到，返回找到的这个元素的一个指针（地址）会更靠谱一些。</p>
-<p>所以，为了解决泛型的问题，需要动用以下几个C++的技术。</p>
-<ol>
-<li>使用模板技术来抽象类型，这样可以写出类型无关的数据结构（数据容器）。</li>
-<li>使用一个迭代器来遍历或是操作数据结构内的元素。</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Iter&gt;</span><br><span class="line"><span class="function">Iter <span class="title">search</span><span class="params">(Iter pStart, Iter pEnd, T target)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(Iter p = pStart; p != pEnd; p++) &#123;</span><br><span class="line">		<span class="keyword">if</span> ( *p == target ) </span><br><span class="line">			<span class="keyword">return</span> p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在C++的泛型版本中，可以看到：</p>
-<ul>
-<li>使用typename T抽象了数据结构中存储数据的类型</li>
-<li>使用typename Iter，这是不同的数据结构需要自己实现的”迭代器“，这样也就抽象掉了不同类型的数据结构</li>
-<li>然后，对数据结构的遍历使用了Iter中的++方法，这是数据容器需要重载的操作符，这样通过操作符重载也就泛型掉了遍历</li>
-<li>在函数的入参上使用了pStart和pEnd来表示遍历的起止。</li>
-<li>使用<em>Iter来取得这个”指针“的内容。这也是通过重载 </em>取值操作符来达到的泛型</li>
-</ul>
-<p>所谓的Iter，在实际代码中，就是像vector<int>::iterator或map&lt;int, string&gt;::iterator这样得到东西。这是由相应的数据容器来实现和提供的。</int></p>
-<h3 id="C-泛型编程的重要技术-迭代器"><a href="#C-泛型编程的重要技术-迭代器" class="headerlink" title="C++泛型编程的重要技术 - 迭代器"></a>C++泛型编程的重要技术 - 迭代器</h3><p>这里，先看以下sum()函数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Iter&gt;</span><br><span class="line"><span class="function">T <span class="title">sum</span><span class="params">(Iter pStart, Iter pEnd)</span> </span>&#123;</span><br><span class="line">	T result = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(Iter p=pStart; p!=pEnd; p++) &#123;</span><br><span class="line">		result += *p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以上代 码是有问题的。代码中最大的问题就是 T result = 0;这条语句：</p>
-<ul>
-<li>0假设了类型是int</li>
-<li>T 假设了Iter中出来的类型是T</li>
-</ul>
-<p>我们知道Iter在实际调用者那会是一个具体的像vertor<int>::iterator这样的东西。在这个声明中，int已经被传入Iter中。所以，定义result的T应该可以从Iter中来。这样就可以保证类型的一样的，而且不会有被转型的问题。</int></p>
-<p>所以，需要实现一个”迭代器”，以下为一个“精简版”的迭代器：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">container</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">iterator</span> &#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="keyword">typedef</span> iterator self_type;</span><br><span class="line">		<span class="keyword">typedef</span> T   value_type;</span><br><span class="line">		<span class="keyword">typedef</span> T*  pointer;</span><br><span class="line">		<span class="keyword">typedef</span> T&amp; 	reference;</span><br><span class="line"></span><br><span class="line">		reference <span class="keyword">operator</span>*();</span><br><span class="line">		pointer <span class="keyword">operator</span>-&gt;();</span><br><span class="line">		<span class="keyword">bool</span> <span class="keyword">operator</span>==(<span class="keyword">const</span> self_type&amp; rhs)；</span><br><span class="line">		<span class="keyword">bool</span> <span class="keyword">operator</span>!=(<span class="keyword">const</span> self_type&amp; rhs)；</span><br><span class="line">		self_type <span class="keyword">operator</span>++() &#123; self_type i = *<span class="keyword">this</span>; ptr_++; <span class="keyword">return</span> i; &#125;</span><br><span class="line">		self_type <span class="keyword">operator</span>++(<span class="keyword">int</span> junk) &#123; ptr_++; <span class="keyword">return</span> *<span class="keyword">this</span>; &#125;</span><br><span class="line">		...</span><br><span class="line">		...</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		pointer _ptr;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="function">iterator <span class="title">begin</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function">iterator <span class="title">end</span><span class="params">()</span></span>;</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>有了这个迭代器，还要解决 T result = 0 后面这个 0 的问题。这个算法没办法搞定，最好由用户传入。于是出现了下面最终泛型的 sum() 函数。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">Iter</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">typename</span> <span class="title">Iter</span>:</span>:value_type</span><br><span class="line">sum(Iter start, Iter end, T init) &#123;</span><br><span class="line">	<span class="keyword">typename</span> Iter::value_type result = init;</span><br><span class="line">	<span class="keyword">while</span> (start != end) &#123;</span><br><span class="line">		result = result + *start;</span><br><span class="line">		start++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>typename Iter::value_type result = init 这条语句是关键。</strong>它解决了所有的问题。</p>
-<h3 id="更为复杂的需求——需要更多的抽象"><a href="#更为复杂的需求——需要更多的抽象" class="headerlink" title="更为复杂的需求——需要更多的抽象"></a>更为复杂的需求——需要更多的抽象</h3><p>还能不能做到更为泛型呢。我门可能还会有别的需求：求平均值average，最小值min，求中位数mean等等。然而，我们会发现，算法写出来基本上是一样，只是其中的“累加”操作变成了另外一个操作而已。那么面对这么多的需求，我们如何解决呢？</p>
-<p>要解决这个问题，我们需要明确：这个算法只管遍历，具体要干什么，那是业务逻辑，由外面的调用方来定义就好了，和算法无关。这样一来，代码的重用度就更高了。</p>
-<p>因此，我们需要更高维度的抽象，这个版本不再叫sum了，这个版本应该是reduce——用于把一个数组reduce成一个值。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">Iter</span>, <span class="title">class</span> <span class="title">T</span>, <span class="title">class</span> <span class="title">Op</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">T</span> <span class="title">reduce</span> (<span class="title">Iter</span> <span class="title">start</span>, <span class="title">Iter</span> <span class="title">end</span>, <span class="title">T</span> <span class="title">init</span>, <span class="title">Op</span> <span class="title">op</span>) &#123;</span></span><br><span class="line">	T result = init;</span><br><span class="line">	<span class="keyword">while</span> ( start != end ) &#123;</span><br><span class="line">		result = op( result, *start );</span><br><span class="line">		start++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用示例</span></span><br><span class="line"><span class="keyword">double</span> sum_salaries = </span><br><span class="line">  reduce( staff.begin(), staff.end(), <span class="number">0.0</span>,		  </span><br><span class="line">		    &#123;<span class="keyword">return</span> s + e.salary;&#125;  );</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> max_salary =</span><br><span class="line">  reduce( staff.begin(), staff.end(), <span class="number">0.0</span>,</span><br><span class="line">		    &#123;<span class="keyword">return</span> s &gt; e.salary? s: e.salary; &#125; );</span><br></pre></td></tr></table></figure>
-<p>上面的代码中，需要传入一个函数。在STL中，它是个函数对象，result不像前面那样去加，而是把整个迭代器值给你一个operation，然后由它来做。可以很清楚地看到，reduce这个函数更通用了。具体要干什么样的事情？放在匿名函数里，它会定义如何做，算法本身只做一个reduce。</p>
-<p>在C++STL中，与这个reduce函数对应的函数名叫accumulate()。</p>
-<hr>
-<h3 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h3><p>在计算机科学中，类型系统用于定义如何将编程语言中的数值和表达式归类为许多不同的类型，以及如何操作这些类型，还有这些类型如何互相作用。类型可以确认一个值或者一组具有特定的意义和目的。</p>
-<p>一般来说，编程语言还有两种类型，一种是内建类型，如int、float和char等，一种是抽象类型，如struct、class和function等。抽象类型在程序运行中，可能不表示为值。类型系统在各种语言之间有非常大的不同也许，最主要的差异在于编译时期的语法，以及运行时期的操作实现方式。</p>
-<p>程序语言的类型系统主要提供如下的功能：</p>
-<ul>
-<li><strong>程序语言的安全性</strong>。使用类型可以让编译器侦测一些代码的错误。强类型语言提供更多的安全性，但是并不能保证绝对的安全。</li>
-<li><strong>利于编译器的优化</strong>。静态类型语言的类型生命，可以让编译器明确地知道程序员的意图。因此，编译器就可以利用这一信息做很多代码优化工作。</li>
-<li><strong>代码的可读性。</strong>有类型的编程语言，可以让代码更易读和更易维护。代码的语义也更清楚，代码模块的接口（如函数）也更丰富和清楚。</li>
-<li><strong>抽象化</strong>。类型允许程序设计者对程序以较高层次的方式思考，而不是烦人的低层次实现。</li>
-</ul>
-<p>但是，正如前面所讨论的，<strong>类型带来的问题就是作用于不同类型的代码，虽然长得非常相似，但是由于类型的问题需要根据不同版本写出不同的算法，如果要做到泛型，就需要涉及比较底层的玩法。</strong></p>
-<p>对此，这个世界出现了两类语言，一类是<strong>静态类型语言</strong>，如C、C++、Java，一类是<strong>动态类型语言</strong>，如Python、PHP、JavaScript等。</p>
-<p>看一段动态类型语言的代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">5</span></span><br><span class="line">x = <span class="string">"hello"</span></span><br></pre></td></tr></table></figure>
-<p>如果在静态类型的语言中写出这样的代码，那么就会在编译器出错。而在动态类型的语言中，会以类型标记维持程序所有数值的“标记”，并在运算任何数值之前检查标记。所以，一个变量的类型是由运行时的解释器来动态标记的，这样就可以动态地和底层的计算机指令或内存布局对应起来。</p>
-<p>再看一段代码，在弱类型或是动态类型的语言中，下面得到代码的执行会有不确定的结结果。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">5</span></span><br><span class="line">y = <span class="string">"37"</span></span><br><span class="line">z = x + y</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在Visual Basic语言中结果是42</li>
-<li>在JavaScript语言中结果是“537”</li>
-<li>在Python中则会产生一个运行时错误</li>
-</ul>
-<p><strong>我们需要清楚地知道，无论那种程序语言，都避免不了一个特定的类型系统。</strong>哪怕是可随意改变变量类型的动态类型的语言，我们在读代码的过程中也需要脑补某个变量在运行时的类型。</p>
-<p>所以，每个语言都需要一个类型检查系统。</p>
-<ul>
-<li>静态类型检查是在编译器进行语义分析时进行的。如果一个语言强制实行类型规则（即通常只允许以不丢失信息为前期的自动类型转换），那么称此处理为强类型，反之称为弱类型</li>
-<li>动态类型检查系统更多地是在运行时期做动态类型标记和相关检查。所以，动态类型的语言必然要给出一堆诸如：is_array()，is_int()，is_string()或是typeof()这样额运行时类型检查函数。</li>
-</ul>
-<p>总之，“类型”有时候是一个有用的东西，有时候又是一个很讨厌的事情。因为类型会对底层内存布局的一个抽象，会让我们的代码要关注于这些非业务逻辑上的东西。而且，我们的代码需要在不同类型的数据间做处理。</p>
-<p>我们需要清楚地明白，<strong>任何语言都有类型系统</strong>，只是动态类型语言在运行时做类型检查。动态语言的代码复杂度较低，并可以更容易地关注业务，在某些场景下是对的，但有些情况却不见得。</p>
-<h3 id="泛型的本质"><a href="#泛型的本质" class="headerlink" title="泛型的本质"></a>泛型的本质</h3><p>要了解泛型的本质，就需要了解类型的本质。</p>
-<ul>
-<li><strong>类型是对内存的一种抽象。不同的类型，会有不同内存布局和内存分配的策略。</strong></li>
-<li>不同的类型，有不同的操作。所以，对于特定的类型，也有特定的一组操作。</li>
-</ul>
-<p>所以，要做到泛型，需要做下面的事情。</p>
-<ul>
-<li>标准化掉类型的内存分配、释放和访问。</li>
-<li>标准化掉类型的操作。比如：比较操作、I/O操作、复制操作…</li>
-<li>标准化点数据容器的操作。比如：查找算法、过滤算法、聚合算法…..</li>
-<li>标准化掉类型上特有的操作。需要有标准化的接口来回调不同类型的具体操作。</li>
-</ul>
-<p>所以，C++动用了非常繁多和复杂的技术来达到泛型编程的目标。</p>
-<ul>
-<li>通过类中的构造、析构、拷贝构造、重载赋值操作符，标准化（隐藏）了类型的内存分配、释放和复制的操作。</li>
-<li>通过重载操作符，可标准化类型的比较等操作。</li>
-<li>通过isotream，标准化类型的输入输出控制</li>
-<li>通过模板技术（包括模板的特化），来为不同的类型生成类型专属的代码。</li>
-<li>通过迭代器来标准化数据容器的遍历操作。</li>
-<li>通过面向对象的接口依赖（虚函数技术），来标准化特定类型在特定算法上的操作。</li>
-<li>通过函数式（函数对象），来标准化不同类型的特定操作。</li>
-</ul>
-<p>通过学习C++，我们可以看到一个比较完整的泛型编程里所涉及的编程范式。</p>
-<p>泛型编程于1985年在论文 Generic Programming中被这样定义：</p>
-<blockquote>
-<p>Generic programming centers around the idea of abstractingfrom concee,efficient algorithms to obtiain generic algorithms that can be combined with different data representations to produce a wide variety of useful software</p>
-<p>—Musser, David R.;Stepanov,Alexander A., Generic Programming</p>
-</blockquote>
-<p>其本质就是——<strong>屏蔽掉数据和操作数据的细节，让算法更为通用，让编程者更多地关注算法的结构，而不是在算法中处理不同的数据类型。</strong></p>
-<p><strong>小结：</strong></p>
-<p>我们需要明白，编程语言本质上帮助程序员屏蔽底层机器代码的实现，而让我们可以更为关注于业务逻辑代码。但是因为，编程语言作为机器代码和业务逻辑的粘合层，实在让程序员可以更多底层的灵活性，还是屏蔽底层细节，让程序员可以更多地关注于业务逻辑，这是很难两全的，是需要trade-off的事。</p>
-<p>所以，不同的语言在设计上都会做相应的取舍。比如：C语言偏向于让程序眼可以控制更多的底层细节，而Java和Python则让程序员更多地关注业务功能的实现。而C++则是两者都想要，导致语言在设计上非常复杂。</p>
-<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><p>C++ 很大程度上解决了C语言中的各种问题和不便，尤其是通过类、模板、虚函数和运行时识别解决了C语言的泛型编程问题。然而，如何做更为抽象的泛型呢？答案就是函数式编程（Functional Programming）。</p>
-<p>相对于计算机的历史而言，函数式编程其实是一个非常古老的概念。它是由Alonzo Church和 Stephen Cole Kleene在20世纪30年代引入的一套研究函数定义、函数应用和递归的形式系统。</p>
-<p>如Alonzo所说，像booleans、integers或其他的数据结构都可以被函数取代掉。</p>
-<p>它的理念来自于数学中的代数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f(x) = 5x^2+4x+3</span><br><span class="line">g(x) = 2f(x)+5 = 10x^2+8x+11</span><br><span class="line">h(x) = f(x) + g(x) = 15x^2+12x+14</span><br></pre></td></tr></table></figure>
-<p>假设f(x)是一个函数，g(x)是第二个函数，把f(x)这个函数套下来，并展开。</p>
-<p>对于函数式编程来说，它只关心定<strong>义输入数据和输出数据相关的关心，数学表达式里面其实是在做一种映射（mapping），输入的数据和输出的数据关系是什么样的，使用函数来定义的。</strong></p>
-<p>函数式编程有以下特点。</p>
-<p><strong>特征</strong></p>
-<ul>
-<li><strong>stateless</strong>：函数不维护任何状态。函数式编程的核心精神是stateless，简而言之就是它不能存在状态，打个比方，，你给我数据我处理完扔出来，里面的数据是不变的。</li>
-<li><strong>immutable</strong>：输入数据是不能动的，动了输入数据就与危险，所以要返回新的数据集。</li>
-</ul>
-<p><strong>优势</strong></p>
-<ul>
-<li>没有状态就灭有伤害</li>
-<li>并行执行无伤害</li>
-<li>Copy-Paste重构代码无伤害</li>
-<li>函数的执行没有顺序上的问题</li>
-</ul>
-<p>函数式编程还带来了以下一些好处。</p>
-<ul>
-<li><strong>惰性求值</strong>。这需要编译器的支持。表达式不在它被绑定到变量之后就立即求职，而是在该值被取用的时候求值</li>
-<li><strong>确定性</strong>。所谓确定性，就是像在数学中那样，f(x) = y 这个函数无论在什么场景下，都会得到同样的结果，而不是像程序中的很多函数那样，同一个参数，在不同的场景下会计算出不同的结果，这个我们称之为函数的确定性。</li>
-</ul>
-<p><strong>劣势</strong></p>
-<ul>
-<li>数据复制比较严重</li>
-</ul>
-<h3 id="函数式编程用到的技术"><a href="#函数式编程用到的技术" class="headerlink" title="函数式编程用到的技术"></a>函数式编程用到的技术</h3><ul>
-<li><strong>first class function（头等函数）</strong>：这个技术可以让你的函数就像变量一样来使用。也就是说，函数可以像变量一样被创建、修改，并当成变量一样传递、返回，或是在函数中嵌套函数。</li>
-<li><strong>tail recursion optimization（尾递归优化）：</strong>每次递归时都会重用stack，这样能够提升性能。当然，这需要语言或编译器的支持。</li>
-<li><strong>map &amp; reduce：</strong>函数式编程最常见的技术就是对一个集合做Map和Reduce操作。</li>
-<li><strong>pipeline（管道）</strong>：将函数实例成一个一个的action，然后将一组action放到一个数组或是列表中，再把数据传给这个action list，数据就像一个pipeline一样顺序地被各个函数所操作，最终得到我们想要的结果。</li>
-<li><strong>recursing（递归）</strong>：递归最大额好处就是简化代码。注意：递归的精髓是描述问题，而这正式函数式编程的精髓。</li>
-<li><strong>currying（柯里化）：</strong>将一个函数的多个参数分解成多个函数，然后将函数多层封装起来，每层函数都返回一个函数去接收下一个参数。</li>
-<li><strong>higer order function（高阶函数）</strong>：所谓高阶函数就是函数当参数，把传入的函数做一个封装，然后返回这个封装函数。</li>
-</ul>
-<p>下面以代码做讲解：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 非函数式，不是 pure funciton，有状态</span></span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">increment</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cnt++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里有个全局变量，调这个全局函数变量++，这里面是有状态的，这个状态在外部。所以，如果是多线程的话，这里面的代码是不安全的。</p>
-<p>写成纯函数式：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数式，pure function， 无状态</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">increment</span><span class="params">(<span class="keyword">int</span> cnt)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> cnt+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个代码可以随便拷，而且与线程无关，代码在并行时不用锁，因为是复制了原有的数据，并返回了新的数据。</p>
-<p>再看另一个例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inc</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">incx</span><span class="params">(y)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> x+y</span><br><span class="line">    <span class="keyword">return</span> incx</span><br><span class="line"> </span><br><span class="line">inc2 = inc(<span class="number">2</span>)</span><br><span class="line">inc5 = inc(<span class="number">5</span>)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> inc2(<span class="number">5</span>) <span class="comment"># 输出 7</span></span><br><span class="line"><span class="keyword">print</span> inc5(<span class="number">5</span>) <span class="comment"># 输出 10</span></span><br></pre></td></tr></table></figure>
-<p>上面这段Python代码，开始有点复杂了。可以看到上面的例子中 inc() 函数返回了另一个函数 incx() ，于是可以用 inc() 函数来构造各种版本的inc() 函数。这个技术其实就是上面所说的currying技术。从这个技术山，可以体会到函数式编程的理念。</p>
-<ul>
-<li><strong>把函数当成变量来用，关注描述问题而不是怎么实现，这样可以让代码更易读</strong></li>
-<li><strong>因为函数返回里面的这个函数，所以函数关注的是表达式，关注的是描述这个问题，而不是怎么实现这个事情。</strong></li>
-</ul>
-<h3 id="函数式编程的思维方式"><a href="#函数式编程的思维方式" class="headerlink" title="函数式编程的思维方式"></a>函数式编程的思维方式</h3><p>函数式编程关注的是：describe what to do，rather than how to do it。于是，我们把以前的过程式编程范式叫作 Imperative Programming - 指令式编程，而把函数式编程范式叫作 Declarative Programming - 声明式编程。</p>
-<p><strong>传统方式的写法</strong></p>
-<p>下面我们看一下相关的示例。比如问题：有3辆车比赛，简单起见，分别给这3辆车70 %的概率让它们可以往前走一步，一共有5次机会，然后打出每一次这3辆车的前行状态。</p>
-<p>对于 Imperative Programming来说，代码如下（Python）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">move_cars</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i, _ <span class="keyword">in</span> enumerate(car_positions):</span><br><span class="line">        <span class="keyword">if</span> random() &gt; <span class="number">0.3</span>:</span><br><span class="line">            car_positions[i] += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_car</span><span class="params">(car_position)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'-'</span> * car_position</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_step_of_race</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> time</span><br><span class="line">    time -= <span class="number">1</span></span><br><span class="line">    move_cars()</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> car_position <span class="keyword">in</span> car_positions:</span><br><span class="line">        draw_car(car_position)</span><br><span class="line"> </span><br><span class="line">time = <span class="number">5</span></span><br><span class="line">car_positions = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> time:</span><br><span class="line">    run_step_of_race()</span><br><span class="line">    draw()</span><br></pre></td></tr></table></figure>
-<p>上面的代码，从主循环开始，我们可以很清楚地看到程序的主干，因为我们把程序的逻辑分成了几个函数。这样一来，代码逻辑就会变成几个小碎片，于是我们读代码时要考虑的上下文就少了很多，阅读代码也会更容易。</p>
-<p>但是，我们发现，封装成函数后，这些函数都会依赖于共享的变量来同步其状态。也就是说，这些函数必须直到其他函数是怎么修改它们之间的共享变量的，所以，这些函数是有状态的。</p>
-<p><strong>函数式写法</strong></p>
-<p>我们知道，有状态并不是一件很好的事情，无论是对代码重用，还是对代码的并行来说，都是有副作用的。为了把这些状态搞掉，于是出现了函数式编程的编程范式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">move_cars</span><span class="params">(car_positions)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> map(<span class="keyword">lambda</span> x: x + <span class="number">1</span> <span class="keyword">if</span> random() &gt; <span class="number">0.3</span> <span class="keyword">else</span> x,</span><br><span class="line">               car_positions)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">output_car</span><span class="params">(car_position)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'-'</span> * car_position</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_step_of_race</span><span class="params">(state)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">'time'</span>: state[<span class="string">'time'</span>] - <span class="number">1</span>,</span><br><span class="line">            <span class="string">'car_positions'</span>: move_cars(state[<span class="string">'car_positions'</span>])&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw</span><span class="params">(state)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">''</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'\n'</span>.join(map(output_car, state[<span class="string">'car_positions'</span>]))</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">race</span><span class="params">(state)</span>:</span></span><br><span class="line">    draw(state)</span><br><span class="line">    <span class="keyword">if</span> state[<span class="string">'time'</span>]:</span><br><span class="line">        race(run_step_of_race(state))</span><br><span class="line"> </span><br><span class="line">race(&#123;<span class="string">'time'</span>: <span class="number">5</span>,</span><br><span class="line">      <span class="string">'car_positions'</span>: [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]&#125;)</span><br></pre></td></tr></table></figure>
-<p>上面的代码依然把程序的逻辑分成了函数。不过这些函数都是函数式，它们有三个特点：1）它们之间没有共享的变量；2）函数间通过参数和返回值来传递数据；3）在函数里没有临时变量。</p>
-<p>我们还可以看到，for循环被递归取代了——递归是函数式编程中常用到的技术，正如前面所说的，递归的本质是描述问题是什么。</p>
-<h3 id="函数式语言的三套件"><a href="#函数式语言的三套件" class="headerlink" title="函数式语言的三套件"></a>函数式语言的三套件</h3><p>函数式语言有三套件，<strong>Map、Reduce 和 Filter。</strong></p>
-<p><strong>Map示例</strong>：</p>
-<p>对于需求：把一个字符串数组中的字符串都转成小写。</p>
-<p>用常规的面向过程的方式，代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 传统的非函数式</span></span><br><span class="line">upname =[<span class="string">'HAO'</span>, <span class="string">'CHEN'</span>, <span class="string">'COOLSHELL'</span>]</span><br><span class="line">lowname =[] </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(upname)):</span><br><span class="line">    lowname.append( upname[i].lower() )</span><br></pre></td></tr></table></figure>
-<p>写成函数式，用map() 函数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数式</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">toUpper</span><span class="params">(item)</span>:</span></span><br><span class="line">      <span class="keyword">return</span> item.upper()</span><br><span class="line"> </span><br><span class="line">upper_name = map(toUpper, [<span class="string">"hao"</span>, <span class="string">"chen"</span>, <span class="string">"coolshell"</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> upper_name</span><br><span class="line"><span class="comment"># 输出 ['HAO', 'CHEN', 'COOLSHELL']</span></span><br></pre></td></tr></table></figure>
-<p>在函数式版本中，我们定义了一个函数 toUpper，这个函数没有改变传进来的值，只是把传进来的值做个简单的操作，然后返回。（？？？）然后，把它用在map函数中，就尅很清楚地描述出我们想要干什么，而不是去理解一个在循环中怎么实现的代码，最终在读了很多循环的逻辑才发现是什么意思。</p>
-<p><strong>Reduce 和 Filter示例</strong></p>
-<p>需求：计算数组平均值</p>
-<p>非函数式：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算数组中正数的平均值</span></span><br><span class="line">num =  [<span class="number">2</span>, <span class="number">-5</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">-2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-3</span>, <span class="number">8</span>]</span><br><span class="line">positive_num_cnt = <span class="number">0</span></span><br><span class="line">positive_num_sum = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(num)):</span><br><span class="line">    <span class="keyword">if</span> num[i] &gt; <span class="number">0</span>:</span><br><span class="line">        positive_num_cnt += <span class="number">1</span></span><br><span class="line">        positive_num_sum += num[i]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> positive_num_cnt &gt; <span class="number">0</span>:</span><br><span class="line">    average = positive_num_sum / positive_num_cnt</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> average</span><br></pre></td></tr></table></figure>
-<p>函数式下使用 filter/reduce 函数的玩法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 计算数组中正数的平均值</span></span><br><span class="line">positive_num = filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">0</span>, num)</span><br><span class="line">average = reduce(<span class="keyword">lambda</span> x,y: x+y, positive_num) / len( positive_num )</span><br></pre></td></tr></table></figure>
-<p>首先，使用filter函数把整数过滤出来，保存在一个新的数组中——positive_num。然后，使用reduce函数对数组positive_num求和后，再除以其个数，就得到正数的平均值了。</p>
-<p>可以看到， <strong>隐藏了数组遍历并过滤数组控制流程的 filter和reduce，不仅让代码更为简洁，因为代码里只有业务逻辑了，而且让我们更容易地理解代码。</strong>。</p>
-<p>感觉代码更亲切了，因为：</p>
-<ul>
-<li>数据集、对数据的操作和返回值都放在了一起。</li>
-<li>没有了循环体，皆可以少了些临时用来控制程序执行逻辑的变量，也少了把数据倒来倒去的控制逻辑。</li>
-<li><strong>代码变成了在描述你要干什么，而不是怎么干。</strong></li>
-</ul>
-<p>对于函数式编程的思路，下图是一个比较形象的例子，面包和蔬菜 map 到切碎的操作上，在把结果给 reduce 成汉堡。</p>
-<p>在这个图中，<strong>我们可以看到 map 和 reduce 不关心源输入数据，它们只是控制，并不是业务。控制是描述怎么干，而业务是描述要干什么。</strong></p>
-<h3 id="函数式的-pipeline-模式"><a href="#函数式的-pipeline-模式" class="headerlink" title="函数式的 pipeline 模式"></a>函数式的 pipeline 模式</h3><p>pipeline（管道）借鉴于 Unix Shell 的管道操作——把若干个命令串起来，前面的命令的输出称为后面命令的输入，如此完成一个流式计算。</p>
-<p>接下来，用一个简单的示例来看一下如何实现 pipeline。</p>
-<p>程序的 process() 有三个步骤：</p>
-<p>1.找出偶数；2.乘以3;  3.转成字符串返回。</p>
-<p>传统的非函数式的实现如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="comment"># filter out non-evens</span></span><br><span class="line">    <span class="keyword">if</span> num % <span class="number">2</span> != <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    num = num * <span class="number">3</span></span><br><span class="line">    num = <span class="string">'The Number: %s'</span> % num</span><br><span class="line">    <span class="keyword">return</span> num</span><br><span class="line"> </span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">    <span class="keyword">print</span> process(num)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="comment"># None</span></span><br><span class="line"><span class="comment"># The Number: 6</span></span><br><span class="line"><span class="comment"># None</span></span><br><span class="line"><span class="comment"># The Number: 12</span></span><br><span class="line"><span class="comment"># None</span></span><br><span class="line"><span class="comment"># The Number: 18</span></span><br><span class="line"><span class="comment"># None</span></span><br><span class="line"><span class="comment"># The Number: 24</span></span><br><span class="line"><span class="comment"># None</span></span><br><span class="line"><span class="comment"># The Number: 30</span></span><br></pre></td></tr></table></figure>
-<p>pipeline版本如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">even_filter</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">        <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">yield</span> num</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiply_by_three</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">        <span class="keyword">yield</span> num * <span class="number">3</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert_to_string</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> nums:</span><br><span class="line">        <span class="keyword">yield</span> <span class="string">'The Number: %s'</span> % num</span><br><span class="line"></span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line">pipeline = convert_to_string(multiply_by_three(even_filter(nums)))</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> pipeline:</span><br><span class="line">    <span class="keyword">print</span> num</span><br><span class="line"><span class="comment"># 输出：</span></span><br><span class="line"><span class="comment"># The Number: 6</span></span><br><span class="line"><span class="comment"># The Number: 12</span></span><br><span class="line"><span class="comment"># The Number: 18</span></span><br><span class="line"><span class="comment"># The Number: 24</span></span><br><span class="line"><span class="comment"># The Number: 30</span></span><br></pre></td></tr></table></figure>
-<p>上面，我们动用了 Python 的关键字 yield，它是一个类似 return 的关键字，只是这个函数返回的是 Generator（生成器）。所谓生成器，指的是 yield 返回的是一个可迭代的对象，并没有真正的执行函数。也就是说，只有其返回的迭代对象被迭代时，yield函数才会真正运行。运行到 yield 语句时就会挺住，然后等下一次迭代。这就是 lazy evluation （懒惰加载）。</p>
-<p>使用 Map &amp; Reduce 版本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">even_filter</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> filter(<span class="keyword">lambda</span> x: x%<span class="number">2</span>==<span class="number">0</span>, nums)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiply_by_three</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> map(<span class="keyword">lambda</span> x: x*<span class="number">3</span>, nums)</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert_to_string</span><span class="params">(nums)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> map(<span class="keyword">lambda</span> x: <span class="string">'The Number: %s'</span> % x,  nums)</span><br><span class="line"> </span><br><span class="line">nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line">pipeline = convert_to_string(</span><br><span class="line">               multiply_by_three(</span><br><span class="line">                   even_filter(nums)</span><br><span class="line">               )</span><br><span class="line">            )</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> pipeline:</span><br><span class="line">    <span class="keyword">print</span> num</span><br></pre></td></tr></table></figure>
-<p><strong>小结</strong></p>
-<p>函数式编程是个非常古老的概念，它的核心思想是键运算过程尽量写成一系列嵌套的函数调用，关注的是做什么而不是怎么做，因而被称为声明式编程。以 Stateless（无状态）和 lmmutable（不可变）为主要特点，代码简洁，抑郁理解，能便于进行并行执行，易于做代码重构，函数执行没有顺序上的问题，支持惰性求值，具有函数的确定性——无论在什么场景下都会得到同样的结果。</p>
-<hr>
-<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><p><strong>面向对象的编程有三大特性：封装、继承和多态。</strong></p>
-<p>面向对象编程是一种具有对象概念的程序编程发型，同时也是一种程序开发的抽象方针。它可能包含数据、属性、代码与方法。对象则指的是类的实例。它将对象作为程序的基本单元，将程序和数据封装其中，以提高软件的可重用性、灵活性和可扩展性，对象里的程序可以访问及修改对象相关联的数据。在面向对象编程里，计算机程序会被设计成彼此相关的对象。</p>
-<p>面向对象程序设计可以看作一种在程序中包含各种队里而又互相调用的对象的思想，这与传统的思想刚好相反：传统的程序设计主张将程序看作一系列函数的集合，或者是直接就是一系列对计算机下达的指令。面向对象程序设计中的每一个对象都应该能够接受数据、处理数据并将数据传达给其他对象，因此它们都可以被看作一个小型的“机器”，即对象。</p>
-<p>鉴于对面向对象比较熟悉，这里不再详述。</p>
-<p><strong>小结</strong></p>
-<p><strong>优点</strong></p>
-<ul>
-<li>能和真实的世界交相辉映，符合人的直觉</li>
-<li>面向对象和数据库模型设计类型，更多地关注对象间的模型设计</li>
-<li>强调于“名词”而不是“动词”，更多地关注对象和对象间的接口</li>
-<li>根据业务的特征形成一个个高内聚的对象，有效地分离了抽象和具体实现，增加了可重用性和可扩展性。</li>
-<li>拥有大量非常优秀的设计原则和设计模式</li>
-</ul>
-<p><strong>缺点</strong></p>
-<ul>
-<li>代码都需要附着在一个类上，从另一个角度来说，其鼓励了类型。</li>
-<li>代码需要通过对象来达到抽象的效果，导致了相当厚重的“代码粘合层”。</li>
-<li>因为太多的封装以及对状态的鼓励，导致了大量不透明并在并发下出现了很多问题。</li>
-</ul>
-<hr>
-<h2 id="基于原型的编程范式"><a href="#基于原型的编程范式" class="headerlink" title="基于原型的编程范式"></a>基于原型的编程范式</h2><p>基于原型（prototype）的编程其实也是面向对象编程的一种方式。没有class化，直接使用对象。又叫，基于实例的编程。其主流的语言是 JavaScript。</p>
-<p>与传统的面向对象编程的比较如下：</p>
-<ul>
-<li>在基于类的编程中，对象总共有两种类型。类定义了对象基本布局和函数特性，而接口是可以使用的对象，它基于特定类的样式。在此模型中，类表现行为和结构的集合，对所有接口来说这些类的行为和结构都是相同的。</li>
-<li>原型编程提倡程序员关注一系列对象实例的行为，而之后才关心如何将这些对象划分到最近的使用方式相似的原型对象，而不是分类。</li>
-<li>在基于原型的系统中构造对象有两种方法，通过复制已有的对象或者通过扩展对象创建。</li>
-</ul>
-<h3 id="JavaScipt的原型概念"><a href="#JavaScipt的原型概念" class="headerlink" title="JavaScipt的原型概念"></a>JavaScipt的原型概念</h3><p>先看一段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">name</span>: <span class="string">"foo"</span>, <span class="attr">one</span>: <span class="number">1</span>, <span class="attr">two</span>: <span class="number">2</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bar = &#123;<span class="attr">three</span>: <span class="number">3</span>&#125;;</span><br></pre></td></tr></table></figure>
-<p>每个对象都有一个 _ <em>proto</em> <em>的属性，这个就是“原型”。对于上面的两个对象，如果我们把foo赋值给bar.__proto</em> _,那就意味着，bar的原型就成了foo的。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bar.__proto__ = foo; <span class="comment">// foo is now the prototype of bar.</span></span><br></pre></td></tr></table></figure>
-<p>于是，我们就可以在 bar 里面访问 foo 的属性了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// If we try to access foo's properties from bar </span></span><br><span class="line"><span class="comment">// from now on, we'll succeed. </span></span><br><span class="line">bar.one <span class="comment">// Resolves to 1.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// The child object's properties are also accessible.</span></span><br><span class="line">bar.three <span class="comment">// Resolves to 3.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Own properties shadow prototype properties</span></span><br><span class="line">bar.name = <span class="string">"bar"</span>;</span><br><span class="line">foo.name; <span class="comment">// unaffected, resolves to "foo"</span></span><br><span class="line">bar.name; <span class="comment">// Resolves to "bar"</span></span><br></pre></td></tr></table></figure>
-<p>再来看一段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 一种构造函数写法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.y = y;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 修改 Foo 的 prototype，加入一个成员变量 x</span></span><br><span class="line">Foo.prototype.x = <span class="number">10</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 修改 Foo 的 prototype，加入一个成员函数 calculate</span></span><br><span class="line">Foo.prototype.calculate = <span class="function"><span class="keyword">function</span> (<span class="params">z</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.x + <span class="keyword">this</span>.y + z;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 现在，我们用 Foo 这个原型来创建 b 和 c</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Foo(<span class="number">20</span>);</span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> Foo(<span class="number">30</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 调用原型中的方法，可以得到正确的值</span></span><br><span class="line">b.calculate(<span class="number">30</span>); <span class="comment">// 60</span></span><br><span class="line">c.calculate(<span class="number">40</span>); <span class="comment">// 80</span></span><br></pre></td></tr></table></figure>
-<p>那么，在内存中的布局大概是下面这个样子。</p>
-<p><img src="/home/utur/图片/picture_for_note/编程范式/javascript.png" alt="javascript"></p>
-<p>上述就是基于原型的面向对象编程的玩法了。</p>
-<p><strong>小结</strong></p>
-<p>可以看到，这种玩法就是一种委托的方式。在使用委托的基于原型的语言中，运行时语言可以“仅仅通过序列的指针找到匹配”这样的方式来定位属性或者寻找正确的数据。所有的这些创建行为共享的行为需要的是委托指针。</p>
-<p>不像是基于类的面向对象语言中类和接口的关系，原型和它的分支之间的关系并不要求对象有相似的内存结构，因为如此，子对象可以继续修改而无需像基于类的系统那样整理结构。</p>
-<p>这种在对象里直接修改的玩法，虽然这个特性可以带来运行时的灵活性，我们可以在运行时修改一个 prototype，给它增加甚至删除属性和方法。但是其带来了执行的不确定性，也有安全性的问题，而代码还变得不可预测，这就有点黑科技的味道了。因为这些不想静态类型系统，没有一个不可变的契约对代码的确定性有保证，所以，需要使用者来自己保证。</p>
-<hr>
-<h2 id="编程本质"><a href="#编程本质" class="headerlink" title="编程本质"></a>编程本质</h2><h3 id="编程的本质"><a href="#编程的本质" class="headerlink" title="编程的本质"></a>编程的本质</h3><p><strong>两篇论文</strong></p>
-<p>1976年，瑞士计算机科学家，Algol W，Wodula，Oberaon和Pascal语言的设计师NiklausEmil Wirth写了一本非常经典的书《<a href="http://www.ethoberon.ethz.ch/WirthPubl/AD.pdf" target="_blank" rel="noopener">Algorithms + Data Structures = Programs</a>》，即算法 + 数据结构 = 程序。</p>
-<p>1979年，英国逻辑学家和计算机学家Robert Kowalski发表论文 <a href="https://www.doc.ic.ac.uk/~rak/papers/algorithm%20=%20logic%20+%20control.pdf" target="_blank" rel="noopener">Alogrithm = Logic + Control</a>，并且主要开发“逻辑编程”相关的工作。</p>
-<p>Robert Kowalski在这篇论文里提到：</p>
-<blockquote>
-<p>An algorithm can be egarded as consisting of a logic componnent . which specifies the knowledge to be used in solving problems, and a control component, which determines the problem-solving strategies by means of which that knowledge is used. The logic component determines the meaning of the algorithm whereas the control component only affects its efficiency. The efficiency of an algorithm can often be imporved by improving the control component without changing the logic of the algorithm. We argue that computer programs would be more often correct and more easily improved and modified if their logic and control aspects were identified and separated in the program text.</p>
-</blockquote>
-<p>翻译过来的意思大概就是：</p>
-<blockquote>
-<p>任何算法都会有两个部分，一个是Logic部分，这是用来解决实际问题的。另一个是Control部分，这是用来决定用什么策略来解决问题。Logic部分是真正意义上的解决问题的算法，而Control部分只是影响解决这个问题的效率。程序运行的效率问题和程序的逻辑其实是没有关系的。我们认为，如果将Logic和Control部分有效地分开，那么代码就会变得更容易改进和维护。</p>
-</blockquote>
-<p>注意，最后一句话是重点——<strong>如果将Logic和Control部分有效地分开，那么代码就会变得更容易改进和维护。</strong></p>
-<p><strong>编程的本质</strong></p>
-<p>两位老先生的两个表达式：</p>
-<ul>
-<li>Programs = Algorithms + Data Structures</li>
-<li>Algorithm = Logic + Control</li>
-</ul>
-<p>第一个表达式倾向于数据结构和算法，它是想把这两个拆分，早起都在走这条路。它们认为，如果数据结构设计的好，算法也会变得简单，而且一个好的通用算法应该可以用在不同的数据结构上。</p>
-<p>第二个表达式则想表达的是数据结构不复杂，复杂的是算法，也就是我们的业务逻辑是复杂的。我们的算法由两个逻辑组成，一个是真正的业务逻辑，另外一种是控制逻辑。程序中有两种代码，一种是真正的业务逻辑代码，另一种是控制我们程序的代码，叫控制代码，这根本不是业务逻辑，业务逻辑不关心这个事情。</p>
-<p>算法的效率往往可以通过提高控制部分的效率来实现，而无需改变逻辑部分，也就无需改变算法的意义。举个阶乘的例子：X(n)! = X(n) <em> X(n-1) </em> X(n-2) <em>… </em> 2 <em> 1。逻辑部分用来定义阶乘： 1) 1是0的阶乘；2) 如果v是x的阶乘，且u=v</em>(x+1)，那么u是x+1的阶乘。</p>
-<p>用这个定义，既可以从上往下将x+1的阶乘缩小为先计算x的阶乘，再将结果乘以x+1（recursive，递归），也可以由下而上逐个计算一系列阶乘的结果（iteration，遍历）。</p>
-<p>How控制部分用来描述如何使用逻辑。最粗略的看法可疑人物“控制”是解决问题额策略，而不会改变算法的意义，因为算法的意义是由逻辑决定的。对用一个逻辑，使用不同控制，所得到的算法，本质是等价的，因为它们解决同样的问题，并得到同样的结果。</p>
-<p>因此，我们可以用过逻辑分析，来提高算法的效率，保持它的逻辑，而更好地使用这一逻辑。比如，有时用自上而下的控制代替自下而上，，能提高效率。而将自上而下的顺序执行改为并行执行，也会提高效率。</p>
-<p>总之，通过这两个表达式，我们可以得出：</p>
-<p><strong>Program = Logic + Control + Data Structure</strong></p>
-<p>前面讲了这么多的编程范式，其实，都是在围绕着这三件事来做。比如：</p>
-<ul>
-<li>就像函数编程中的Map/Reduce/Filter，它们都是一种控制。而传给这些控制模块的那个Lambda表达式才是我们要解决问题的逻辑，它们共同组成了一个算法、最后，再把数据放在数据结构了进行处理，最终就成为了我们的程序。</li>
-<li>就像面向对象中依赖于接口而不是实现一样，接口是对逻辑的抽象，真正的逻辑放在不同的具体类中，通过多态或是依赖注入这样的控制来完成对数据在不同情况下的不同处理。</li>
-</ul>
-<p>仔细地结合之前的各式各样的编程范式来思考上述这些概念，我们会发现，所有的语言或编程范式都在解决上面的这些问题。也就下面的这几个事。</p>
-<ul>
-<li>Control是可以标准化的。比如：遍历数据、查找数据、多线程、并发、异步等，都是可以标准化的。</li>
-<li>因为Control需要处理数据，所以标准化Control，需要标准化Data Structure，我们可以通过泛型编程来解决这个事</li>
-<li>而Control还要处理用户的业务逻辑，即Logic。所以，我们可以通过标准化接口/协议来实现，我们的Control模式可以适配与任何的Logic。</li>
-</ul>
-<p>上述三点，就是编程范式的本质。</p>
-<ul>
-<li><strong>有效地分离 Logic、Control 和 Data 是写出好程序的关键所在！</strong></li>
-<li><strong>有效地分离 Logic、Control 和 Data 是写出好程序的关键所在！</strong></li>
-<li><strong>有效地分离 Logic、Control 和 Data 是写出好程序的关键所在！</strong></li>
-</ul>
-<p>控制一个程序流转的方式，即程序执行的方式，并行还是串行，同步还是异步，以及调度不同执行路径或模块，数据之间的存储关系，这些和业务逻辑没有关系。</p>
-<p><img src="/home/utur/图片/picture_for_note/编程范式/alogrithm=logic+control.png" alt="alogrithm"></p>
-<p>那些混乱不堪的代码，你会发现其中最大的问题是我们把Logic和Control纠缠在一起了，所以导致代码很混乱，难以维护，Bug很多。绝大多数程序复杂的原因就是这个问题。</p>
-<p><strong>小结：</strong></p>
-<p>代码复杂度的原因：</p>
-<ul>
-<li>业务逻辑的复杂度据定了代码的复杂度；</li>
-<li>控制逻辑的复杂度 + 业务逻辑的复杂度 ==&gt; 程序代码的混乱不堪；</li>
-<li>绝大多数程序复杂混乱的根本原因：<strong>业务逻辑与控制逻辑的耦合</strong>。</li>
-</ul>
-<p>如何分离 control 和 logic呢》使用下面的这些技术来解耦：</p>
-<ul>
-<li><p><strong>State Machine</strong></p>
-<ul>
-<li>状态定义</li>
-<li>状态变迁条件</li>
-<li>状态的action</li>
-</ul>
-</li>
-<li><p><strong>DSL -  Domain Specific Language</strong></p>
-<ul>
-<li>HTML，SQL，Unix shell Script，AWK，正则表达式</li>
-</ul>
-</li>
-<li><strong>编程范式</strong><ul>
-<li>面向对象：委托、策略、桥接、修饰、Ioc/DIP、MVC</li>
-<li>函数式编程：修饰、管道、拼接</li>
-<li>逻辑推导式编程：Prolog</li>
-</ul>
-</li>
-</ul>
-<p><strong>这就是编程的本质：</strong></p>
-<ul>
-<li><strong>Logic 部分才是真正有意义的（What）</strong></li>
-<li><strong>Control 部分只是影响Logic部分的效率（How）</strong></li>
-</ul>
-<hr>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/Flask_Web/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Utur">
-      <meta itemprop="description" content="木龟想做一个哈皮程序猿。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Utur的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/11/Flask_Web/" class="post-title-link" itemprop="url">Flask学习笔记</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-11 00:00:00" itemprop="dateCreated datePublished" datetime="2019-04-11T00:00:00+08:00">2019-04-11</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-06 17:04:27" itemprop="dateModified" datetime="2019-07-06T17:04:27+08:00">2019-07-06</time>
-              </span>
-            
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Flask/" itemprop="url" rel="index"><span itemprop="name">Flask</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h2><p>Flask是使用Python编写的Web微框架，Web框架可以让开发者不用关心底层的请求响应处理，更方便更高效地编写Web程序。Flask有两个主要依赖，一个是WSGI（Web Server Gateway Interface，Web服务器网关接口）工具集——Werkzeug，另一个是Jinja2模板引擎。</p>
-<h3 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h3><ol>
-<li>安装<strong>pip</strong>和<strong>pipenv</strong></li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install pipenv</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>创建虚拟环境</li>
-</ol>
-<p>在Python中虚拟环境（virtual environment）就是隔离的Python解释器环境。通过创建虚拟环境，你可以拥有一个独立的Python解释器环境。<em>这样做的好处是可以为每一个项目创建独立的Python解释器环境，因为不同的项目常常会话依赖不同版本的库或Python版本。使用虚拟环境可以保持全局Python解释器环境的干净，避免包和版本的混乱，并且可以方便地区分和记录每个项目的依赖，以便在新环境下复现依赖环境。</em></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pipenv install  <span class="comment"># 为当前目录的项目创建虚拟环境</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> pipenv shell   <span class="comment"># 显式激活虚拟环境</span></span></span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>安装<strong>Flask</strong></li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pipenv install flask  <span class="comment"># 在虚拟环境中安装Flask</span></span></span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="注册路由"><a href="#注册路由" class="headerlink" title="注册路由"></a>注册路由</h3><p>在一个Web应用里，客户端和服务器上的Flask程序的交互可以简单概括为以下几步：</p>
-<p>1）用户在浏览器中输入URL访问某个资源</p>
-<p>2）Flask接收用户请求并分析请求的URL</p>
-<p>3）为这个URL找到对应的处理函数</p>
-<p>4）执行函数并生成响应，返回给浏览器</p>
-<p>5）浏览器接收并解析响应，将信息显示在页面中</p>
-<p>在以上步骤中，大部分都由Flask完成，开发者要做的只是<strong>建立处理请求的函数，并定义对应的URL规则。</strong>只需为函数附加app.route()装饰器，并传入URL规则作为参数，就可以让URL与函数建立联系。这个过程称为<strong>注册路由（route）</strong>，路由负责管理URL和函数之间的映射，而这个函数则被称为视图函数（view function）。</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello, World&lt;/h1&gt;'</span></span><br></pre></td></tr></table></figure>
-<p>在这个程序里，app.route()装饰器把根地址/和index()函数绑定起来，当用户访问这个URL时就会触发index()函数。这个视图函数可以像其他普通函数一样执行任意操作，最后，视图函数返回的值作为响应的主体。</p>
-<ul>
-<li><p>为视图绑定多个URL</p>
-<p>一个视图函数可以绑定多个URL。</p>
-<p>例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/hi')</span></span><br><span class="line"><span class="meta">@app.route('/hello')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello, Flask!&lt;/h1&gt;'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>动态URL</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/greet/&lt;name&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet</span><span class="params">(name)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello, %s!&lt;/h1&gt;'</span> % name</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h3 id="启动开发服务器"><a href="#启动开发服务器" class="headerlink" title="启动开发服务器"></a>启动开发服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> flask run</span></span><br></pre></td></tr></table></figure>
-<p>flask run命令启动内置的开发服务器。</p>
-<ol>
-<li><p><strong>自动发现程序实例</strong></p>
-<p>一般来说，在执行flask run命令运行程序前，需要提供程序实例所在模块的位置。若无提供，Flask会自动探测程序实例，自动探测存在以下规则：</p>
-<ul>
-<li>从当前目录寻找app.py和wsgi.py模块，并从中寻找名为app或application的程序实例。</li>
-<li>从环境变量FLASK_APP对应的值寻找名为app或application的程序实例。</li>
-</ul>
-</li>
-<li><p><strong>管理环境变量</strong></p>
-<p>Flask的自动发现程序实例机制还有第三条规则：如果安装了python-dotenv，那么在使用flask run或其他命令时会使用它自动从<strong>.flaskenv</strong>文件和<strong>.env</strong>文件中加载环境变量。</p>
-<p>为了避免频繁设置环境变量，可以使用python-dotenv管理项目的环境变量。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pipenv install python-dotenv</span><br></pre></td></tr></table></figure>
-<p>.flaskenv文件用来存储和Flask相关的公开环境变量，比如FLASK_APP;</p>
-<p>.env文件用来存储包含敏感信息的环境变量，比如账户名和密码。</p>
-<p>环境变量以键值对的形式定义。</p>
-</li>
-</ol>
-<hr>
-<h2 id="Flask与HTTP"><a href="#Flask与HTTP" class="headerlink" title="Flask与HTTP"></a>Flask与HTTP</h2><h3 id="请求响应循环"><a href="#请求响应循环" class="headerlink" title="请求响应循环"></a>请求响应循环</h3><p><img src="/home/utur/图片/picture_for_note/Flask_Web/Flask Web工作流程图.png" alt="Flask Web工作流程"></p>
-<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><h4 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h4><p><strong>这个请求对象封装了从客户端发来的请求报文，能从它获取请求报文中的所有数据。</strong></p>
-<h4 id="在Flask中处理请求"><a href="#在Flask中处理请求" class="headerlink" title="在Flask中处理请求"></a>在Flask中处理请求</h4><ul>
-<li><p>设置监听的HTTP方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/hello', method=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello, Flask!&lt;/h1&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="请求钩子"><a href="#请求钩子" class="headerlink" title="请求钩子"></a>请求钩子</h4><p>有时需要对请求进行预处理（preprocessing）和后处理（postprocessing）。这时可以使用Flask提供的一些请求钩子（Hook），它们可以用来注册在请求处理的不同阶段执行的处理函数。这些请求钩子用装饰器实现，通过程序实例app调用。</p>
-<p>​                        <strong>请求钩子</strong></p>
-<table>
-<thead>
-<tr>
-<th>钩子</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>before_first_request</td>
-<td>注册一个函数，在处理第一个请求前运行</td>
-</tr>
-<tr>
-<td>before_request</td>
-<td>注册一个函数，在处理每个请求前运行</td>
-</tr>
-<tr>
-<td>after_request</td>
-<td>注册一个函数，如果没有未处理的异常抛出，会在每个请求结束后运行</td>
-</tr>
-<tr>
-<td>teardown_request</td>
-<td>注册一个函数，即使有未处理的异常抛出，会在每个请求结束后运行</td>
-</tr>
-<tr>
-<td>after_this_request</td>
-<td>在视图函数内注册一个函数，会在这个请求结束后运行</td>
-</tr>
-</tbody>
-</table>
-<p><img src="/home/utur/图片/picture_for_note/Flask_Web/请求处理函数调用示意图.png" alt="请求处理函数调用示意图"></p>
-<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><h4 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h4><p>在HTTP响应中，数据可以通过多种格式传输。大多数情况下，我们会使用HTML格式，这是Flask中的默认设置。在特定的情况下，也会使用其他格式。不同的响应数据格式需要设置不同的MIME类型。</p>
-<ul>
-<li><p>纯文本</p>
-<p>MIME类型： text/plain</p>
-</li>
-<li><p>HTML</p>
-<p>MIME类型：text/html</p>
-</li>
-<li><p>XML</p>
-<p>MIME类型：application/xml</p>
-</li>
-<li><p>JSON</p>
-<p>MIME类型：application/json</p>
-</li>
-</ul>
-<hr>
-<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><p>HTTP是无状态协议。在一次响应结束后，服务器不会留下任何关于对方状态的信息。</p>
-<p>Cookie是Web服务器为了存储某些数据（比如用户信息）而保存在浏览器上的小型数据。浏览器会在一定时间内保存它，并在下一次向同一个服务器发送请求时附带这些数据。Cookie通常被用来进行用户会话管理（比如登录状态），保存用户的个性化信息以及记录和收集用户浏览数据以用来分析用户行为等。</p>
-<p>在Flask中，想要在响应中添加一个cookie，最方便的方法是使用Response类提供的set_cookie() 方法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, make_response</span><br><span class="line">...</span><br><span class="line"><span class="meta">@app.route('/set/&lt;name&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_cookie</span><span class="params">(name)</span>:</span></span><br><span class="line">	response = make_response(redirect(url_for(<span class="string">'hello'</span>)))</span><br><span class="line">	response.set_cookie(<span class="string">'name'</span>, name)</span><br><span class="line">	<span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
-<h4 id="Session：安全的Cookie"><a href="#Session：安全的Cookie" class="headerlink" title="Session：安全的Cookie"></a>Session：安全的Cookie</h4><p>在编程中，session指用户会话，又称为对话，即服务器和客户端/浏览器之间或桌面程序和用户之间建立的交互活动。<strong>而在Flask中，session对象用来加密Cookie。默认情况下，它会把数据存储在浏览器上一个名为session的cookie里。</strong></p>
-<p>session通过密钥对数据进行签名以加密数据。因此，得先社会一个密钥。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 程序的密钥可以通过Flask.secret_key属性或配置变量SECRET_KEY设置</span></span><br><span class="line">app.secret_key = <span class="string">'secret string'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更安全的做法是把密钥写进系统环境变量或是保存在.env文件中</span></span><br><span class="line">SECRET_KEY = secret string</span><br><span class="line"><span class="comment"># 然后在陈旭脚本中使用os模块提供的getenv()方法获取</span></span><br><span class="line">app.secret_key = os.getenv(<span class="string">'SECRET_KEY'</span>, ‘secret string<span class="string">')</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="HTTP进阶"><a href="#HTTP进阶" class="headerlink" title="HTTP进阶"></a>HTTP进阶</h3><h4 id="重定向回上一个页面"><a href="#重定向回上一个页面" class="headerlink" title="重定向回上一个页面"></a>重定向回上一个页面</h4><p>要重定向回上一个页面，最关键的是获取上一个页面的URL。上一个页面的URL一般可以通过两种方法获取。</p>
-<ul>
-<li><p>HTTP referer</p>
-<p>HTTP referer是一个用来记录请求发源地的HTTP首部字段，即访问来源。当用户在某个站点单击链接，浏览器向新链接所在的服务器发起请求，请求的数据中包含的HTTP_REFERER字段记录了用户所在的原站点URL。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> redirect(request.referrer)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查询参数</p>
-<p>在URL中手动加入包含当前URL的查询参数，这个查询参数一般命名为next。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/foo')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'&lt;h1&gt;Foo page&lt;/h1&gt;&lt;a href="%s"&gt;Do somthing and redirect&lt;/a&gt;'</span> % url_for(<span class="string">'do something'</span>, next=request.full_path)</span><br><span class="line">	</span><br><span class="line"><span class="keyword">return</span> redirect(request.args.get(<span class="string">'next'</span>))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h4 id="Ajax技术发送异步请求"><a href="#Ajax技术发送异步请求" class="headerlink" title="Ajax技术发送异步请求"></a>Ajax技术发送异步请求</h4><p>AJAX指异步JavaScript和XML，它不是编程语言或通信协议，而是一系列技术的组合体。简单来说，Ajax基于XMLHttpRequest让我们可以在不重载页面的情况下和服务器进行数据交换。加上JavaScript和DOM，就可以在接收到数据后局部更新页面。</p>
-<ul>
-<li><p>使用JQuery发送Ajax请求</p>
-<p>jQuery是流行的JavaScript库，它包装了JavaScript，让我们可以通过更简单的方式编写JavaScript代码。对于Ajax，它提供了多个相关的方法，使用它可以很方便的实现Ajax操作。更重要的是，jQuery处理了不同浏览器的Ajax兼容问题，只需要编写一套代码，就可以在所有主流的浏览器正常运行。</p>
-<p>JQuery中和Ajax相关的方法及具体用法访问<a href="http://api.jquery.com/category/ajax/" target="_blank" rel="noopener">http://api.jquery.com/category/ajax/</a></p>
-</li>
-</ul>
-<hr>
-<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>在动态Web程序中，视图函数返回的HTML数据往往需要根据相应的变量（比如查询函数）动态生成。当HTML代码保存到单独的文件中时，没法再使用字符串格式化或拼接字符串的方式来在HTML代码中插入变量，这时，需要使用模板引擎（template engine），借助模板引擎，可以在HTML文件中使用特殊的语法来标记处变量，这类包含固定内容和动态部分的可重用文件称为模板（template）。</p>
-<p>模板引擎的作用就是读取并执行模板中的特殊语法标记，并根据传入的数据将变量替换为实际值，输出最终的HTML页面，这个过程被称为渲染（rendering）。</p>
-<h3 id="模板基本用法"><a href="#模板基本用法" class="headerlink" title="模板基本用法"></a>模板基本用法</h3><p>（1）<strong>语句</strong></p>
-<p>比如 if 判断、for 循环等：</p>
-<p><strong>{/% for %/}</strong>注：因为hexo缘故，实际使用不需要斜杠。</p>
-<p>（2）<strong>表达式</strong></p>
-<p>比如字符串、变量、函数调用等</p>
-<p><strong>{/{  xxx.xx  }/}</strong>注：因为hexo缘故，实际使用不需要斜杠。</p>
-<p>（3）<strong>注释</strong></p>
-<p><strong>{/# xxx #/}</strong>注：因为hexo缘故，实际使用不需要斜杠。</p>
-<hr>
-<h3 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h3><h3 id="渲染模板"><a href="#渲染模板" class="headerlink" title="渲染模板"></a>渲染模板</h3><p>在视图函数中，不直接使用Jinja2提供的函数，而是使用Flask提供的渲染函数render_template()。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/example')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">example_for_render</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> render_templae(<span class="string">'example.html'</span>, arg1=xxx, arg2=yyy)</span><br></pre></td></tr></table></figure>
-<p>在render_template() 函数中，<strong>首先传入模板的文件名作为参数，以关键字参数的形式传入模板中使用的变量值</strong>。其他类型的变量通过相同的方式传入。传入Jinja2中的变量值可以使字符串、列表、和字典，也可以是函数、类和类实例。</p>
-<hr>
-<h3 id="模板辅助工具"><a href="#模板辅助工具" class="headerlink" title="模板辅助工具"></a>模板辅助工具</h3><h4 id="上下文"><a href="#上下文" class="headerlink" title="上下文"></a>上下文</h4><ul>
-<li><p><strong>内置上下文变量</strong></p>
-<p>Flask在模板上下文中提供了一些内置变两个，可以在模板中直接使用</p>
-</li>
-</ul>
-<p>​                                                        <strong>标准模板全局变量</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">变量</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">config</td>
-<td style="text-align:center">当前的配置对象</td>
-</tr>
-<tr>
-<td style="text-align:center">request</td>
-<td style="text-align:center">当前的请求对象，在已激活的请求环境下可用</td>
-</tr>
-<tr>
-<td style="text-align:center">session</td>
-<td style="text-align:center">当前的会话对象，在已激活的请求环境下可用</td>
-</tr>
-<tr>
-<td style="text-align:center">g</td>
-<td style="text-align:center">与请求绑定的全局变量，在已激活的请求环境下可用</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p><strong>自定义上下文</strong></p>
-<p>如果多个模板都需要使用同一变量，那么较好的方法是能够设置一个模板全局变量。Flask提供了一个app.context_processor()装饰器，可以用来注册模板上下文处理函数，它可以完成统一传入变量的工作。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.context_processo()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inject_foo</span><span class="params">()</span>:</span></span><br><span class="line">	foo = <span class="string">'I am foo.'</span></span><br><span class="line">	<span class="keyword">return</span> dict(foo=foo)  <span class="comment"># 等同于return &#123;'foo': foo&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接将app.context_processor作为方法调用</span></span><br><span class="line">app.context_processor(inject_foo)</span><br></pre></td></tr></table></figure>
-<p><em>当调用render_template()函数渲染任意一个模板时，所有使用app.context_processor装饰器注册的模板上下文处理函数（包括Flask内置的上下文处理函数）都会被执行，这些函数的返回值会被添加到模板中，因此可以在模板中直接使用变量。</em></p>
-</li>
-</ul>
-<hr>
-<h4 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h4><p>全局对象是指在所有的模板中都可以直接使用的对象，包括在模板中导入的模板。</p>
-<ul>
-<li><p>内置全局函数</p>
-<p>​                                Jinja2内置模板全局函数(部分)</p>
-<p>| 函数                                   | 说明                        |<br>| ————————————– | ————————— |<br>| range([start,]stop[, step])            | 和python中的range()用法相同 |<br>| lipsum(n=5, html=True, min=20,max=100) | 生成随机文本（lorem ipsum） |<br>| dict(**items)                          | 和python中的dict()用法相同  |</p>
-<p>​                                Flask内置模板全局函数</p>
-<p>| 函数                   | 说明                    |<br>| ———————- | ———————– |<br>| url_for()              | 用于生成URL的函数       |<br>| get_flashed_message(0) | 用于获取flash消息的函数 |</p>
-</li>
-<li><p><strong>自定义全局函数</strong></p>
-<p><strong>使用app.template_global()装饰器直接将函数注册为模板全局函数</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.template_global()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'I am bar'</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><p>在Jinja2中，过滤器（filter）是一些可以用来修改和过滤变量值的特殊函数，过滤器和变量用一个竖线（管道符号）隔开，需要参数的过滤器可以像函数一样使用括号传递。</p>
-<p>例如：</p>
-
-<ul>
-<li><p>内置过滤器</p>
-<p>Jinja2提过了许多内置过滤器，访问<a href="http://jinjia.pocoo.org/docs/2.10/template/#builtin-filters" target="_blank" rel="noopener">http://jinjia.pocoo.org/docs/2.10/template/#builtin-filters</a></p>
-</li>
-<li><p><strong>自定义过滤器</strong></p>
-<p><strong>使用app.template_filter()装饰器可以自定义过滤器</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Markup</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.template_filter()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">miscal</span><span class="params">(s)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> s + Markup(<span class="string">' &amp;#9835;'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h4 id="测试器"><a href="#测试器" class="headerlink" title="测试器"></a>测试器</h4><p>在Jinja中，测试器（Test）是一些用来测试变量或表达式，返回值（True或False）的特殊函数。比如，number测试器用来判断一个变量或变大时是否数字。使用 is 连接变量和测试器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if age is number %&#125;</span><br><span class="line">	&#123;&#123; age * 365&#125;&#125;</span><br><span class="line">&#123;% else %&#125;</span><br><span class="line">	无效数字</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>内置测试器</p>
-<p>Jinja2提供了许多内置测试器，访问<a href="http://jinjia.pocoo.org/docs/2.10/template/#list-of-builtin-tests" target="_blank" rel="noopener">http://jinjia.pocoo.org/docs/2.10/template/#list-of-builtin-tests</a></p>
-</li>
-<li><p><strong>自定义测试器</strong></p>
-<p><strong>使用app.template_test()装饰器自定义测试器</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.template_test()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">baz</span><span class="params">(n)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> n == <span class="string">'baz'</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="模板环境对象"><a href="#模板环境对象" class="headerlink" title="模板环境对象"></a>模板环境对象</h4><p>在jinja2中，渲染行为有jinja2.Environment类控制，所有的配置选项，上下文变量、全局函数、过滤器和测试器都存储在Environment实例上。当与Flask结合后，我们并不单独创建Environment对象，而是使用Flask创建的Environment对象，它存储在app.jinja_env属性上。</p>
-<p>在程序中，可以使用app.jinja_env更改Jinja2设置。</p>
-<p>模板环境中的全局函数、过滤器和测试器分别存储在Environment对象的globals、filters和tests属性中，这三个属性都是字典对象。可以直接操作这三个字典来添加相应的函数或变量。</p>
-<ul>
-<li><p>添加自定义全局对象</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="string">'I am bar'</span></span><br><span class="line">foo = <span class="string">'I am foo'</span></span><br><span class="line"></span><br><span class="line">app.jinja_env.globals[<span class="string">'bar'</span>] = bar</span><br><span class="line">app.jinja_env.globals[<span class="string">'foo'</span>] = foo</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加自定义过滤器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">smiling</span><span class="params">(s)</span>:</span></span><br><span class="line">	<span class="keyword">return</span> s + <span class="string">':)'</span></span><br><span class="line">	</span><br><span class="line">app.jinja_env.filters[<span class="string">'smiling'</span>] = smiling</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加自定义测试器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">baz</span><span class="params">(n)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> n == <span class="string">'baz'</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">	</span><br><span class="line">app.jinja_env.tests[<span class="string">'baz'</span>] = baz</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h3 id="模板结构组织"><a href="#模板结构组织" class="headerlink" title="模板结构组织"></a>模板结构组织</h3><ul>
-<li><p>局部模板</p>
-<p>当多个独立模板总都会使用同一块HTML代码时，可以把这部分代码抽离出来，存储到局部模板中。这样一方面可以避免重复，另一方面也可以方便统一管理。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &apos;xxx.html&apos; %&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>模板继承</strong></p>
-<p>Jinja2的模板继承允许定义一个基模板，把网页上的导航栏、页脚等通用内容放在基模板中，而每一个继承基模板的子模板在被渲染时都会自动包含这些部分。</p>
-<p>为了能够让子模板方便地覆盖或插入内容到基模板中，需要在基模板中定义块(block)，在子模板中可以通过定义同名的块来执行继承操作。</p>
-</li>
-</ul>
-<hr>
-<h3 id="模板进阶"><a href="#模板进阶" class="headerlink" title="模板进阶"></a>模板进阶</h3><h4 id="加载静态文件"><a href="#加载静态文件" class="headerlink" title="加载静态文件"></a>加载静态文件</h4><p>一个Web项目不仅需要HTML模板，还需要虚度静态文件，比如CSS、JavaScript文件、图片及音频等。在Flask程序中，默认需要将静态文件存储在与主脚本（包含程序实例的脚本）同级目录的static文件夹中。</p>
-<p>为了在HTML文件中引用静态文件，需要使用url_for() 函数获取静态URL。Flask内置了用于获取静态文件的试图函数，端点值为static， 默认URL规则为 static/<a href="path:filename" target="_blank" rel="noopener">path:filename</a>，URL变量filename是相对于static文件夹根目录的文件路径。</p>
-<p>例如：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; url_for('static', filename='xxx.jpg') &#125;&#125;"</span> &gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('static', filename='styles.css') &#125;&#125;"</span> &gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="使用CSS框架"><a href="#使用CSS框架" class="headerlink" title="使用CSS框架"></a>使用CSS框架</h4><p>在编写Web程序时，手动编写CSS比较麻烦，常见的做法是使用CSS框架来为程序添加样式。CSS框架内置了大量可以直接使用的CSS样式类和JavaScript函数，使用它们可以非常快速地让程序页面变得美观和易用，同时也可以定义自己的CSS文件来进行补充和调整。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block sysles %&#125;</span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">ref</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('static', filename='css/bootstrap.min.css') &#125;&#125;"</span> &gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line">...</span><br><span class="line">&#123;% block script %&#125;</span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">scr</span>=<span class="string">"&#123;&#123; url_for('static', filename='js/jquery.min.js') &#125;&#125;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; url_fro('static', filename='js/popper.min.js') &#125;&#125;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="消息闪现"><a href="#消息闪现" class="headerlink" title="消息闪现"></a>消息闪现</h4><p>Flask提供了一个非常有用的<strong>flash()</strong> 函数，它可以用来“闪现”需要显示给用户的消息。在视图函数中调用flash()函数，传入消息内容即可“闪现”一条消息。<strong>发送的消息会存储在session中，需要在模板中使用全局函数get_flashed_messages() 获取消息并将其显示出来</strong>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> flash</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">just_flash</span><span class="params">()</span>:</span></span><br><span class="line">		flash(<span class="string">'I am flash, who is looking for me.'</span>)</span><br><span class="line">		<span class="keyword">return</span> redirect(url_for(<span class="string">'index'</span>))</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><h3 id="HTML表单"><a href="#HTML表单" class="headerlink" title="HTML表单"></a>HTML表单</h3><p>HTML表单的具体定义和用法访问<a href="http://www.w3.org/TR/html401/interact/forms.html" target="_blank" rel="noopener">http://www.w3.org/TR/html401/interact/forms.html</a></p>
-<hr>
-<h3 id="使用Flask-WTF处理表单"><a href="#使用Flask-WTF处理表单" class="headerlink" title="使用Flask-WTF处理表单"></a>使用Flask-WTF处理表单</h3><h3 id="在模板中渲染表单"><a href="#在模板中渲染表单" class="headerlink" title="在模板中渲染表单"></a>在模板中渲染表单</h3><h4 id="提交表单"><a href="#提交表单" class="headerlink" title="提交表单"></a>提交表单</h4><p>出于安全考虑，一般使用POST方法提交表单。使用POST方法时，按照默认的编码类型，表单数据会被存储在请求主体中。</p>
-<p>为了支持接收表单提交发送的POST请求，必须在app.route()装饰器里使用methods关键字为路由指定HTTP方法。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">basic</span><span class="params">()</span>:</span></span><br><span class="line">	form = LoginForm()</span><br><span class="line">	<span class="keyword">return</span> render_template(<span class="string">'basic.html'</span>, form=form)</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="验证表单数据"><a href="#验证表单数据" class="headerlink" title="验证表单数据"></a>验证表单数据</h4><ul>
-<li><p>客户端验证和服务器端验证</p>
-<ul>
-<li><p>客户端验证</p>
-<p>指在客户端（比如Web浏览器）对用户的输入值进行验证。客户端方式可以实时动态提示用户输入是否正确，只有用户输入正确后才会将表单数据发送到服务器。客户端验证可以增强用户体验，降低服务器负载。</p>
-</li>
-<li><p>服务器端验证</p>
-<p>指用户把输入的数据提交到服务器，在服务器端对数据进行验证。如果验证出错，就在返回的响应中加入错误信息。</p>
-<p>客户端验证和服务器端验证都是必不可少的。</p>
-</li>
-</ul>
-</li>
-<li><p>WTForms验证机制</p>
-<p>WTForms验证表单字段的方式是在实例化表单类时传去表单数据，然后对表单实例调用validate() 方法。</p>
-</li>
-</ul>
-<h3 id="表单进阶"><a href="#表单进阶" class="headerlink" title="表单进阶"></a>表单进阶</h3><h4 id="自定义验证器"><a href="#自定义验证器" class="headerlink" title="自定义验证器"></a>自定义验证器</h4><p>在WTForms中，验证器是指在定义字段时传入validators参数列表的可调用对象。</p>
-<ul>
-<li><p>行内验证器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wtforms <span class="keyword">import</span> IntegerField, SubmitField</span><br><span class="line"><span class="keyword">from</span> wtforms.validators <span class="keyword">import</span> ValidationError</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FortyTwoForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">	answer = IntegerField(<span class="string">'The Number'</span>)</span><br><span class="line">	submit = SubmitField()</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">validate_answer</span><span class="params">(form, field)</span>:</span>     <span class="comment"># 验证器在表单类中定义</span></span><br><span class="line">		<span class="keyword">if</span> field.data != <span class="number">42</span>:</span><br><span class="line">			<span class="keyword">raise</span> ValidationError(<span class="string">'Must be 42'</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>当表单类总包含以“validate_字段属性名“形式命名的方法时，在验证字段数据时会同时调用这个方法来验证对应的字段，这也是为什么表单类的字段属性名不能以validate开头。</strong></p>
-</li>
-<li><p>全局验证器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> wtforms.validators <span class="keyword">import</span> ValidationError</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_42</span><span class="params">(form, field)</span>:</span>			<span class="comment"># 验证器在表单类外定义</span></span><br><span class="line">	<span class="keyword">if</span> filed.data != <span class="number">42</span>:</span><br><span class="line">		<span class="keyword">raise</span> ValidationError(<span class="string">'Must be 42'</span>)</span><br><span class="line">		</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FortyTwoForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">	answer = IntegerField(<span class="string">'The Number'</span>, validators=[is_42])</span><br><span class="line">	submit = SubmitField()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h4 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h4><p>在HTML中，渲染一个文件上传字段只需要将<input>标签的type属性设为file，即<input type="file">。这会在浏览器中渲染陈一个文件上传字段，单机文件选择按钮会打开文件选择窗口，选择对应的文件后，被选择的文件名会显示在文件选择按钮旁边。</p>
-<ul>
-<li><p>定义上传表单</p>
-<p>在Python表单类中创建文件上传字段时，使用扩展Flask-WTF提供的FileField类，它继承了WTForm提供的上传字段FileField，添加了对Flask的集成。</p>
-<p>例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask wtf.file <span class="keyword">import</span> FileField, FileRequired, FileAllowed</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UploadForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">	photo = FileField(<span class="string">'Upload Image'</span>, validators=[FileRequired(), FileAllowed([<span class="string">'jpg'</span>, <span class="string">'jpeg'</span>, <span class="string">'png'</span>, <span class="string">'gif'</span>])])</span><br><span class="line">	submit = SubmitField()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>渲染上传表单</p>
-<p>在创建的upload视图里，实例化表单类UploadForm，然后传入模板：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/upload', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload</span><span class="params">()</span>:</span></span><br><span class="line">	form = UploadForm()</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">return</span> render_template(<span class="string">'upload.html, form=form)</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">	&#123;&#123; form.csrf_token &#125;&#125;</span><br><span class="line">	&#123;&#123; form_field(form.photo) &#125;&#125;</span><br><span class="line">	&#123;&#123; form.submit() &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>处理上传文件</p>
-<p>和普通的表单数据不同，当包含上传文件字段的表单提交后，上传的文件需要在请求对象的files属性（reuqest.files）中获取。</p>
-<p>当使用Flask-WTF时，它会自动帮我们获取对应的文件对象。这里使用表单类属性的data属性获取上传文件。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">app.config[<span class="string">'UPLOAD_PATH'</span>] = os.path.join(app.root_path, <span class="string">'uploads'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/upload', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upload</span><span class="params">()</span>:</span></span><br><span class="line">	form = UploadForm()</span><br><span class="line">	<span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">		f = form.photo.data</span><br><span class="line">		filename = random_filename(f.filename)</span><br><span class="line">		f.save(os.path.join(app.config[<span class="string">'UPLOAD)PATH'</span>], filename))</span><br><span class="line">		flash(<span class="string">'Upload success.'</span>)</span><br><span class="line">		session[<span class="string">'filenames'</span>] = [filename]</span><br><span class="line">		<span class="keyword">return</span> redirect(url_for(<span class="string">'show_images'</span>))</span><br><span class="line">	<span class="keyword">return</span> render_template(<span class="string">'upload.html'</span>, form=form)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="使用Flask-CKEditor集成富文本编辑器"><a href="#使用Flask-CKEditor集成富文本编辑器" class="headerlink" title="使用Flask-CKEditor集成富文本编辑器"></a>使用Flask-CKEditor集成富文本编辑器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pipenv install flask-ckeditor  <span class="comment"># 安装</span></span></span><br></pre></td></tr></table></figure>
-<p>1）实例化Flask-CkEditor提供的CkEditor类，传入程序实例</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_ckeditor <span class="keyword">import</span> CKEditor</span><br><span class="line"></span><br><span class="line">ckeditor = CKEditor()</span><br></pre></td></tr></table></figure>
-<p>2）渲染富文本编辑器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_wtf <span class="keyword">import</span> FlaskForm</span><br><span class="line">From wtforms <span class="keyword">import</span> StringField, SubmitField</span><br><span class="line"><span class="keyword">from</span> wtforms.validators <span class="keyword">import</span> DataRequired, Length</span><br><span class="line"><span class="keyword">from</span> flask_ckeditor <span class="keyword">import</span> CKEditorField</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RichTextForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">	title = StringField(<span class="string">'Title'</span>, validators=[DataRequired(), Length[<span class="number">1.</span> <span class="number">50</span>]])</span><br><span class="line">	body = CKEditorField(<span class="string">'Body'</span>, validators=[DataRequeired()])</span><br><span class="line">	submit= SubmitField(<span class="string">'Publish'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block  content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Integrate CKEditor with Flask-CKEditor<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">	&#123;&#123; form.csrf_token &#125;&#125;</span><br><span class="line">	&#123;&#123; form_field(form.title) &#125;&#125;</span><br><span class="line">	&#123;&#123; form_field(form.body) &#125;&#125;</span><br><span class="line">	&#123;&#123; form.submit &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h4 id="单个表单多个提交按钮"><a href="#单个表单多个提交按钮" class="headerlink" title="单个表单多个提交按钮"></a>单个表单多个提交按钮</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewPostForm</span><span class="params">(FlaskForm)</span>:</span></span><br><span class="line">	title = String(<span class="string">'Title'</span>)</span><br><span class="line">	...</span><br><span class="line">	save = SubmitField(<span class="string">'Save'</span>)</span><br><span class="line">	publish = SubmitField(<span class="string">'Publish'</span>)</span><br><span class="line">	</span><br><span class="line"><span class="meta">@app.route('/xxx', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_submits</span><span class="params">()</span>:</span></span><br><span class="line">	form = NewPostForm()</span><br><span class="line">	<span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">		<span class="keyword">if</span> form.save.data:</span><br><span class="line">			....</span><br><span class="line">		<span class="keyword">elif</span> form.publish.data:</span><br><span class="line">			....</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><h2 id="电子邮件"><a href="#电子邮件" class="headerlink" title="电子邮件"></a>电子邮件</h2><h2 id="Flask程序的自动化测试"><a href="#Flask程序的自动化测试" class="headerlink" title="Flask程序的自动化测试"></a>Flask程序的自动化测试</h2><h2 id="Flask程序性能优化"><a href="#Flask程序性能优化" class="headerlink" title="Flask程序性能优化"></a>Flask程序性能优化</h2><h2 id="部署FLask程序"><a href="#部署FLask程序" class="headerlink" title="部署FLask程序"></a>部署FLask程序</h2><h2 id="Flask的一些设计理念"><a href="#Flask的一些设计理念" class="headerlink" title="Flask的一些设计理念"></a>Flask的一些设计理念</h2><h2 id="后续补充"><a href="#后续补充" class="headerlink" title="后续补充"></a>后续补充</h2>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -3063,7 +2497,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3098,7 +2532,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
