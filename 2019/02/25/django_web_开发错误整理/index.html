@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="环境变量$PATH在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》） 改变PATH直接修改$PATH值：12echo $PATH //查看当前PATH的配置路径export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用&apos;:&apos;">
-<meta name="keywords" content="环境变量">
+  <meta name="description" content="在使用Django2.0进行Web开发过程中遇到的问题Django在根据models生成数据库表时报 _ init _()missing 1 required positional argument: ‘on_delete’ 原因 在django2.0后，定义外键和一对一关系的时候需要加on_delete选项，此参数为了避免两个表里的数据不一致问题，不然会报错：TypeError: _ init">
+<meta name="keywords" content="Web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux环境变量PATH">
-<meta property="og:url" content="http://yoursite.com/2019/02/25/Linux_环境变量PATH/index.html">
+<meta property="og:title" content="django开发问题整理">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/django_web_开发错误整理/index.html">
 <meta property="og:site_name" content="Utur的个人博客">
-<meta property="og:description" content="环境变量$PATH在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》） 改变PATH直接修改$PATH值：12echo $PATH //查看当前PATH的配置路径export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用&apos;:&apos;">
+<meta property="og:description" content="在使用Django2.0进行Web开发过程中遇到的问题Django在根据models生成数据库表时报 _ init _()missing 1 required positional argument: ‘on_delete’ 原因 在django2.0后，定义外键和一对一关系的时候需要加on_delete选项，此参数为了避免两个表里的数据不一致问题，不然会报错：TypeError: _ init">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-06T09:07:58.988Z">
+<meta property="og:updated_time" content="2019-07-06T09:12:50.422Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux环境变量PATH">
-<meta name="twitter:description" content="环境变量$PATH在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》） 改变PATH直接修改$PATH值：12echo $PATH //查看当前PATH的配置路径export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用&apos;:&apos;">
+<meta name="twitter:title" content="django开发问题整理">
+<meta name="twitter:description" content="在使用Django2.0进行Web开发过程中遇到的问题Django在根据models生成数据库表时报 _ init _()missing 1 required positional argument: ‘on_delete’ 原因 在django2.0后，定义外键和一对一关系的时候需要加on_delete选项，此参数为了避免两个表里的数据不一致问题，不然会报错：TypeError: _ init">
 
 
 
@@ -113,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/02/25/Linux_环境变量PATH/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/25/django_web_开发错误整理/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>Linux环境变量PATH | Utur的个人博客</title>
+  <title>django开发问题整理 | Utur的个人博客</title>
   
 
 
@@ -322,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/Linux_环境变量PATH/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/25/django_web_开发错误整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Utur">
@@ -339,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux环境变量PATH
+          <h1 class="post-title" itemprop="name headline">django开发问题整理
 
               
             
@@ -380,7 +380,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-06 17:07:58" itemprop="dateModified" datetime="2019-07-06T17:07:58+08:00">2019-07-06</time>
+                <time title="Modified: 2019-07-06 17:12:50" itemprop="dateModified" datetime="2019-07-06T17:12:50+08:00">2019-07-06</time>
               </span>
             
           
@@ -394,7 +394,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/django/" itemprop="url" rel="index"><span itemprop="name">django</span></a></span>
 
                 
                 
@@ -432,41 +432,73 @@
       
 
       
-        <h2 id="环境变量-PATH"><a href="#环境变量-PATH" class="headerlink" title="环境变量$PATH"></a>环境变量$PATH</h2><p>在Linux中，执行命令时，系统会按照PATH的设置，去每个PATH定义的路径下搜索执行文件，先搜索到的文件先执行。（From：《鸟哥的LINUX私房菜》）</p>
-<h2 id="改变PATH"><a href="#改变PATH" class="headerlink" title="改变PATH"></a>改变PATH</h2><h3 id="直接修改-PATH值："><a href="#直接修改-PATH值：" class="headerlink" title="直接修改$PATH值："></a>直接修改$PATH值：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH //查看当前PATH的配置路径</span><br><span class="line">export PATH=$PATH:/xxx1:/xxx2 //将需要的配置路径加入$PATH 等号两边没有空格，path之间用':'间隔</span><br></pre></td></tr></table></figure>
-<ul>
-<li>生效方法：立即生效</li>
-<li>有效期限：临时改变，只对当前终端有效，关闭后恢复原来的PATH</li>
-<li>用户局限：<strong>仅当前用户</strong></li>
-</ul>
-<h3 id="通过修改-bashrc文件：（-bashrc文件在根目录下）"><a href="#通过修改-bashrc文件：（-bashrc文件在根目录下）" class="headerlink" title="通过修改.bashrc文件：（.bashrc文件在根目录下）"></a>通过修改.bashrc文件：（.bashrc文件在根目录下）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim .bashrc  // 编辑.bashrc文件</span><br><span class="line"></span><br><span class="line">// 在最后一行添加：</span><br><span class="line"></span><br><span class="line">export PATH=$PATH:/xxx/xxx    // /xxx/xxx为需要加入的环境变量地址，等号两边无空格</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>生效方法：（有一下两种）</p>
-<ol>
-<li><p>关闭当前终端窗口，重新打开一个新的终端窗口即可</p>
+        <h1 id="在使用Django2-0进行Web开发过程中遇到的问题"><a href="#在使用Django2-0进行Web开发过程中遇到的问题" class="headerlink" title="在使用Django2.0进行Web开发过程中遇到的问题"></a>在使用Django2.0进行Web开发过程中遇到的问题</h1><h3 id="Django在根据models生成数据库表时报-init-missing-1-required-positional-argument-‘on-delete’"><a href="#Django在根据models生成数据库表时报-init-missing-1-required-positional-argument-‘on-delete’" class="headerlink" title="Django在根据models生成数据库表时报 _ init _()missing 1 required positional argument: ‘on_delete’"></a>Django在根据models生成数据库表时报 _ <em>init</em> _()missing 1 required positional argument: ‘on_delete’</h3><ul>
+<li><p><strong>原因</strong></p>
+<p>在django2.0后，定义外键和一对一关系的时候需要加on_delete选项，此参数为了避免两个表里的数据不一致问题，不然会报错：<br>TypeError: _ init _() missing 1 required positional argument: ‘on_delete’</p>
 </li>
-<li><p>输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .bashrc</span><br></pre></td></tr></table></figure>
-<p>命令，立即生效。</p>
-</li>
-</ol>
-</li>
-<li><p>有效期限：永久有效</p>
-</li>
-<li>用户局限：<strong>仅当前用户</strong></li>
-</ul>
-<h3 id="通过修改profile文件：（profile文件在-etc目录下）"><a href="#通过修改profile文件：（profile文件在-etc目录下）" class="headerlink" title="通过修改profile文件：（profile文件在/etc目录下）"></a>通过修改profile文件：（profile文件在/etc目录下）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile    // 编辑profile文件</span><br><span class="line"></span><br><span class="line">// 在最后一行添加：</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/xxx/xxx</span><br></pre></td></tr></table></figure>
+<li><p><strong>解决方法</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 以下代码报错</span></span><br><span class="line">user = models.OneToOneField(User)</span><br><span class="line">owner = models.ForeignKey(UserProfile)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 以下代码正确</span></span><br><span class="line">user = models.OneToOneField(User, on_delete=models.CASCADE)</span><br><span class="line">owner = models.ForergnKey(UserProfile, on_delete=models.CASCADE)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>生效方法：系统重启</li>
-<li>有效期限：永久有效</li>
-<li>用户局限：<strong>所有用户</strong></li>
+<li><p>参数说明</p>
+<p>on_delete有CASCADE、PROTECT、SET_NULL、SET_DEFAULT、SET()五个可选择的值。<br>CASCADE：此值设置，是级联删除。<br>PROTECT：此值设置，是会报完整性错误。<br>SET_NULL：此值设置，会把外键设置为null，前提是允许为null。<br>SET_DEFAULT：此值设置，会把设置为外键的默认值。<br>SET()：此值设置，会调用外面的值，可以是一个函数。<br><strong>一般情况下使用CASCADE就可以了。</strong></p>
+</li>
 </ul>
-<h3 id="通过修改environment文件：（environment文件在-etc目录下）"><a href="#通过修改environment文件：（environment文件在-etc目录下）" class="headerlink" title="通过修改environment文件：（environment文件在/etc目录下）"></a>通过修改environment文件：（environment文件在/etc目录下）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/environment    //编辑environment文件</span><br><span class="line"></span><br><span class="line">在PATH=/.......中加入“:/xxx/xxx”</span><br></pre></td></tr></table></figure>
-<ul>
-<li>生效方法：系统重启</li>
-<li>有效期限：永久有效</li>
-<li>用户局限：<strong>所有用户</strong></li>
+</li>
 </ul>
+<hr>
+<h3 id="Django2-0配置Mysql数据库后执行数据迁移时报错："><a href="#Django2-0配置Mysql数据库后执行数据迁移时报错：" class="headerlink" title="Django2.0配置Mysql数据库后执行数据迁移时报错："></a>Django2.0配置Mysql数据库后执行数据迁移时报错：</h3><ul>
+<li><p><strong>报错</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">django</span><span class="selector-class">.core</span><span class="selector-class">.exceptions</span><span class="selector-class">.ImproperlyConfigured</span>: <span class="selector-tag">mysqlclient</span> 1<span class="selector-class">.3</span><span class="selector-class">.3</span> <span class="selector-tag">or</span> <span class="selector-tag">newer</span> <span class="selector-tag">is</span> <span class="selector-tag">required</span>; <span class="selector-tag">you</span> <span class="selector-tag">have</span> 0<span class="selector-class">.7</span><span class="selector-class">.11</span><span class="selector-class">.None</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>原因</strong></p>
+<p>MySQLclient目前只支持到python3.4</p>
+</li>
+<li><p><strong>解决方法</strong></p>
+<p>因为要使用<strong>python3.6</strong>，所以修改下面路径的文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim /home/utur/.<span class="built_in">local</span>/lib/python3.6/site-packages/django/db/backends/mysql</span></span><br></pre></td></tr></table></figure>
+<p>将以下代码注释即可：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> version &lt; (<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>):</span><br><span class="line">	<span class="keyword">raise</span> ImproperlyConfigured(<span class="string">"mysqlclient 1.3.3 or newer is required; you have %s"</span> % Database.__version__)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="MySQL-django-db-utils-OperationalError-1698-“Access-denied-for-user-‘roo‘-’localhost’”-with-correct-username-and-pw"><a href="#MySQL-django-db-utils-OperationalError-1698-“Access-denied-for-user-‘roo‘-’localhost’”-with-correct-username-and-pw" class="headerlink" title="MySQL: django.db.utils.OperationalError:( 1698, “Access denied for user ‘roo‘@’localhost’”) with correct username and pw"></a>MySQL: django.db.utils.OperationalError:( 1698, “Access denied for user ‘roo‘@’localhost’”) with correct username and pw</h3><ul>
+<li><p>详情见：<a href="https://stackoverflow.com/questions/41542045/mysql-django-db-utils-operationalerror-1698-access-denied-for-user-root" target="_blank" rel="noopener">https://stackoverflow.com/questions/41542045/mysql-django-db-utils-operationalerror-1698-access-denied-for-user-root</a></p>
+</li>
+<li><p><strong>解决方法</strong></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create user &apos;django&apos;@&apos;localhost&apos; identified by &apos;django-user-password&apos;;</span><br><span class="line">grant usage on *.* to &apos;django&apos;@&apos;localhost&apos;;</span><br><span class="line">grant all privileges on django-database-1.* to &apos;django&apos;@&apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="AttributeError-‘str’-object-has-no-attribute-‘decode’"><a href="#AttributeError-‘str’-object-has-no-attribute-‘decode’" class="headerlink" title="AttributeError: ‘str’ object has no attribute ‘decode’"></a>AttributeError: ‘str’ object has no attribute ‘decode’</h3><ul>
+<li><p><strong>报错</strong></p>
+<p>执行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py makemigrations</span><br></pre></td></tr></table></figure>
+<p>报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/Django-2.2-py3.7.egg/django/db/backends/mysql/operations.py", line 146, in last_executed_query</span><br><span class="line">    query = query.decode(errors='replace')</span><br><span class="line">AttributeError: 'str' object has no attribute 'decode'</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>原因</strong></p>
+<p>python在bytes和str两种类型转换，所需要的函数依次是encode(),decode()</p>
+</li>
+<li><p><strong>解决方法</strong></p>
+<p>在报错路径下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim operations.py</span><br></pre></td></tr></table></figure>
+<p>找到错误代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">query = query.decode(errors=<span class="string">'replace'</span>)</span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">query = query.encode(errors=<span class="string">'replace'</span>)</span><br><span class="line"><span class="comment"># 保存并退出</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="include-got-an-unexpected-keyword-argument-‘app-name’"><a href="#include-got-an-unexpected-keyword-argument-‘app-name’" class="headerlink" title="include() got an unexpected keyword argument ‘app_name’"></a>include() got an unexpected keyword argument ‘app_name’</h3><ul>
+<li><p><strong>原因</strong></p>
+<p><strong>在Django2.0版本使用url()导致，推荐使用path()</strong></p>
+</li>
+<li><p><strong>解决方法</strong></p>
+<p>在xxx应用下的<strong>urls.py</strong>添加app_name变量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url,include</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app_name = xxx</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">     <span class="comment"># 路由规则</span></span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
 
       
     </div>
@@ -493,7 +525,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/环境变量/" rel="tag"># 环境变量</a>
+            <a href="/tags/Web开发/" rel="tag"># Web开发</a>
           
         </div>
       
@@ -506,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/25/Ubuntu快速配置工作环境/" rel="next" title="Ubuntu环境">
-                <i class="fa fa-chevron-left"></i> Ubuntu环境
+              <a href="/2019/02/25/Apache_Kafka/" rel="next" title="消息队列Kafka学习笔记">
+                <i class="fa fa-chevron-left"></i> 消息队列Kafka学习笔记
               </a>
             
           </div>
@@ -516,8 +548,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/11/Flask_Web/" rel="prev" title="Flask学习笔记">
-                Flask学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/25/Ubuntu快速配置工作环境/" rel="prev" title="Ubuntu环境">
+                Ubuntu环境 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -725,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量-PATH"><span class="nav-number">1.</span> <span class="nav-text">环境变量$PATH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变PATH"><span class="nav-number">2.</span> <span class="nav-text">改变PATH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接修改-PATH值："><span class="nav-number">2.1.</span> <span class="nav-text">直接修改$PATH值：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过修改-bashrc文件：（-bashrc文件在根目录下）"><span class="nav-number">2.2.</span> <span class="nav-text">通过修改.bashrc文件：（.bashrc文件在根目录下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过修改profile文件：（profile文件在-etc目录下）"><span class="nav-number">2.3.</span> <span class="nav-text">通过修改profile文件：（profile文件在/etc目录下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过修改environment文件：（environment文件在-etc目录下）"><span class="nav-number">2.4.</span> <span class="nav-text">通过修改environment文件：（environment文件在/etc目录下）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在使用Django2-0进行Web开发过程中遇到的问题"><span class="nav-number">1.</span> <span class="nav-text">在使用Django2.0进行Web开发过程中遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Django在根据models生成数据库表时报-init-missing-1-required-positional-argument-‘on-delete’"><span class="nav-number">1.0.1.</span> <span class="nav-text">Django在根据models生成数据库表时报 _ init _()missing 1 required positional argument: ‘on_delete’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Django2-0配置Mysql数据库后执行数据迁移时报错："><span class="nav-number">1.0.2.</span> <span class="nav-text">Django2.0配置Mysql数据库后执行数据迁移时报错：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-django-db-utils-OperationalError-1698-“Access-denied-for-user-‘roo‘-’localhost’”-with-correct-username-and-pw"><span class="nav-number">1.0.3.</span> <span class="nav-text">MySQL: django.db.utils.OperationalError:( 1698, “Access denied for user ‘roo‘@’localhost’”) with correct username and pw</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AttributeError-‘str’-object-has-no-attribute-‘decode’"><span class="nav-number">1.0.4.</span> <span class="nav-text">AttributeError: ‘str’ object has no attribute ‘decode’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#include-got-an-unexpected-keyword-argument-‘app-name’"><span class="nav-number">1.0.5.</span> <span class="nav-text">include() got an unexpected keyword argument ‘app_name’</span></a></li></ol></li></ol></div>
             
 
           </div>
